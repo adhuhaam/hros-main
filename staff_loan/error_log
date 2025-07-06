@@ -1,0 +1,55 @@
+[26-Jan-2025 08:10:42 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.loans' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php:45
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php(45): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php on line 45
+[26-Jan-2025 08:12:25 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.loans' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php:6
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php(6): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php on line 6
+[26-Jan-2025 11:58:26 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'e.id' in 'ON' in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php:19
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php(19): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php on line 19
+[26-Jan-2025 11:58:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'el.emp_no' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php:19
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php(19): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php on line 19
+[26-Jan-2025 11:59:30 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'e.id' in 'ON' in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php:20
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php(20): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php on line 20
+[26-Jan-2025 12:43:31 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'interest_rate' in 'INSERT INTO' in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/add_loan.php:20
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/add_loan.php(20): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/add_loan.php on line 20
+[26-Jan-2025 12:45:54 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'el.monthly_deduction' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php:27
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php(27): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php on line 27
+[26-Jan-2025 12:46:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'el.monthly_deduction' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php:27
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php(27): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php on line 27
+[26-Jan-2025 12:46:28 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'el.monthly_deduction' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php:27
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php(27): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php on line 27
+[26-Jan-2025 12:46:30 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'el.monthly_deduction' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php:27
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php(27): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/index.php on line 27
+[26-Jan-2025 12:48:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'el.interest_amount' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/summary.php:28
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/staff_loan/summary.php(28): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/staff_loan/summary.php on line 28

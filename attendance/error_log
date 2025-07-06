@@ -1,0 +1,12 @@
+[12-Jun-2025 10:01:48 Indian/Maldives] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/attendance/upload.php on line 70
+[12-Jun-2025 10:01:48 Indian/Maldives] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/attendance/upload.php on line 77
+[12-Jun-2025 10:01:48 Indian/Maldives] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/attendance/upload.php on line 77
+[12-Jun-2025 10:08:16 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'name' in 'INSERT INTO' in /home/rccmgvfd/hros.rccmaldives.com/attendance/upload.php:43
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/attendance/upload.php(43): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/attendance/upload.php on line 43
+[12-Jun-2025 10:15:14 Indian/Maldives] PHP Warning:  Undefined array key "name" in /home/rccmgvfd/hros.rccmaldives.com/attendance/index.php on line 73
+[12-Jun-2025 10:15:14 Indian/Maldives] PHP Warning:  Undefined array key "name" in /home/rccmgvfd/hros.rccmaldives.com/attendance/index.php on line 73
+[12-Jun-2025 10:15:16 Indian/Maldives] PHP Warning:  Undefined array key "name" in /home/rccmgvfd/hros.rccmaldives.com/attendance/index.php on line 73
+[12-Jun-2025 10:15:16 Indian/Maldives] PHP Warning:  Undefined array key "name" in /home/rccmgvfd/hros.rccmaldives.com/attendance/index.php on line 73

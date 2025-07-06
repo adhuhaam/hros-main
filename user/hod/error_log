@@ -1,0 +1,8 @@
+[21-Jan-2025 18:23:50 UTC] PHP Warning:  Undefined array key "hrm_comment" in /home/rccmgvfd/hros.rccmaldives.com/user/hod/add_comment_hod.php on line 103
+[21-Jan-2025 18:23:50 UTC] PHP Warning:  Undefined variable $prev_warnings in /home/rccmgvfd/hros.rccmaldives.com/user/hod/add_comment_hod.php on line 111
+[21-Jan-2025 18:23:50 UTC] PHP Warning:  Attempt to read property "num_rows" on null in /home/rccmgvfd/hros.rccmaldives.com/user/hod/add_comment_hod.php on line 111
+[21-Jan-2025 18:24:02 UTC] PHP Warning:  Undefined array key "hod_statement" in /home/rccmgvfd/hros.rccmaldives.com/user/hod/add_comment_hod.php on line 13
+[21-Jan-2025 18:26:25 UTC] PHP Warning:  Undefined array key "hrm_comment" in /home/rccmgvfd/hros.rccmaldives.com/user/hod/add_comment_hod.php on line 113
+[21-Jan-2025 18:26:25 UTC] PHP Warning:  Undefined variable $prev_warnings in /home/rccmgvfd/hros.rccmaldives.com/user/hod/add_comment_hod.php on line 121
+[21-Jan-2025 18:26:25 UTC] PHP Warning:  Attempt to read property "num_rows" on null in /home/rccmgvfd/hros.rccmaldives.com/user/hod/add_comment_hod.php on line 121
+[21-Jan-2025 18:26:43 UTC] PHP Warning:  Undefined array key "hod_statement" in /home/rccmgvfd/hros.rccmaldives.com/user/hod/add_comment_hod.php on line 13

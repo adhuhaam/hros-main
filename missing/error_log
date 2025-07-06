@@ -1,0 +1,15 @@
+[09-Apr-2025 13:33:09 Indian/Maldives] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/missing/index.php:50
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/missing/index.php(50): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/missing/index.php on line 50
+[10-Apr-2025 11:07:03 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'e.full_name' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/missing/edit.php:11
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/missing/edit.php(11): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/missing/edit.php on line 11
+[10-Apr-2025 11:14:42 Indian/Maldives] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/missing/index.php:50
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/missing/index.php(50): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/missing/index.php on line 50

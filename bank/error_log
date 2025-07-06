@@ -1,0 +1,65 @@
+[27-Jan-2025 10:30:15 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 827
+[27-Jan-2025 10:30:48 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 827
+[27-Jan-2025 10:30:51 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 825
+[27-Jan-2025 10:30:51 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 828
+[27-Jan-2025 10:31:52 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 825
+[27-Jan-2025 10:31:52 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 828
+[27-Jan-2025 10:31:55 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 828
+[27-Jan-2025 10:32:04 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 828
+[27-Jan-2025 10:32:07 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 828
+[27-Jan-2025 10:32:12 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 828
+[27-Jan-2025 10:32:38 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 828
+[27-Jan-2025 10:32:53 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 828
+[27-Jan-2025 10:32:56 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 828
+[27-Jan-2025 10:34:29 UTC] PHP Warning:  Undefined array key "name" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 824
+[27-Jan-2025 10:35:41 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 828
+[27-Jan-2025 10:37:30 UTC] PHP Warning:  Undefined array key "emergency_contact_name" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 825
+[27-Jan-2025 10:37:30 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 834
+[27-Jan-2025 10:37:32 UTC] PHP Warning:  Undefined array key "emergency_contact_name" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 825
+[27-Jan-2025 10:37:32 UTC] PHP Warning:  Undefined array key "emp_email" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 834
+[27-Jan-2025 11:17:21 UTC] PHP Warning:  Undefined array key "company" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 1237
+[27-Jan-2025 11:17:32 UTC] PHP Warning:  Undefined array key "company" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 1237
+[27-Jan-2025 11:17:39 UTC] PHP Warning:  Undefined array key "company" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 1237
+[27-Jan-2025 11:17:44 UTC] PHP Warning:  Undefined array key "company" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 1237
+[27-Jan-2025 11:17:54 UTC] PHP Warning:  Undefined array key "company" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 1237
+[27-Jan-2025 11:18:16 UTC] PHP Warning:  Undefined array key "company" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 1237
+[27-Jan-2025 11:18:23 UTC] PHP Warning:  Undefined array key "company" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 1237
+[27-Jan-2025 11:18:43 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.passport_nic_no_expires, e.contact_number, e.emp_email, e.nationality, e.xpa...' at line 1 in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php:18
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php(18): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 18
+[27-Jan-2025 11:19:13 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.passport_nic_no_expires, e.contact_number, e.emp_email, e.nationality, e.xpa...' at line 1 in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php:18
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php(18): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 18
+[27-Jan-2025 11:19:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.passport_nic_no_expires, e.contact_number, e.emp_email, e.nationality, e.xpa...' at line 1 in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php:18
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php(18): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 18
+[27-Jan-2025 12:01:21 UTC] PHP Warning:  Undefined array key "dob" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 475
+[27-Jan-2025 12:02:02 UTC] PHP Warning:  Undefined array key "dob" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 475
+[27-Jan-2025 12:02:06 UTC] PHP Warning:  Undefined array key "dob" in /home/rccmgvfd/hros.rccmaldives.com/bank/mib_from.php on line 475
+[06-Feb-2025 06:04:13 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' e.emp_email, e.contact_number, e.designation, e.company, e.xpat_join_date, e...' at line 1 in /home/rccmgvfd/hros.rccmaldives.com/bank/mib.php:19
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/bank/mib.php(19): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/bank/mib.php on line 19
+[16-Mar-2025 12:33:02 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/bank/sbi.php(5): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[20-May-2025 10:32:15 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rccmgvfd_hros`.`bank_account_records`, CONSTRAINT `bank_account_records_ibfk_1` FOREIGN KEY (`emp_no`) REFERENCES `employees` (`emp_no`) ON DELETE CASCADE) in /home/rccmgvfd/hros.rccmaldives.com/bank/add.php:26
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/bank/add.php(26): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/bank/add.php on line 26
+[20-May-2025 10:32:41 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rccmgvfd_hros`.`bank_account_records`, CONSTRAINT `bank_account_records_ibfk_1` FOREIGN KEY (`emp_no`) REFERENCES `employees` (`emp_no`) ON DELETE CASCADE) in /home/rccmgvfd/hros.rccmaldives.com/bank/add.php:26
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/bank/add.php(26): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/bank/add.php on line 26

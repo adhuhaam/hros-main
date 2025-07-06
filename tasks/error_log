@@ -1,0 +1,6 @@
+[09-Apr-2025 23:19:27 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/tasks/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tasks/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/tasks/index.php(1): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tasks/db.php on line 12

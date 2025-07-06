@@ -1,0 +1,68 @@
+[07-Jan-2025 04:40:18 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'employees.emp_name' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/hospital/index.php:36
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hospital/index.php(36): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hospital/index.php on line 36
+[07-Jan-2025 04:40:43 UTC] PHP Warning:  Undefined array key "emp_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/index.php on line 136
+[07-Jan-2025 04:40:43 UTC] PHP Warning:  Undefined array key "emp_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/index.php on line 136
+[07-Jan-2025 04:41:24 UTC] PHP Warning:  Undefined array key "emp_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/index.php on line 138
+[07-Jan-2025 04:41:24 UTC] PHP Warning:  Undefined array key "emp_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/index.php on line 138
+[12-Jan-2025 12:33:12 UTC] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[12-Jan-2025 12:33:12 UTC] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[15-Jan-2025 12:38:35 UTC] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[15-Jan-2025 12:38:35 UTC] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[04-Feb-2025 10:54:22 UTC] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[04-Feb-2025 10:54:22 UTC] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[04-Feb-2025 10:54:36 UTC] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[04-Feb-2025 10:54:36 UTC] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[05-Feb-2025 06:23:45 UTC] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[05-Feb-2025 06:23:45 UTC] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[06-Feb-2025 10:14:27 UTC] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[06-Feb-2025 10:14:27 UTC] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[08-Feb-2025 06:48:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'opd_records.date_of_medical' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/hospital/export_csv.php:41
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hospital/export_csv.php(41): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hospital/export_csv.php on line 41
+[08-Feb-2025 06:48:42 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'opd_records.date_of_medical' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/hospital/export_csv.php:41
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hospital/export_csv.php(41): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hospital/export_csv.php on line 41
+[08-Feb-2025 06:49:26 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'opd_records.date_of_medical' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/hospital/export_csv.php:41
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hospital/export_csv.php(41): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hospital/export_csv.php on line 41
+[08-Feb-2025 08:43:42 UTC] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[08-Feb-2025 08:43:42 UTC] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[03-Mar-2025 11:14:49 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[03-Mar-2025 11:14:49 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[12-Mar-2025 14:03:46 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[12-Mar-2025 14:03:46 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[15-Mar-2025 14:58:17 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[15-Mar-2025 14:58:17 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[05-Apr-2025 09:21:55 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[05-Apr-2025 09:21:55 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[05-Apr-2025 09:33:36 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[05-Apr-2025 09:33:36 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[05-Apr-2025 09:46:14 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[05-Apr-2025 09:46:14 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[10-Apr-2025 08:12:46 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[10-Apr-2025 08:12:46 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[21-Apr-2025 08:15:34 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[21-Apr-2025 08:15:34 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[21-Apr-2025 08:18:12 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[21-Apr-2025 08:18:12 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[21-Apr-2025 08:31:54 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[21-Apr-2025 08:31:54 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[27-Apr-2025 08:06:32 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[27-Apr-2025 08:06:32 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[27-Apr-2025 08:34:22 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[27-Apr-2025 08:34:22 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[25-May-2025 16:40:30 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[25-May-2025 16:40:30 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[24-Jun-2025 11:40:18 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[24-Jun-2025 11:40:18 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21
+[28-Jun-2025 10:02:51 Indian/Maldives] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 20
+[28-Jun-2025 10:02:51 Indian/Maldives] PHP Warning:  Undefined array key "project_name" in /home/rccmgvfd/hros.rccmaldives.com/hospital/edit.php on line 21

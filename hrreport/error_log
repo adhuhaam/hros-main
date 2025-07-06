@@ -1,0 +1,94 @@
+[09-Apr-2025 19:27:11 Indian/Maldives] PHP Fatal error:  Uncaught PhpOffice\PhpSpreadsheet\Exception: Invalid character found in sheet title in /home/rccmgvfd/hros.rccmaldives.com/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Worksheet.php:437
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Worksheet.php(870): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::checkSheetTitle()
+#1 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(20): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setTitle()
+#2 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(86): writeSheet()
+#3 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Worksheet.php on line 437
+[09-Apr-2025 19:30:43 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'terminated,
+        (SELECT COUNT(*) FROM leave_records WHERE status = 'Depa...' at line 5 in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:103
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(103): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 103
+[09-Apr-2025 19:30:54 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'terminated,
+        (SELECT COUNT(*) FROM leave_records WHERE status = 'Depa...' at line 5 in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:107
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(107): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 107
+[09-Apr-2025 19:31:47 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'terminated,
+        (SELECT COUNT(*) FROM leave_records WHERE status = 'Depa...' at line 5 in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:107
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(107): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 107
+[09-Apr-2025 19:31:48 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'terminated,
+        (SELECT COUNT(*) FROM leave_records WHERE status = 'Depa...' at line 5 in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:107
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(107): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 107
+[09-Apr-2025 19:31:49 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'terminated,
+        (SELECT COUNT(*) FROM leave_records WHERE status = 'Depa...' at line 5 in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:107
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(107): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 107
+[09-Apr-2025 19:33:05 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'terminated,
+        (SELECT COUNT(*) FROM leave_records WHERE status = 'Depa...' at line 5 in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:107
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(107): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 107
+[09-Apr-2025 19:33:09 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'terminated,
+        (SELECT COUNT(*) FROM leave_records WHERE status = 'Depa...' at line 5 in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:107
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(107): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 107
+[09-Apr-2025 19:42:10 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'terminated,
+        (SELECT COUNT(*) FROM leave_records WHERE status IN ('De...' at line 5 in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:106
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(106): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 106
+[09-Apr-2025 19:43:14 Indian/Maldives] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:117
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(117): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 117
+[09-Apr-2025 19:53:59 Indian/Maldives] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:116
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(116): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 116
+[10-Apr-2025 17:49:36 Indian/Maldives] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:116
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(116): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 116
+[10-Apr-2025 17:50:23 Indian/Maldives] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php:118
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php(118): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/hrreport/export_hr_report_excel.php on line 118
+[25-May-2025 09:26:48 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/hrreport/index.php(5): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[25-May-2025 09:26:55 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/hrreport/summary.php(2): include('/home/rccmgvfd/...')
+#2 /home/rccmgvfd/hros.rccmaldives.com/hrreport/index.php(116): include('/home/rccmgvfd/...')
+#3 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[02-Jul-2025 11:33:53 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/hrreport/index.php(5): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12

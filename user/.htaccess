@@ -1,0 +1,11 @@
+# Enable rewrite engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect to login.php when accessing /user/
+    RewriteCond %{REQUEST_URI} ^/user/?$
+    RewriteRule ^ /user/login.php [L]
+</IfModule>
+
+# Set login.php as the default file in the user directory
+DirectoryIndex login.php

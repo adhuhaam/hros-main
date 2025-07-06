@@ -1,0 +1,370 @@
+[08-Apr-2025 17:12:46 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-Apr-2025 17:12:58 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[09-Apr-2025 12:08:20 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/images.jpeg): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[09-Apr-2025 12:08:20 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpTid2Y9&quot; to &quot;../uploads/medical_docs/images.jpeg&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[09-Apr-2025 14:05:46 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/images.jpeg): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[09-Apr-2025 14:05:46 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/php4otDRr&quot; to &quot;../uploads/medical_docs/images.jpeg&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[09-Apr-2025 14:08:46 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/images.jpeg): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[09-Apr-2025 14:08:46 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpl3chM1&quot; to &quot;../uploads/medical_docs/images.jpeg&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[09-Apr-2025 14:31:34 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/images.jpeg): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[09-Apr-2025 14:31:34 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpqCi3HT&quot; to &quot;../uploads/medical_docs/images.jpeg&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[09-Apr-2025 15:12:18 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in ORDER BY is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php:52
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php(52): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php on line 52
+[09-Apr-2025 15:12:44 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in ORDER BY is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php:52
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php(52): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php on line 52
+[09-Apr-2025 15:13:16 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in ORDER BY is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php:52
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php(52): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php on line 52
+[09-Apr-2025 15:13:33 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in ORDER BY is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php:52
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php(52): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php on line 52
+[09-Apr-2025 16:46:25 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[09-Apr-2025 19:14:23 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/images.jpeg): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[09-Apr-2025 19:14:23 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phprC8zuZ&quot; to &quot;../uploads/medical_docs/images.jpeg&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[10-Apr-2025 12:39:30 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/images.jpeg): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[10-Apr-2025 12:39:30 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/php0wTEpd&quot; to &quot;../uploads/medical_docs/images.jpeg&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[11-Apr-2025 11:08:20 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[12-Apr-2025 08:28:19 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/WhatsApp Image 2025-04-12 at 08.27.58_90d0e5c6.jpg): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[12-Apr-2025 08:28:19 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpsTiOMe&quot; to &quot;../uploads/medical_docs/WhatsApp Image 2025-04-12 at 08.27.58_90d0e5c6.jpg&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[12-Apr-2025 08:46:13 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[12-Apr-2025 08:46:35 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[12-Apr-2025 10:43:41 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[12-Apr-2025 10:45:39 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/images.jpeg): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[12-Apr-2025 10:45:39 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpQX68L1&quot; to &quot;../uploads/medical_docs/images.jpeg&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[12-Apr-2025 11:15:48 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[12-Apr-2025 14:54:40 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-Apr-2025 11:58:45 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-Apr-2025 11:59:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-Apr-2025 16:05:09 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-Apr-2025 16:37:40 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-Apr-2025 16:37:57 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 12:14:58 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php(2): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[17-Apr-2025 12:16:40 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 12:16:53 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 13:24:19 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 14:18:21 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 14:18:27 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 14:20:22 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 14:20:42 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 14:39:24 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 14:39:32 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 14:40:54 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-Apr-2025 14:41:01 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:13:28 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:13:44 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:13:54 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:14:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:14:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:14:28 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:19:50 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:20:46 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:20:54 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:22:04 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 08:22:09 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 11:20:24 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 11:20:31 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 12:16:01 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 12:16:05 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 13:28:16 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 13:28:26 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 13:28:39 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 13:30:19 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Apr-2025 13:30:28 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[21-Apr-2025 09:40:42 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[21-Apr-2025 09:41:08 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[21-Apr-2025 15:20:45 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-Apr-2025 11:01:28 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in ORDER BY is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php:52
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php(52): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php on line 52
+[22-Apr-2025 11:01:30 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in ORDER BY is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php:52
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php(52): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php on line 52
+[22-Apr-2025 11:01:32 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in ORDER BY is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php:52
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php(52): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php on line 52
+[22-Apr-2025 11:01:33 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in ORDER BY is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php:52
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php(52): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php on line 52
+[26-Apr-2025 08:08:40 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Apr-2025 12:08:35 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Apr-2025 15:03:52 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Apr-2025 15:04:06 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Apr-2025 15:05:24 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Apr-2025 15:05:46 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[27-Apr-2025 14:00:13 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[30-Apr-2025 12:03:53 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/4855 medical report_30042025120954.PDF): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[30-Apr-2025 12:03:53 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpFotMkR&quot; to &quot;../uploads/medical_docs/4855 medical report_30042025120954.PDF&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[30-Apr-2025 16:23:54 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[30-Apr-2025 16:26:27 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[30-Apr-2025 16:28:31 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[30-Apr-2025 16:29:09 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[30-Apr-2025 16:29:43 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[30-Apr-2025 16:30:14 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[30-Apr-2025 16:31:00 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 08:15:20 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 08:15:35 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 08:20:59 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 08:21:07 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 10:36:54 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 10:37:00 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 15:38:59 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 15:39:04 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 15:46:05 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 15:46:10 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 17:30:38 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-May-2025 17:31:16 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[04-May-2025 08:16:44 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[05-May-2025 08:16:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[05-May-2025 08:16:58 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[05-May-2025 15:30:32 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[05-May-2025 15:30:40 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[06-May-2025 13:41:28 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[06-May-2025 15:53:58 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[06-May-2025 15:54:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[06-May-2025 15:56:57 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[06-May-2025 15:57:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 13:26:00 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 13:26:13 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 13:30:29 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 13:30:38 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 13:42:47 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 13:42:52 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 15:52:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 15:52:22 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 16:01:01 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 16:01:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 16:01:04 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 16:26:58 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:11:14 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:11:18 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:13:22 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:13:27 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:19:09 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:19:15 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:19:20 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:26:38 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:26:43 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:28:45 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:28:49 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 17:29:25 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[08-May-2025 19:42:06 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[10-May-2025 15:46:50 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[10-May-2025 15:47:00 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[11-May-2025 15:15:45 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-May-2025 10:09:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-May-2025 10:09:10 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-May-2025 11:39:20 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-May-2025 11:39:36 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-May-2025 11:39:47 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-May-2025 13:05:55 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-May-2025 13:50:23 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[13-May-2025 13:50:29 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-May-2025 17:57:51 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-May-2025 17:59:55 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-May-2025 18:00:02 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-May-2025 18:01:47 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[17-May-2025 18:02:08 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[18-May-2025 10:30:25 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[20-May-2025 09:05:16 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[21-May-2025 13:33:08 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[21-May-2025 13:33:18 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:02:48 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:03:23 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:07:06 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:07:19 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:08:39 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:08:52 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:13:33 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:13:49 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:16:06 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:16:15 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:17:04 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:17:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:18:43 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 14:18:53 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 18:21:54 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-May-2025 18:22:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[24-May-2025 10:34:31 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[24-May-2025 10:34:41 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[24-May-2025 11:12:27 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[24-May-2025 11:12:42 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-May-2025 08:27:04 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-May-2025 09:06:00 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-May-2025 09:06:06 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-May-2025 09:07:25 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-May-2025 09:07:31 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-May-2025 13:00:55 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-May-2025 13:01:18 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[27-May-2025 08:23:00 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[27-May-2025 08:23:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[27-May-2025 10:49:41 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[27-May-2025 10:49:53 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[27-May-2025 10:51:02 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[27-May-2025 10:51:07 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[27-May-2025 18:39:49 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/viber_image_2025-05-27_18-30-32-198.jpg): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[27-May-2025 18:39:49 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpyKV5sF&quot; to &quot;../uploads/medical_docs/viber_image_2025-05-27_18-30-32-198.jpg&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[29-May-2025 09:48:52 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[29-May-2025 10:30:58 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[29-May-2025 10:31:39 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[29-May-2025 12:13:05 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[29-May-2025 12:13:13 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 08:40:53 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 08:41:13 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 08:56:06 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 08:56:46 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 08:56:59 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 12:13:49 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 12:23:07 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 12:23:30 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:45 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:46 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:46 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:46 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:47 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:47 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:48 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:48 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:49 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:50 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:51 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:51 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:52 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:55 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:55 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:56 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:57 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:58 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:58 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:37:59 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:38:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:38:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:38:04 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:38:04 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:38:05 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:38:06 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 13:38:07 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 16:02:06 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 16:02:11 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 16:02:23 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 16:02:32 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 16:04:25 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 16:05:33 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[31-May-2025 16:05:38 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jun-2025 12:18:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[02-Jun-2025 10:45:41 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-Jun-2025 12:35:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[03-Jun-2025 12:36:16 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[07-Jun-2025 11:57:35 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/WhatsApp Image 2025-06-02 at 09.44.05_dadb6e1b.jpg): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[07-Jun-2025 11:57:35 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpz8gqmz&quot; to &quot;../uploads/medical_docs/WhatsApp Image 2025-06-02 at 09.44.05_dadb6e1b.jpg&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[07-Jun-2025 11:58:23 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/Screenshot 2025-06-07 115748.png): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[07-Jun-2025 11:58:23 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpBrlX6f&quot; to &quot;../uploads/medical_docs/Screenshot 2025-06-07 115748.png&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[09-Jun-2025 09:37:18 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[09-Jun-2025 09:37:26 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[09-Jun-2025 14:29:38 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[09-Jun-2025 14:29:50 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[11-Jun-2025 08:26:32 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[14-Jun-2025 17:23:24 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 09:09:48 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 09:10:08 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 13:46:24 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 13:46:37 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 13:46:42 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 16:25:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 16:26:48 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 16:28:04 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 16:28:12 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 16:28:41 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[15-Jun-2025 16:28:46 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[16-Jun-2025 09:25:51 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[16-Jun-2025 09:25:56 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[18-Jun-2025 15:18:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Jun-2025 11:15:36 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Jun-2025 11:15:49 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[19-Jun-2025 11:16:22 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[21-Jun-2025 16:03:35 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[22-Jun-2025 15:21:34 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/leaves/index.php(2): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[23-Jun-2025 10:34:28 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[23-Jun-2025 10:35:05 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[23-Jun-2025 11:53:32 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[23-Jun-2025 11:53:40 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[23-Jun-2025 12:22:45 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[24-Jun-2025 10:56:18 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 08:11:05 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 08:12:47 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 08:12:57 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 09:21:59 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 09:22:11 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 09:31:32 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 09:31:38 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 11:49:09 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 12:09:40 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 12:10:09 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[25-Jun-2025 15:43:02 Indian/Maldives] PHP Warning:  move_uploaded_file(../uploads/medical_docs/Ot_25062025154956.PDF): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[25-Jun-2025 15:43:02 Indian/Maldives] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpt1AKoy&quot; to &quot;../uploads/medical_docs/Ot_25062025154956.PDF&quot; in /home/rccmgvfd/hros.rccmaldives.com/leaves/submit_medical_leave.php on line 19
+[26-Jun-2025 08:18:40 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Jun-2025 08:18:54 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Jun-2025 08:36:53 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Jun-2025 08:43:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Jun-2025 08:46:18 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Jun-2025 08:46:25 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Jun-2025 09:11:51 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Jun-2025 09:17:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[26-Jun-2025 09:17:50 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 10:28:34 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 15:42:21 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 15:43:01 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 15:43:08 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 17:15:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 17:15:23 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 17:19:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 17:19:17 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 17:19:39 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 17:23:03 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 17:23:08 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 17:28:04 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[28-Jun-2025 17:28:09 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[29-Jun-2025 10:16:13 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[29-Jun-2025 10:17:05 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[29-Jun-2025 10:17:10 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 08:04:48 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 12:44:36 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:50:23 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:50:34 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:50:50 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:50:55 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:51:04 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:51:10 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:51:19 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:51:25 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:51:32 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:51:37 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:51:48 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81
+[01-Jul-2025 16:51:53 Indian/Maldives] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/leaves/view_leave.php on line 81

@@ -1,0 +1,18 @@
+[17-Jun-2025 17:07:06 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/leavex/index.php(2): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[17-Jun-2025 17:07:42 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/leavex/index.php(2): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[17-Jun-2025 17:07:48 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/leavex/index.php(2): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12

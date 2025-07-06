@@ -1,0 +1,13 @@
+[14-Jun-2025 12:10:56 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'main_heading' in 'INSERT INTO' in /home/rccmgvfd/hros.rccmaldives.com/handbook/add.php:8
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/handbook/add.php(8): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/handbook/add.php on line 8
+[14-Jun-2025 12:14:55 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'main_heading' in 'INSERT INTO' in /home/rccmgvfd/hros.rccmaldives.com/handbook/add.php:11
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/handbook/add.php(11): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/handbook/add.php on line 11
+[14-Jun-2025 12:17:21 Indian/Maldives] PHP Warning:  Undefined array key "main_heading" in /home/rccmgvfd/hros.rccmaldives.com/handbook/index.php on line 20
+[14-Jun-2025 12:17:21 Indian/Maldives] PHP Warning:  Undefined array key "sub_heading" in /home/rccmgvfd/hros.rccmaldives.com/handbook/index.php on line 29
+[14-Jun-2025 12:17:21 Indian/Maldives] PHP Warning:  Undefined array key "detail_title" in /home/rccmgvfd/hros.rccmaldives.com/handbook/index.php on line 38

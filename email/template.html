@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>New Staff Announcement</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Calibri, sans-serif;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 90%;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+    }
+
+
+    h2 {
+      font-size: 20px;
+      color: #1F497D;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #4979b5;
+      color: white;
+      font-weight: bold;
+      padding: 10px 6px;
+      border: 1px solid #ccc;
+    }
+
+    td {
+      padding: 10px 6px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #1F497D;
+      line-height: 1.5;
+    }
+
+    .footer strong {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+
+      table {
+        font-size: 13px;
+        min-width: 100%;
+      }
+
+      th, td {
+        padding: 8px 5px;
+      }
+
+      .footer {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>Dear Team,</p>
+    <p>Please note that the following staff has newly joined our team:</p>
+
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>S/N</th>
+          <th>EMP ID</th>
+          <th>NAME</th>
+          <th>DESIGNATION</th>
+          <th>NATIONALITY</th>
+          <th>JOINED DATE</th>
+          <th>WORK START DATE</th>
+        </tr>
+        <tr>
+          <td>01</td>
+          <td>{{EMP_NO}}</td>
+          <td>{{NAME}}</td>
+          <td>{{DESIGNATION}}</td>
+          <td>{{NATIONALITY}}</td>
+          <td>{{JOIN_DATE}}</td>
+          <td>{{START_DATE}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="footer">
+      Kind Regards,  
+      <strong>{{HR_NAME}}</strong><br>
+      RASHEED CARPENTRY & CONSTRUCTION PVT LTD  <br>
+      M. Nector, Asaree Hingun, Male' Maldives  <br>
+      M: (960) 9969252 | T: (960) 3028054 |<br> W: rcc.com.mv  
+      E: {{HR_EMAIL}}<br>
+    </div>
+  </div>
+</body>
+</html>

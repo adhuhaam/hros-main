@@ -1,0 +1,47 @@
+ 
+    body {
+        font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    .salary-slip {
+      width: 210mm;
+      height: 297mm;
+      margin: auto;
+      padding: 20mm;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      background: #fff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    table th, table td {
+      border: 1px solid #808080;
+      padding: 4px;
+      font-size: 10px;
+    }
+    table th {
+      background-color: #f1f1f1;
+      text-align: left;
+    }
+    .compact-row td, .compact-row th {
+      padding: 2px;
+      height: 10px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    .wrapx {
+      width: 100px; /* Set a fixed width for all <th> and <td> elements */
+      text-align: left; /* Align content, adjust as needed */
+      padding: 8px;
+    }
+    .b {
+      font-weight: bold;
+    }

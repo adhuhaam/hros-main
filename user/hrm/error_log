@@ -1,0 +1,157 @@
+[01-Jan-2025 11:27:44 UTC] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/add_comment_hrm.php on line 147
+[01-Jan-2025 11:28:50 UTC] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/add_comment_hrm.php on line 147
+[01-Jan-2025 11:28:51 UTC] PHP Warning:  Undefined array key "emp_no" in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/add_comment_hrm.php on line 147
+[12-Jan-2025 03:52:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.loan_requests' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:16
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(16): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 16
+[12-Jan-2025 04:33:03 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.bank_details' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:13
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 13
+[21-Jan-2025 18:30:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.bank_details' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:13
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 13
+[21-Jan-2025 18:30:53 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.bank_details' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:13
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 13
+[21-Jan-2025 18:30:55 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.bank_details' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:13
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 13
+[21-Jan-2025 18:31:00 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.bank_details' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:13
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 13
+[21-Jan-2025 18:31:04 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.bank_details' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:13
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 13
+[21-Jan-2025 18:31:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.bank_details' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:13
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 13
+[21-Jan-2025 18:32:49 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.bank_details' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:15
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(15): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 15
+[21-Jan-2025 18:33:30 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.visas' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:20
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(20): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 20
+[21-Jan-2025 18:33:57 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'status' in 'WHERE' in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:21
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(21): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 21
+[21-Jan-2025 18:34:41 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'status' in 'WHERE' in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:23
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(23): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 23
+[21-Jan-2025 18:34:43 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'status' in 'WHERE' in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:23
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(23): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 23
+[21-Jan-2025 18:34:55 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'expiry_date' in 'WHERE' in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:23
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(23): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 23
+[21-Jan-2025 18:35:24 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'expiry_date' in 'WHERE' in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:32
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(32): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 32
+[21-Jan-2025 18:35:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'expiry_date' in 'WHERE' in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:32
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(32): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 32
+[21-Jan-2025 18:36:11 UTC] PHP Warning:  Undefined variable $totalLeaveApplications in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 38
+[21-Jan-2025 18:38:54 UTC] PHP Warning:  include(../../x_sidebar.php): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 56
+[21-Jan-2025 18:38:54 UTC] PHP Warning:  include(): Failed opening '../../x_sidebar.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 56
+[21-Jan-2025 18:41:40 UTC] PHP Warning:  include(../sidebar.php): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 56
+[21-Jan-2025 18:41:40 UTC] PHP Warning:  include(): Failed opening '../sidebar.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 56
+[21-Jan-2025 18:42:44 UTC] PHP Warning:  include(../sidebar.php): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 56
+[21-Jan-2025 18:42:44 UTC] PHP Warning:  include(): Failed opening '../sidebar.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 56
+[21-Jan-2025 18:43:04 UTC] PHP Warning:  Undefined variable $prev_warnings in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/add_comment_hrm.php on line 102
+[21-Jan-2025 18:43:04 UTC] PHP Warning:  Attempt to read property "num_rows" on null in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/add_comment_hrm.php on line 102
+[26-Apr-2025 09:57:27 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.loan_records' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:51
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(51): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 51
+[26-Apr-2025 09:59:38 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.documents' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:51
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(51): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 51
+[26-Apr-2025 10:16:42 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.quota_slot_payments' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:11
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 11
+[26-Apr-2025 10:16:43 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.quota_slot_payments' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:11
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 11
+[26-Apr-2025 10:24:26 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.quota_slot_payments' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:11
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 11
+[26-Apr-2025 10:24:29 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'renewal_status' in 'WHERE' in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:13
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 13
+[26-Apr-2025 10:24:30 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'renewal_status' in 'WHERE' in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:13
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 13
+[26-Apr-2025 10:43:09 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.quota_slot_payments' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:17
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(17): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 17
+[26-Apr-2025 10:43:37 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.insurance_records' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php:52
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php(52): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 52
+[26-Apr-2025 10:43:52 Indian/Maldives] PHP Warning:  Undefined variable $quotaSlotFeeCount in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 59
+[26-Apr-2025 10:43:52 Indian/Maldives] PHP Warning:  Undefined variable $insuranceExpirySoon in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 59
+[26-Apr-2025 10:43:52 Indian/Maldives] PHP Warning:  Undefined variable $quotaSlotFeeCount in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 129
+[26-Apr-2025 10:43:52 Indian/Maldives] PHP Warning:  Undefined variable $insuranceExpirySoon in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 164
+[26-Apr-2025 10:46:12 Indian/Maldives] PHP Warning:  Undefined variable $quotaSlotFeeCount in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 59
+[26-Apr-2025 10:46:12 Indian/Maldives] PHP Warning:  Undefined variable $insuranceExpirySoon in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 59
+[26-Apr-2025 10:46:12 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[26-Apr-2025 10:46:12 Indian/Maldives] PHP Warning:  Undefined variable $quotaSlotFeeCount in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 124
+[26-Apr-2025 10:46:12 Indian/Maldives] PHP Warning:  Undefined variable $insuranceExpirySoon in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 144
+[26-Apr-2025 05:51:12 UTC] PHP Warning:  Undefined variable $quotaSlotFeeCount in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 59
+[26-Apr-2025 05:51:12 UTC] PHP Warning:  Undefined variable $insuranceExpirySoon in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 59
+[26-Apr-2025 10:51:12 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[26-Apr-2025 10:51:12 Indian/Maldives] PHP Warning:  Undefined variable $quotaSlotFeeCount in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 124
+[26-Apr-2025 10:51:12 Indian/Maldives] PHP Warning:  Undefined variable $insuranceExpirySoon in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 144
+[26-Apr-2025 10:51:54 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[26-Apr-2025 10:51:54 Indian/Maldives] PHP Warning:  Undefined variable $quotaSlotFeeCount in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 124
+[26-Apr-2025 10:51:54 Indian/Maldives] PHP Warning:  Undefined variable $insuranceExpirySoon in /home/rccmgvfd/hros.rccmaldives.com/user/hrm/hrm_dashboard.php on line 144
+[26-Apr-2025 10:52:20 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[26-Apr-2025 16:54:43 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[26-Apr-2025 16:56:40 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3

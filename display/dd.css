@@ -1,0 +1,78 @@
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .dashboard-title {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            background: #ffffff;
+            border: none;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .card h5 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #007bff;
+            text-align: center;
+        }
+        .list-group-item {
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border: none;
+            background: #f8f9fa;
+            transition: background 0.3s ease-in-out;
+        }
+        .list-group-item:nth-child(even) {
+            background: #e9ecef;
+        }
+        .list-group-item:hover {
+            background: #dee2e6;
+        }
+        .list-group-item span {
+            font-weight: bold;
+            color: #333;
+        }
+        .dashboard-container {
+            padding: 20px;
+        }
+        
+        
+    
+        #sortable {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+        }
+        .card {
+            cursor: grab;
+            flex: 1 1 calc(33.333% - 10px);
+            min-width: 280px;
+            resize: both;
+            overflow: auto;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+        }
+    
+    
+    

@@ -1,0 +1,6 @@
+[21-Jan-2025 18:21:42 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/user/db.php:7
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/user/db.php(7): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/user/login.php(3): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/user/db.php on line 7

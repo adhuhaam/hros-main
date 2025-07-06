@@ -1,0 +1,11 @@
+[31-Dec-2024 16:19:11 UTC] PHP Parse error:  syntax error, unexpected integer "40", expecting "," or ";" in /home/rccmgvfd/hros.rccmaldives.com/projects/edit.php on line 181
+[05-Feb-2025 06:56:44 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OFFICE.jpg"]', 'he Hulhumalé office is located at Lot #11809, Kela Magu,  ...' at line 2 in /home/rccmgvfd/hros.rccmaldives.com/projects/add.php:61
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/projects/add.php(61): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/projects/add.php on line 61
+[05-Feb-2025 06:58:57 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OFFICE.jpg"]', 'Hulhumalé office is located at Lot #11809, Kela Magu, Hulh...' at line 2 in /home/rccmgvfd/hros.rccmaldives.com/projects/add.php:61
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/projects/add.php(61): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/projects/add.php on line 61

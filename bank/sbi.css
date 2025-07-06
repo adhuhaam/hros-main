@@ -1,0 +1,82 @@
+    body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            font-size: 11px;
+        }
+
+        .a4-container {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            padding: 10mm;
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        .letterhead {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        h1, h2, h6 {
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            border: 1px solid #A6A6A6;
+            padding: 3px;
+        }
+
+        th {
+            text-align: left;
+            font-weight: fw-normal;
+        }
+
+        td {
+            text-align: left;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        .text-end {
+            text-align: right !important;
+        }
+
+        .signature {
+            margin-top: 10px;
+        }
+
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        @media print {
+            body {
+                background: none;
+                margin: 0;
+            }
+
+            .a4-container {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+
+            .print-button {
+                display: none;
+            }
+        }

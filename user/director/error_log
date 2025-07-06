@@ -1,0 +1,4 @@
+[21-Jan-2025 18:46:23 UTC] PHP Warning:  Undefined array key "hrm_comment" in /home/rccmgvfd/hros.rccmaldives.com/user/director/add_comment_decision.php on line 89
+[21-Jan-2025 18:46:23 UTC] PHP Warning:  Undefined array key "hod_comment" in /home/rccmgvfd/hros.rccmaldives.com/user/director/add_comment_decision.php on line 90
+[21-Jan-2025 18:46:23 UTC] PHP Warning:  Undefined variable $prev_warnings in /home/rccmgvfd/hros.rccmaldives.com/user/director/add_comment_decision.php on line 98
+[21-Jan-2025 18:46:23 UTC] PHP Warning:  Attempt to read property "num_rows" on null in /home/rccmgvfd/hros.rccmaldives.com/user/director/add_comment_decision.php on line 98

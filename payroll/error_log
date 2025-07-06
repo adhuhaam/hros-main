@@ -1,0 +1,355 @@
+[30-Dec-2024 21:06:29 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'e.account_no' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php:21
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php(21): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 21
+[30-Dec-2024 21:07:28 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'e.mode_of_pay' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php:21
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php(21): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 21
+[30-Dec-2024 21:08:02 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'e.pf_no' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php:21
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php(21): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 21
+[30-Dec-2024 21:08:32 UTC] PHP Warning:  Undefined array key "currency" in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[30-Dec-2024 21:08:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function num2words() in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php:148
+Stack trace:
+#0 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 148
+[30-Dec-2024 21:14:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function convertNumberToWords() in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php:141
+Stack trace:
+#0 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 141
+[30-Dec-2024 21:21:38 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 263
+[30-Dec-2024 21:24:12 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:24:52 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:25:19 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:25:52 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:26:11 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:26:28 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:27:05 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:28:02 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:28:07 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:29:04 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:29:33 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:29:35 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:30:10 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:30:33 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:31:09 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:31:12 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:32:52 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:34:18 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:34:46 UTC] PHP Deprecated:  Implicit conversion from float 8.29 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:36:09 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:41:15 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 233
+[30-Dec-2024 21:44:10 UTC] PHP Deprecated:  Implicit conversion from float 8.3 to int loses precision in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 247
+[30-Dec-2024 22:03:56 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 95
+[30-Dec-2024 22:03:56 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 105
+[30-Dec-2024 22:03:56 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 150
+[30-Dec-2024 22:03:56 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 152
+[30-Dec-2024 22:03:56 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 156
+[30-Dec-2024 22:03:56 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 165
+[30-Dec-2024 22:17:34 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[30-Dec-2024 22:17:34 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 149
+[30-Dec-2024 22:17:34 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 153
+[30-Dec-2024 22:21:08 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/sidebar.php on line 2
+[30-Dec-2024 22:21:17 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/sidebar.php on line 2
+[31-Jan-2025 18:02:00 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.payroll_summary' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/payroll/process_payroll.php:49
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/process_payroll.php(49): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/process_payroll.php on line 49
+[31-Jan-2025 18:41:44 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rccmgvfd_hros.loan' doesn't exist in /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php:25
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php(25): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php on line 25
+[31-Jan-2025 18:48:06 UTC] PHP Warning:  Undefined array key "payment_year" in /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php on line 28
+[31-Jan-2025 18:48:06 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'payment_year' cannot be null in /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php:42
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php(42): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php on line 42
+[31-Jan-2025 18:48:36 UTC] PHP Warning:  Undefined array key "payment_year" in /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php on line 28
+[31-Jan-2025 18:48:36 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'payment_year' cannot be null in /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php:42
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php(42): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/loan_management.php on line 42
+[31-Jan-2025 19:09:31 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 122
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:09:31 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:12 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 122
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:12 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:29 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 122
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 146
+[31-Jan-2025 19:14:29 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:02 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 102
+[31-Jan-2025 19:19:02 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 102
+[31-Jan-2025 19:19:02 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 102
+[31-Jan-2025 19:19:02 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 102
+[31-Jan-2025 19:19:02 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 102
+[31-Jan-2025 19:19:02 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 102
+[31-Jan-2025 19:19:02 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 102
+[31-Jan-2025 19:19:02 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 102
+[31-Jan-2025 19:19:42 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 123
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 148
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 148
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 148
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 148
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 148
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 148
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 148
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 147
+[31-Jan-2025 19:19:42 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 148
+[31-Jan-2025 19:23:59 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 93
+[31-Jan-2025 19:23:59 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:23:59 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:23:59 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:23:59 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:23:59 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:23:59 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:23:59 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:23:59 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:27:56 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 93
+[31-Jan-2025 19:27:56 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:27:56 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:27:56 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:27:56 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:27:56 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:27:56 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:27:56 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:27:56 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:01 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 93
+[31-Jan-2025 19:28:01 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:01 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:01 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:01 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:01 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:01 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:01 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:01 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:13 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 93
+[31-Jan-2025 19:28:13 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:13 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:13 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:13 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:13 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:13 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:13 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:28:13 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 116
+[31-Jan-2025 19:39:26 UTC] PHP Warning:  Undefined array key "date" in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:39:26 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:39:26 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:39:26 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:39:26 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:39:26 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:39:26 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:39:26 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:39:26 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:39:26 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:40:13 UTC] PHP Warning:  Undefined array key "date" in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:40:13 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:40:13 UTC] PHP Warning:  Undefined array key 7 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:40:13 UTC] PHP Warning:  Undefined array key 8 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:40:13 UTC] PHP Warning:  Undefined array key 9 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:40:13 UTC] PHP Warning:  Undefined array key 10 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:40:13 UTC] PHP Warning:  Undefined array key 11 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:40:13 UTC] PHP Warning:  Undefined array key 12 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:40:13 UTC] PHP Warning:  Undefined array key 13 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:40:13 UTC] PHP Warning:  Undefined array key 14 in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 117
+[31-Jan-2025 19:43:20 UTC] PHP Warning:  Undefined array key "date" in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:43:20 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:47:14 UTC] PHP Warning:  Undefined array key "date" in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:47:14 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:47:59 UTC] PHP Warning:  Undefined array key "date" in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:47:59 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:48:01 UTC] PHP Warning:  Undefined array key "date" in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:48:01 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:48:04 UTC] PHP Warning:  Undefined array key "date" in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:48:04 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:48:18 UTC] PHP Warning:  Undefined array key "date" in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 19:48:18 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/rccmgvfd/hros.rccmaldives.com/payroll/pay_slip.php on line 94
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "service_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 14
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "island_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 15
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "attendance_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 16
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "salary_arrear_other" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 17
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "safety_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 18
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "pump_brick_batching" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 19
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "food_and_tea" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 20
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "long_term_service_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 21
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "living_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 22
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "ot" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 23
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "ot_arrears" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 24
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "phone_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 25
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "petrol_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 26
+[31-Jan-2025 21:42:11 UTC] PHP Warning:  Undefined array key "pension" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 27
+[31-Jan-2025 21:42:11 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php:56
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php(56): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 56
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "service_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 12
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "island_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 13
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "attendance_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 14
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "salary_arrear_other" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 15
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "safety_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 16
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "pump_brick_batching" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 17
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "food_and_tea" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 18
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "long_term_service_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 19
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "living_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 20
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "ot" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 21
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "ot_arrears" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 22
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "phone_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 23
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "petrol_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 24
+[31-Jan-2025 21:45:07 UTC] PHP Warning:  Undefined array key "pension" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 25
+[31-Jan-2025 21:45:07 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php:33
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php(33): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 33
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "service_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 12
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "island_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 13
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "attendance_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 14
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "salary_arrear_other" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 15
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "safety_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 16
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "pump_brick_batching" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 17
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "food_and_tea" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 18
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "long_term_service_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 19
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "living_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 20
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "ot" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 21
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "ot_arrears" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 22
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "phone_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 23
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "petrol_allowance" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 24
+[31-Jan-2025 21:45:25 UTC] PHP Warning:  Undefined array key "pension" in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 25
+[31-Jan-2025 21:45:25 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php:33
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php(33): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 33
+[31-Jan-2025 21:49:55 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php:33
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php(33): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 33
+[31-Jan-2025 21:51:44 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php:33
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php(33): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/payroll/salary_setup.php on line 33
+[06-Feb-2025 07:50:41 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[06-Feb-2025 07:50:45 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[08-Feb-2025 03:12:13 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[08-Feb-2025 03:12:22 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[09-Feb-2025 07:02:14 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[09-Feb-2025 07:03:31 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[10-Feb-2025 04:21:04 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[15-Feb-2025 17:22:54 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[17-Feb-2025 17:48:43 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[19-Feb-2025 09:37:45 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[20-Feb-2025 16:25:29 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[03-Mar-2025 15:39:00 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[15-Mar-2025 15:56:58 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[15-Mar-2025 15:57:54 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[15-Mar-2025 15:58:31 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[23-Mar-2025 11:53:26 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[31-Mar-2025 10:29:49 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[07-Apr-2025 10:53:52 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[11-Apr-2025 20:29:20 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[27-Apr-2025 15:02:35 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[27-Apr-2025 17:27:37 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[27-Apr-2025 17:29:01 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[27-Apr-2025 17:29:40 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[18-May-2025 11:36:30 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[07-Jun-2025 22:57:36 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[08-Jun-2025 00:55:54 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[09-Jun-2025 17:19:51 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[11-Jun-2025 22:55:49 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[18-Jun-2025 12:59:00 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[21-Jun-2025 08:23:03 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[21-Jun-2025 16:13:25 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3
+[02-Jul-2025 17:28:03 Indian/Maldives] PHP Notice:  session_start(): Ignoring session_start() because a session is already active (started from /home/rccmgvfd/hros.rccmaldives.com/payroll/index.php on line 2) in /home/rccmgvfd/hros.rccmaldives.com/session.php on line 3

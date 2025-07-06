@@ -1,0 +1,92 @@
+[29-Jan-2025 10:39:02 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rccmgvfd_hros`.`employee_tickets_price`, CONSTRAINT `employee_tickets_price_ibfk_1` FOREIGN KEY (`destination_id`) REFERENCES `employee_tickets_destination` (`id`)) in /home/rccmgvfd/hros.rccmaldives.com/tickets/update_price.php:29
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/update_price.php(29): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/update_price.php on line 29
+[29-Jan-2025 10:39:31 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rccmgvfd_hros`.`employee_tickets_price`, CONSTRAINT `employee_tickets_price_ibfk_1` FOREIGN KEY (`destination_id`) REFERENCES `employee_tickets_destination` (`id`)) in /home/rccmgvfd/hros.rccmaldives.com/tickets/update_price.php:31
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/update_price.php(31): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/update_price.php on line 31
+[29-Jan-2025 10:49:21 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '!' 
+               ELSE '' 
+           END AS has_leave
+    FROM employee_...' at line 5 in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:57
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(57): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 57
+[30-Jan-2025 16:15:33 UTC] PHP Warning:  Undefined array key "name" in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 158
+[30-Jan-2025 16:15:33 UTC] PHP Warning:  Undefined array key "name" in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 158
+[30-Jan-2025 16:15:33 UTC] PHP Warning:  Undefined array key "name" in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 158
+[30-Jan-2025 16:16:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.online_price, p.agency_price, d.destination_name,
+           l.start_date A...' at line 2 in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:57
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(57): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 57
+[20-Feb-2025 14:33:39 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[20-Feb-2025 14:33:41 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[20-Feb-2025 14:33:42 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[20-Feb-2025 14:33:42 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[20-Feb-2025 14:33:43 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[20-Feb-2025 14:39:31 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[21-Feb-2025 13:40:30 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[21-Feb-2025 13:40:32 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[23-Feb-2025 10:30:15 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[23-Feb-2025 10:30:17 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[23-Feb-2025 10:30:33 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[23-Feb-2025 10:30:48 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60
+[23-Feb-2025 10:30:59 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'emp_no' in WHERE is ambiguous in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php:60
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php(60): mysqli->query()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/tickets/index.php on line 60

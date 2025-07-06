@@ -1,0 +1,51 @@
+[25-Jun-2025 06:00:37 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'visa_number' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa.php:15
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa.php(15): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa.php on line 15
+[25-Jun-2025 06:00:43 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'visa_number' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa.php:15
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa.php(15): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa.php on line 15
+[25-Jun-2025 06:01:23 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'visa_number' in 'SELECT' in /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa.php:16
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa.php(16): mysqli->prepare()
+#1 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa.php on line 16
+[25-Jun-2025 06:28:35 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/pp_app/status_summary.php(3): require('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[25-Jun-2025 06:37:59 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa_status_list.php(5): require('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[29-Jun-2025 00:11:13 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/pp_app/status_summary.php(3): require('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[02-Jul-2025 11:34:09 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/pp_app/update_visa.php(5): require('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[02-Jul-2025 11:34:20 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/pp_app/visa.php(4): include('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12
+[02-Jul-2025 11:34:20 Indian/Maldives] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/rccmgvfd/hros.rccmaldives.com/db.php:12
+Stack trace:
+#0 /home/rccmgvfd/hros.rccmaldives.com/db.php(12): mysqli->__construct()
+#1 /home/rccmgvfd/hros.rccmaldives.com/pp_app/get_employee.php(5): require('/home/rccmgvfd/...')
+#2 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/db.php on line 12

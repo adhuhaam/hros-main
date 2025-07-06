@@ -1,0 +1,7 @@
+[09-Jun-2025 10:17:41 UTC] PHP Warning:  include(db.php): Failed to open stream: No such file or directory in /home/rccmgvfd/hros.rccmaldives.com/visax/edit.php on line 2
+[09-Jun-2025 10:17:41 UTC] PHP Warning:  include(): Failed opening 'db.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/rccmgvfd/hros.rccmaldives.com/visax/edit.php on line 2
+[09-Jun-2025 10:17:41 UTC] PHP Warning:  Undefined variable $conn in /home/rccmgvfd/hros.rccmaldives.com/visax/edit.php on line 7
+[09-Jun-2025 10:17:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/rccmgvfd/hros.rccmaldives.com/visax/edit.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/rccmgvfd/hros.rccmaldives.com/visax/edit.php on line 7

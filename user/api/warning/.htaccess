@@ -1,0 +1,15 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# If the requested file or directory exists, do not apply rewriting
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect specific API endpoints to their respective PHP files
+RewriteRule ^update_warning$ update_warning.php [QSA,L]
+RewriteRule ^get_warnings$ get_warnings.php [QSA,L]
+RewriteRule ^add_warning$ add_warning.php [QSA,L]
+RewriteRule ^index$ index.php [QSA,L]
+
+# Fallback to auth.php for any other requests
+RewriteRule ^(.*)$ auth.php [QSA,L]

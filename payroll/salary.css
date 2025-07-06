@@ -1,0 +1,46 @@
+.salary-slip {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 2px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fff;
+    }
+    .salary-slip h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .salary-slip table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    .salary-slip table th,
+    .salary-slip table td {
+        border: 0.1pt dotted black; 
+        padding: 5px; 
+        text-align: left; 
+    }
+    .salary-slip table th {
+      background-color: #f7f7f7;
+    }
+    .salary-slip .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+    .table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            margin: 15px 0; 
+        }
+        td, th { 
+            border: 0.1pt dotted black; 
+            padding: 5px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #ffffff; 
+            font-weight: bold; 
+        }
