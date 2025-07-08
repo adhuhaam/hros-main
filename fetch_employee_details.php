@@ -1,4 +1,4 @@
-<?php
+THIS SHOULD BE A LINTER ERROR<?php
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
