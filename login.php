@@ -3,10 +3,15 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
 include 'db.php';
+require_once 'utils/Security.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($conn->real_escape_string($_POST['username']));
-    $password = trim($conn->real_escape_string($_POST['password']));
+    // Check rate limiting
+    if (!Security::checkRateLimit('login', 5, 300)) {
+        $error = "Too many login attempts. Please try again later.";
+    } else {
+        $username = Security::sanitizeInput($_POST['username']);
+        $password = $_POST['password']; // Don't sanitize password before verification
 
     $sql = "SELECT u.id, u.username, u.password, r.role_name 
             FROM users u 
@@ -40,10 +45,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             exit();
         } else {
+            Security::logSecurityEvent('failed_login', ['username' => $username]);
             $error = "Invalid Employee No or password!";
         }
     } else {
+        Security::logSecurityEvent('failed_login', ['username' => $username]);
         $error = "Invalid Employee No or password!";
+    }
     }
 }
 ?>
