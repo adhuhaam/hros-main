@@ -1,12 +1,14 @@
-THIS SHOULD BE A LINTER ERROR<?php
+<?php
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $emp_no = $conn->real_escape_string($_POST['emp_no']);
 
-    // Fetch employee details
-    $query = "SELECT name, designation FROM employees WHERE emp_no = '$emp_no'";
-    $result = $conn->query($query);
+    // Fetch employee details using prepared statement
+    $stmt = $conn->prepare("SELECT name, designation FROM employees WHERE emp_no = ?");
+    $stmt->bind_param("s", $emp_no);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result && $result->num_rows > 0) {
         $employee = $result->fetch_assoc();
@@ -21,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'message' => 'Employee not found.',
         ]);
     }
+    $stmt->close();
 } else {
     echo json_encode([
         'success' => false,
