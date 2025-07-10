@@ -1,23 +1,20 @@
 <?php
 include 'db.php';
 include 'header.php';
+require_once 'utils/FileUploader.php';
 
 // Handle document upload
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $emp_no = $_POST['emp_no'];
     $document_type = $_POST['document_type'];
-    $document_name = $_FILES['document']['name'];
-    $document_tmp_path = $_FILES['document']['tmp_name'];
-    $upload_dir = __DIR__ . '/document/'; // Updated directory to root/document/
-    $document_path = $upload_dir . $emp_no . '_' . $document_type . '_' . $document_name;
-
-    // Ensure the upload directory exists
-    if (!is_dir($upload_dir)) {
-        mkdir($upload_dir, 0777, true);
-    }
-
-    // Move uploaded file to the upload directory
-    if (move_uploaded_file($document_tmp_path, $document_path)) {
+    
+    // Initialize secure file uploader
+    $uploader = new FileUploader();
+    
+    // Upload file securely
+    $uploadResult = $uploader->uploadFile($_FILES['document'], $emp_no, $document_type);
+    
+    if ($uploadResult && $uploadResult['success']) {
         // Check if the document already exists for the employee
         $check_sql = "SELECT * FROM employee_documents WHERE emp_no = ? AND document_type = ?";
         $stmt = $conn->prepare($check_sql);
@@ -29,12 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Update the existing document
             $update_sql = "UPDATE employee_documents SET document_name = ?, document_path = ?, uploaded_at = NOW() WHERE emp_no = ? AND document_type = ?";
             $stmt = $conn->prepare($update_sql);
-            $stmt->bind_param("ssss", $document_name, $document_path, $emp_no, $document_type);
+            $stmt->bind_param("ssss", $uploadResult['original_name'], $uploadResult['path'], $emp_no, $document_type);
         } else {
             // Insert a new document record
             $insert_sql = "INSERT INTO employee_documents (emp_no, document_name, document_type, document_path) VALUES (?, ?, ?, ?)";
             $stmt = $conn->prepare($insert_sql);
-            $stmt->bind_param("ssss", $emp_no, $document_name, $document_type, $document_path);
+            $stmt->bind_param("ssss", $emp_no, $uploadResult['original_name'], $document_type, $uploadResult['path']);
         }
 
         if ($stmt->execute()) {
@@ -43,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error_message = "Error: " . $stmt->error;
         }
     } else {
-        $error_message = "Error uploading the document.";
+        $error_message = "Error uploading the document: " . implode(', ', $uploader->getErrors());
     }
 }
 ?>

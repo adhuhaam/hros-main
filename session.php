@@ -15,7 +15,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
 // Define session timeout duration (3 hours in seconds)
-$session_timeout = 30 * 60; // 1800 seconds
+$session_timeout = 3 * 60 * 60; // 10800 seconds (3 hours)
 
 // Check if session is already set
 if (isset($_SESSION['last_activity'])) {
