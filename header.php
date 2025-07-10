@@ -34,7 +34,7 @@
     </ul>
     <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
       <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-        <div id="currentTime" class="text-primary me-3 fw-bold"></div>
+        <div id="currentTime" class="text-primary me-3 fw-bold d-none d-md-block"></div>
         <li class="nav-item dropdown">
           <a
             class="nav-link nav-icon-hover dropdown-toggle"
@@ -44,15 +44,15 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <img src="../assets/images/default.png" alt="" width="35" height="35" class="rounded-circle">
+            <img src="assets/images/default.png" alt="" width="35" height="35" class="rounded-circle">
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-            <li><a href="../profile.php" class="dropdown-item"><i class="ti ti-user fs-6"></i> My Profile</a></li>
+            <li><a href="profile.php" class="dropdown-item"><i class="ti ti-user fs-6"></i> My Profile</a></li>
             <li><a href="javascript:void(0)" class="dropdown-item"><i class="ti ti-mail fs-6"></i> My Account</a></li>
-            <li><a href="../birthday_calendar.php" class="dropdown-item"><i class="ti ti-mail fs-6"></i> Birthdays</a></li>
+            <li><a href="birthday_calendar.php" class="dropdown-item"><i class="ti ti-mail fs-6"></i> Birthdays</a></li>
             <li><a href="javascript:void(0)" class="dropdown-item"><i class="ti ti-list-check fs-6"></i> My Task</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a href="../logout.php" class="dropdown-item">Logout</a></li>
+            <li><a href="logout.php" class="dropdown-item">Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -93,17 +93,35 @@
         notificationDropdown.setAttribute('aria-expanded', notificationDropdown.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
       });
     }
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.dropdown')) {
+        const dropdowns = document.querySelectorAll('.dropdown-menu');
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('show');
+        });
+        
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
   });
 
   // Real-time clock
   function updateClock() {
     const now = new Date();
     const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-    document.getElementById('currentTime').textContent = now.toLocaleString('en-US', options);
+    const timeElement = document.getElementById('currentTime');
+    if (timeElement) {
+      timeElement.textContent = now.toLocaleString('en-US', options);
+    }
   }
   setInterval(updateClock, 1000);
   updateClock(); // Initialize immediately
 </script>
-<script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 
