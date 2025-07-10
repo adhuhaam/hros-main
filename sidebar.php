@@ -23,37 +23,37 @@ $current_role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
 $accessible_links = $current_role && isset($roles_permissions[$current_role]) ? $roles_permissions[$current_role] : [];
 
 // Determine the role-specific dashboard link
-$dashboard_link = '../user_dashboard.php'; // Default dashboard
+$dashboard_link = 'user_dashboard.php'; // Default dashboard
 switch ($current_role) {
     case 'Admin':
-        $dashboard_link = '../admin_dashboard.php';
+        $dashboard_link = 'admin_dashboard.php';
         break;
     case 'Information Officer':
-        $dashboard_link = '../info_officer_dashboard.php';
+        $dashboard_link = 'info_officer_dashboard.php';
         break;
     case 'Xpat Officer':
-        $dashboard_link = '../xpat_officer_dashboard.php';
+        $dashboard_link = 'xpat_officer_dashboard.php';
         break;
     case 'Leave Officer':
-        $dashboard_link = '../leave_officer_dashboard.php';
+        $dashboard_link = 'leave_officer_dashboard.php';
         break;
     case 'HR Manager':
-        $dashboard_link = '../hrm_dashboard.php';
+        $dashboard_link = 'hrm_dashboard.php';
         break;
     case 'Payroll Officer':
-        $dashboard_link = '../payroll_dashboard.php';
+        $dashboard_link = 'payroll_dashboard.php';
         break;
     case 'Other Staff':
-        $dashboard_link = '../other_dashboard.php';
+        $dashboard_link = 'other_dashboard.php';
         break;
     case 'Supervisor':
-        $dashboard_link = '../supervisor_dashboard.php';
+        $dashboard_link = 'supervisor_dashboard.php';
         break;
     case 'planing':
-        $dashboard_link = '../other_dashboard.php';
+        $dashboard_link = 'other_dashboard.php';
         break;
     case 'reception':
-        $dashboard_link = '../reception_dashboard.php';
+        $dashboard_link = 'reception_dashboard.php';
         break;
 }
 ?>
@@ -68,7 +68,7 @@ switch ($current_role) {
     <!-- Logo Section -->
     <div class="d-flex mb-4 align-items-center justify-content-between">
       <a href="<?php echo $dashboard_link; ?>" class="text-nowrap logo-img ms-0 ms-md-1">
-        <img src="../assets/images/logos/dark-logo.svg" width="180" alt="Company Logo">
+        <img src="assets/images/logos/dark-logo.svg" width="180" alt="Company Logo">
       </a>
       <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
         <i class="ti ti-x fs-8"></i>
@@ -102,7 +102,7 @@ switch ($current_role) {
         <!-- tasks -->
         <?php if (in_array('tasks', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../tasks/' ? 'active' : ''; ?>">
-          <a class="sidebar-link success-hover-bg" href="../tasks/" aria-expanded="false">
+          <a class="sidebar-link success-hover-bg" href="tasks/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-success rounded-3">
              <i class="fa-brands fa-slack text-success"></i>
             </span>
@@ -117,7 +117,7 @@ switch ($current_role) {
          <!-- chat -->
         <?php if (in_array('chat', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../chat/' ? 'active' : ''; ?>">
-          <a class="sidebar-link success-hover-bg" href="../chat/" aria-expanded="false">
+          <a class="sidebar-link success-hover-bg" href="chat/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-success rounded-3">
              <i class="fa-solid fa-paper-plane text-success"></i>
             </span>
@@ -132,7 +132,7 @@ switch ($current_role) {
         <!-- Employees -->
         <?php if (in_array('employees', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../employee/' ? 'active' : ''; ?>">
-          <a class="sidebar-link warning-hover-bg" href="../employee/" aria-expanded="false">
+          <a class="sidebar-link warning-hover-bg" href="employee/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-warning rounded-3">
              <i class="fa-solid fa-user text-warning"></i>
             </span>
@@ -145,7 +145,7 @@ switch ($current_role) {
         <!-- FOOD AND NEW EMPLOYEEE MAL -->
         <?php if (in_array('new_mail', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../new_mail/' ? 'active' : ''; ?>">
-          <a class="sidebar-link danger-hover-bg" href="../new_mail/" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="new_mail/" aria-expanded="false">
             <span class="aside-icon p-4 bg-light-danger rounded-3">
              <i class="fa-solid fa-bowl-food text-danger"></i>
             </span>
@@ -158,7 +158,7 @@ switch ($current_role) {
         <!-- Emp -->
         <?php if (in_array('emp', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../emp/' ? 'active' : ''; ?>">
-          <a class="sidebar-link warning-hover-bg" href="../emp/" aria-expanded="false">
+          <a class="sidebar-link warning-hover-bg" href="emp/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-warning rounded-3">
              <i class="fa-solid fa-user text-warning"></i>
             </span>
@@ -171,7 +171,7 @@ switch ($current_role) {
         <!-- Empl -->
         <?php if (in_array('empl', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../empl/' ? 'active' : ''; ?>">
-          <a class="sidebar-link warning-hover-bg" href="../empl/" aria-expanded="false">
+          <a class="sidebar-link warning-hover-bg" href="empl/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-warning rounded-3">
              <i class="fa-solid fa-user text-warning"></i>
             </span>
@@ -200,7 +200,7 @@ switch ($current_role) {
               
             <?php if (in_array('terminate', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../terminate/' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../terminate/">
+              <a class="sidebar-link" href="terminate/">
                 <span class="hide-menu">Terminate</span>
               </a>
             </li>
@@ -209,7 +209,7 @@ switch ($current_role) {
             
            <?php if (in_array('resign', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../resign/' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../resign/">
+              <a class="sidebar-link" href="resign/">
                 <span class="hide-menu">Resignation</span>
               </a>
             </li>
@@ -218,7 +218,7 @@ switch ($current_role) {
             
             <?php if (in_array('retire', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../retire/' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../retire/">
+              <a class="sidebar-link" href="retire/">
                 <span class="hide-menu">Retirement</span>
               </a>
             </li>
@@ -226,7 +226,7 @@ switch ($current_role) {
             
             <?php if (in_array('missing', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../missing/' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../missing/">
+              <a class="sidebar-link" href="missing/">
                 <span class="hide-menu">Missing</span>
               </a>
             </li>
@@ -238,7 +238,7 @@ switch ($current_role) {
         <!-- accommodation -->
         <?php if (in_array('accommodation', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../accommodation/' ? 'active' : ''; ?>">
-          <a class="sidebar-link danger-hover-bg" href="../accommodation/" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="accommodation/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-danger rounded-3">
              <i class="w100 fa-duotone fa-solid fa-house text-danger"></i>
             </span>
@@ -255,7 +255,7 @@ switch ($current_role) {
         <!-- Email -->
         <?php if (in_array('email', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../email/' ? 'active' : ''; ?>">
-          <a class="sidebar-link danger-hover-bg" href="../email/" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="email/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-danger rounded-3">
              <i class="w100 fa-duotone fa-solid fa-envelope text-danger"></i>
             </span>
@@ -268,7 +268,7 @@ switch ($current_role) {
         <!-- Contracts -->
         <?php if (in_array('contracts', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../contracts/' ? 'active' : ''; ?>">
-          <a class="sidebar-link primary-hover-bg" href="../contracts/" aria-expanded="false">
+          <a class="sidebar-link primary-hover-bg" href="contracts/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-primary rounded-3">
              <i class="w100 fa-doc fa-solid fa-envelope text-primary"></i>
             </span>
@@ -285,7 +285,7 @@ switch ($current_role) {
         <!-- Employee Document -->
         <?php if (in_array('document', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../documents/' ? 'active' : ''; ?>">
-          <a class="sidebar-link primary-hover-bg" href="../documents/" aria-expanded="false">
+          <a class="sidebar-link primary-hover-bg" href="documents/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-primary rounded-3">
              <i class="fa-solid fa-file text-primary"></i>
             </span>
@@ -300,7 +300,7 @@ switch ($current_role) {
         <!-- Payroll 
         <?php if (in_array('payroll', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../payroll/' ? 'active' : ''; ?>">
-          <a class="sidebar-link danger-hover-bg" href="../payroll/" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="payroll/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-danger rounded-3">
               <i class="fa-solid fa-dollar-sign text-danger"></i>
             </span>
@@ -313,7 +313,7 @@ switch ($current_role) {
         
         <?php if (in_array('ot', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../ot/' ? 'active' : ''; ?>">
-          <a class="sidebar-link danger-hover-bg" href="../ot/" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="ot/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-danger rounded-3">
               <i class="fa-solid fa-dollar-sign text-danger"></i>
             </span>
@@ -337,14 +337,14 @@ switch ($current_role) {
           <ul id="payDropdown" class="collapse list-unstyled" style="padding-left: 2rem;">
             <?php if (in_array('payroll', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../payroll/' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../payroll/">
+              <a class="sidebar-link" href="payroll/">
                 <span class="hide-menu">Payroll Sheet</span>
               </a>
             </li>
             <?php endif; ?>
             <?php if (in_array('leave', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../allowance/' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../allowance/">
+              <a class="sidebar-link" href="allowance/">
                 <span class="hide-menu">Allowance</span>
               </a>
             </li>
@@ -365,7 +365,7 @@ switch ($current_role) {
          <!-- Workpermit -->
         <?php if (in_array('workpermit', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../workpermit/' ? 'active' : ''; ?>">
-          <a class="sidebar-link danger-hover-bg" href="../workpermit/" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="workpermit/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-danger rounded-3">
               <i class="fa-solid fa-address-card text-danger"></i>
             </span>
@@ -380,7 +380,7 @@ switch ($current_role) {
         <!-- warning -->
         <?php if (in_array('warning', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../warning/' ? 'active' : ''; ?>">
-          <a class="sidebar-link primary-hover-bg" href="../warning/" aria-expanded="false">
+          <a class="sidebar-link primary-hover-bg" href="warning/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-primary rounded-3">
               <i class="fa-solid fa-file text-primary"></i>
             </span>
@@ -393,7 +393,7 @@ switch ($current_role) {
         <!-- attendance -->
         <?php if (in_array('attendance', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../attendance/' ? 'active' : ''; ?>">
-          <a class="sidebar-link primary-hover-bg" href="../attendance/" aria-expanded="false">
+          <a class="sidebar-link primary-hover-bg" href="attendance/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-primary rounded-3">
               <i class="fa-regular fa-clock text-primary-emphasis"></i>
             </span>
@@ -405,7 +405,7 @@ switch ($current_role) {
         <!-- BANK -->
         <?php if (in_array('bank', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../bank/' ? 'active' : ''; ?>">
-          <a class="sidebar-link danger-hover-bg" href="../bank/" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="bank/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-danger rounded-3">
               <i class="fa-solid fa-credit-card text-danger"></i>
             </span>
@@ -419,7 +419,7 @@ switch ($current_role) {
         <!-- LEAVEX -->
         <?php if (in_array('leavex', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../leavex/' ? 'active' : ''; ?>">
-          <a class="sidebar-link danger-hover-bg" href="../leavex/" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="leavex/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-danger rounded-3">
               <i class="fa-solid fa-credit-card text-danger"></i>
             </span>
@@ -448,14 +448,14 @@ switch ($current_role) {
           <ul id="leaveDropdown" class="collapse list-unstyled" style="padding-left: 2rem;">
             <?php if (in_array('leave', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../leave/' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../leaves/">
+              <a class="sidebar-link" href="leaves/">
                 <span class="hide-menu">Leave</span>
               </a>
             </li>
             <?php endif; ?>
             <?php if (in_array('leave', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../leave/balance.php' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../leaves/balance.php">
+              <a class="sidebar-link" href="leaves/balance.php">
                 <span class="hide-menu">Leave Balance</span>
               </a>
             </li>
@@ -474,7 +474,7 @@ switch ($current_role) {
             <!-- HR Report -->
         <?php if (in_array('hrreport', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../hrreport/' ? 'active' : ''; ?>">
-          <a class="sidebar-link warning-hover-bg" href="../hrreport/" aria-expanded="false">
+          <a class="sidebar-link warning-hover-bg" href="hrreport/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-warning rounded-3">
              <i class="w100 fa-duotone fa-solid fa-folder text-warning"></i>
             </span>
@@ -489,7 +489,7 @@ switch ($current_role) {
         <!-- Depatrue Sheet -->
         <?php if (in_array('email', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../depaturesheet/' ? 'active' : ''; ?>">
-          <a class="sidebar-link danger-hover-bg" href="../depaturesheet/" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="depaturesheet/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-danger rounded-3">
              <i class="w100 fa-duotone fa-solid fa-plane text-danger"></i>
             </span>
@@ -516,14 +516,14 @@ switch ($current_role) {
           <ul id="ticketDropdown" class="collapse list-unstyled" style="padding-left: 2rem;">
             <?php if (in_array('ticket', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../tickets/' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../tickets/">
+              <a class="sidebar-link" href="tickets/">
                 <span class="hide-menu">Ticket</span>
               </a>
             </li>
             <?php endif; ?>
             <?php if (in_array('ticket', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../leave_destination/' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../leave_destination/">
+              <a class="sidebar-link" href="leave_destination/">
                 <span class="hide-menu">Destination</span>
               </a>
             </li>
@@ -537,7 +537,7 @@ switch ($current_role) {
         
         <?php if (in_array('ticketx', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../ticketx/' ? 'active' : ''; ?>">
-          <a class="sidebar-link primary-hover-bg" href="../ticketx/" aria-expanded="false">
+          <a class="sidebar-link primary-hover-bg" href="ticketx/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-primary rounded-3">
                 <i class="fa-solid fa-plane-circle-check text-primary"></i>
             </span>
@@ -554,7 +554,7 @@ switch ($current_role) {
           <!-- sick
         <?php if (in_array('sick', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../tickets/' ? 'active' : ''; ?>">
-          <a class="sidebar-link primary-hover-bg" href="../tickets/" aria-expanded="false">
+          <a class="sidebar-link primary-hover-bg" href="tickets/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-primary rounded-3">
                 <i class="fa-solid fa-plane-circle-check text-primary"></i>
             </span>
@@ -573,7 +573,7 @@ switch ($current_role) {
         <!-- PASSPORT -->
         <?php if (in_array('passport', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../passport/' ? 'active' : ''; ?>">
-          <a class="sidebar-link success-hover-bg" href="../passport/" aria-expanded="false">
+          <a class="sidebar-link success-hover-bg" href="passport/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-success rounded-3">
               <i class="fa-solid fa-passport text-success"></i>
             </span>
@@ -585,7 +585,7 @@ switch ($current_role) {
         <!-- ADVANCE -->
         <?php if (in_array('loan', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../loan/' ? 'active' : ''; ?>">
-          <a class="sidebar-link warning-hover-bg" href="../loan/" aria-expanded="false">
+          <a class="sidebar-link warning-hover-bg" href="loan/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-warning rounded-3">
               <i class="fa-solid fa-money-bill-1-wave text-warning"></i>
             </span>
@@ -600,7 +600,7 @@ switch ($current_role) {
         <!-- LOAN -->
         <?php if (in_array('loan', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../staff_loan/' ? 'active' : ''; ?>">
-          <a class="sidebar-link warning-hover-bg" href="../staff_loan/" aria-expanded="false">
+          <a class="sidebar-link warning-hover-bg" href="staff_loan/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-warning rounded-3">
               <i class="fa-solid fa-money-bill-1-wave text-warning"></i>
             </span>
@@ -615,7 +615,7 @@ switch ($current_role) {
          <!-- CARD PRINT -->
         <?php if (in_array('cards', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../cards/' ? 'active' : ''; ?>">
-          <a class="sidebar-link primary-hover-bg" href="../cards/" aria-expanded="false">
+          <a class="sidebar-link primary-hover-bg" href="cards/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-primary rounded-3">
               <i class="fa-solid fa-id-card text-primary"></i>
             </span>
@@ -630,7 +630,7 @@ switch ($current_role) {
         <!-- Island Transfer -->
         <?php if (in_array('transfer', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../transfer/' ? 'active' : ''; ?>">
-          <a class="sidebar-link success-hover-bg" href="../transfer/" aria-expanded="false">
+          <a class="sidebar-link success-hover-bg" href="transfer/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-success rounded-3">
               <i class="fa-solid fa-sailboat text-success"></i>
             </span>
@@ -645,7 +645,7 @@ switch ($current_role) {
         <!-- Medicals -->
         <?php if (in_array('medical', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../medical/' ? 'active' : ''; ?>">
-          <a class="sidebar-link success-hover-bg" href="../medical/" aria-expanded="false">
+          <a class="sidebar-link success-hover-bg" href="medical/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-success rounded-3">
               <i class="fa-solid fa-star-of-life text-success"></i>
             </span>
@@ -660,7 +660,7 @@ switch ($current_role) {
          <!-- Hospital -->
         <?php if (in_array('hospital', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../hospital/' ? 'active' : ''; ?>">
-          <a class="sidebar-link primary-hover-bg" href="../hospital/" aria-expanded="false">
+          <a class="sidebar-link primary-hover-bg" href="hospital/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-primary rounded-3">
               <i class="fa-solid fa-star-of-life text-primary"></i>
             </span>
@@ -675,7 +675,7 @@ switch ($current_role) {
          <!-- Visa -->
         <?php if (in_array('visa', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../visa/' ? 'active' : ''; ?>">
-          <a class="sidebar-link primary-hover-bg" href="../visa/" aria-expanded="false">
+          <a class="sidebar-link primary-hover-bg" href="visa/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-primary rounded-3">
               <i class="fa-brands fa-cc-visa text-primary"></i>
             </span>
@@ -687,7 +687,7 @@ switch ($current_role) {
          <!-- projects -->
         <?php if (in_array('projects', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../projects/' ? 'active' : ''; ?>">
-          <a class="sidebar-link primary-hover-bg" href="../projects/" aria-expanded="false">
+          <a class="sidebar-link primary-hover-bg" href="projects/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-primary rounded-3">
               <i class="fa-solid fa-building-user text-primary"></i>
             </span>
@@ -699,7 +699,7 @@ switch ($current_role) {
         <!-- allocations -->
         <?php if (in_array('allocation', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../allocations/' ? 'active' : ''; ?>">
-          <a class="sidebar-link warning-hover-bg" href="../allocations/" aria-expanded="false">
+          <a class="sidebar-link warning-hover-bg" href="allocations/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-warning rounded-3">
                 <i class="fa-solid fa-person-digging text-warning"></i>
             </span>
@@ -711,7 +711,7 @@ switch ($current_role) {
         <!-- pp_inv -->
         <?php if (in_array('pp_inv', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../passport_inv/' ? 'active' : ''; ?>">
-          <a class="sidebar-link warning-hover-bg" href="../passport_inv/" aria-expanded="false">
+          <a class="sidebar-link warning-hover-bg" href="passport_inv/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-warning rounded-3">
                 <i class="fa-solid fa-person-digging text-warning"></i>
             </span>
@@ -723,7 +723,7 @@ switch ($current_role) {
         <!-- Sick -->
         <?php if (in_array('sick', $accessible_links)): ?>
         <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../sick/' ? 'active' : ''; ?>">
-          <a class="sidebar-link danger-hover-bg" href="../sick/" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="sick/" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-danger rounded-3">
                 <i class="fa-solid fa-person-digging text-danger"></i>
             </span>
@@ -749,28 +749,28 @@ switch ($current_role) {
           <ul id="settingsDropdown" class="collapse list-unstyled" style="padding-left: 2rem;">
             <?php if (in_array('holidays', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../settings/holidays.php' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../settings/holidays.php">
+              <a class="sidebar-link" href="settings/holidays.php">
                 <span class="hide-menu">Holidays</span>
               </a>
             </li>
             <?php endif; ?>
             <?php if (in_array('notices', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../settings/notice.php' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../settings/notice.php">
+              <a class="sidebar-link" href="settings/notice.php">
                 <span class="hide-menu">Notices</span>
               </a>
             </li>
             <?php endif; ?>
             <?php if (in_array('notices', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../settings/fm.php' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../settings/fm.php">
+              <a class="sidebar-link" href="settings/fm.php">
                 <span class="hide-menu">Food Money calculator</span>
               </a>
             </li>
             <?php endif; ?>
             <?php if (in_array('users', $accessible_links)): ?>
             <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../settings/users.php' ? 'active' : ''; ?>">
-              <a class="sidebar-link" href="../settings/users.php">
+              <a class="sidebar-link" href="settings/users.php">
                 <span class="hide-menu">users</span>
               </a>
             </li>
@@ -793,14 +793,14 @@ switch ($current_role) {
               <ul id="recDropdown" class="collapse list-unstyled" style="padding-left: 2rem;">
                 <?php if (in_array('candidates', $accessible_links)): ?>
                 <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../recruit/view_candidates.php' ? 'active' : ''; ?>">
-                  <a class="sidebar-link" href="../recruit/view_candidates.php">
+                  <a class="sidebar-link" href="recruit/view_candidates.php">
                     <span class="hide-menu">candidates</span>
                   </a>
                 </li>
                 <?php endif; ?>
                 <?php if (in_array('vacancies', $accessible_links)): ?>
                 <li class="sidebar-item <?php echo basename($_SERVER['PHP_SELF']) == '../recruit/view_jobs.php' ? 'active' : ''; ?>">
-                  <a class="sidebar-link" href="../recruit/view_jobs.php">
+                  <a class="sidebar-link" href="recruit/view_jobs.php">
                     <span class="hide-menu">Vacancies</span>
                   </a>
                 </li>
@@ -821,7 +821,7 @@ switch ($current_role) {
 
         <!-- Logout -->
         <li class="sidebar-item">
-          <a class="sidebar-link danger-hover-bg" href="../logout.php" aria-expanded="false">
+          <a class="sidebar-link danger-hover-bg" href="logout.php" aria-expanded="false">
             <span class="aside-icon p-2 bg-light-danger rounded-3">
               <i class="fa-solid fa-power-off text-danger"></i>
             </span>

@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
     session_destroy();
 
     // Redirect to login page
-    header('Location: ../login.php');
+    header('Location: login.php');
     exit();
 }
 
@@ -25,7 +25,7 @@ if (isset($_SESSION['last_activity'])) {
     if ($elapsed_time > $session_timeout) {
         session_unset(); // Unset all session variables
         session_destroy(); // Destroy the session
-        header("Location: ../login.php?timeout=1");
+        header("Location: login.php?timeout=1");
         exit();
     }
 }

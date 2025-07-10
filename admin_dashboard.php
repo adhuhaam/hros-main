@@ -3,13 +3,47 @@
 include 'db.php';
 include 'session.php';
 
-// Fetch counts for specific employment statuses
-$activeCount = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'Active'")->fetch_assoc()['total'];
-$deadCount = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'DEAD'")->fetch_assoc()['total'];
-$missingCount = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'MISSING'")->fetch_assoc()['total'];
-$resignedCount = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'RESIGNED'")->fetch_assoc()['total'];
-$retiredCount = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'RETIRED'")->fetch_assoc()['total'];
-$terminatedCount = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'TERMINATED'")->fetch_assoc()['total'];
+// Fetch counts for specific employment statuses with error handling
+$activeCount = 0;
+$deadCount = 0;
+$missingCount = 0;
+$resignedCount = 0;
+$retiredCount = 0;
+$terminatedCount = 0;
+
+try {
+    $activeResult = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'Active'");
+    if ($activeResult) {
+        $activeCount = $activeResult->fetch_assoc()['total'];
+    }
+    
+    $deadResult = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'DEAD'");
+    if ($deadResult) {
+        $deadCount = $deadResult->fetch_assoc()['total'];
+    }
+    
+    $missingResult = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'MISSING'");
+    if ($missingResult) {
+        $missingCount = $missingResult->fetch_assoc()['total'];
+    }
+    
+    $resignedResult = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'RESIGNED'");
+    if ($resignedResult) {
+        $resignedCount = $resignedResult->fetch_assoc()['total'];
+    }
+    
+    $retiredResult = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'RETIRED'");
+    if ($retiredResult) {
+        $retiredCount = $retiredResult->fetch_assoc()['total'];
+    }
+    
+    $terminatedResult = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'TERMINATED'");
+    if ($terminatedResult) {
+        $terminatedCount = $terminatedResult->fetch_assoc()['total'];
+    }
+} catch (Exception $e) {
+    error_log("Database query error in admin_dashboard.php: " . $e->getMessage());
+}
 ?>
 
 <!doctype html>
@@ -359,7 +393,12 @@ $terminatedCount = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE e
                     </thead>
                     <tbody>
                       <?php
-                      $recentRequests = $conn->query("SELECT emp_no, print_type, status, requested_date FROM card_print ORDER BY id DESC LIMIT 5");
+                      $recentRequests = null;
+                      try {
+                          $recentRequests = $conn->query("SELECT emp_no, print_type, status, requested_date FROM card_print ORDER BY id DESC LIMIT 5");
+                      } catch (Exception $e) {
+                          error_log("Error fetching recent requests: " . $e->getMessage());
+                      }
                       if ($recentRequests && $recentRequests->num_rows > 0):
                         while ($row = $recentRequests->fetch_assoc()): ?>
                           <tr>
