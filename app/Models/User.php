@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 // use Laravel\Sanctum\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles;
+// use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasRoles;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -62,7 +62,8 @@ class User extends Authenticatable
      */
     public function hasPermission($permission)
     {
-        return $this->hasPermissionTo($permission);
+        // TODO: Implement permission checking when Spatie Permission is added back
+        return false;
     }
 
     /**
@@ -70,6 +71,7 @@ class User extends Authenticatable
      */
     public function getRoleNameAttribute()
     {
-        return $this->roles->first()?->name ?? 'Guest';
+        // TODO: Implement role checking when Spatie Permission is added back
+        return 'Guest';
     }
 }
