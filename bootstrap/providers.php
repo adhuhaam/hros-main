@@ -12,4 +12,12 @@ return [
     App\Providers\AuthServiceProvider::class,
     App\Providers\EventServiceProvider::class,
     App\Providers\RouteServiceProvider::class,
+    
+    /*
+     * Framework Service Providers...
+     */
+    Illuminate\Database\DatabaseServiceProvider::class,
+    Illuminate\Cache\CacheServiceProvider::class,
+    Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+    Illuminate\Filesystem\FilesystemServiceProvider::class,
 ];
