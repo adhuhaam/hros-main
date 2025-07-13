@@ -1,208 +1,264 @@
-# Laravel App Migration Documentation
+# HR Management System (Laravel)
 
-## Overview
+A comprehensive Human Resource Management System built with Laravel, featuring employee management, leave management, attendance tracking, loan management, and more.
 
-This document describes the process of moving Laravel application contents from a subdirectory to the root directory of the project.
+## Features
 
-## Migration Process
+### Core Modules
+- **Employee Management**: Complete employee lifecycle management
+- **Leave Management**: Request, approve, and track employee leaves
+- **Attendance Tracking**: Daily attendance monitoring with check-in/check-out
+- **Loan Management**: Employee loan processing and installment tracking
+- **Document Management**: Store and manage employee documents
+- **Medical Records**: Track employee medical information
+- **Warning System**: Manage employee warnings and disciplinary actions
+
+### User Roles & Permissions
+- **Admin**: Full system access
+- **Information Officer**: Employee and leave management
+- **Xpat Officer**: Document and visa management
+- **Leave Officer**: Leave approval and management
+- **HR Manager**: Comprehensive HR functions
+- **Payroll Officer**: Salary and loan management
+- **Supervisor**: Team management
+- **Other Staff**: Limited access to personal information
+- **Reception**: Basic employee and accommodation management
+
+### Dashboard Features
+- Role-based dashboards with relevant statistics
+- Real-time data visualization
+- Quick action buttons
+- Recent activity feeds
+- Responsive design for mobile devices
+
+## Technology Stack
+
+- **Backend**: Laravel 10.x
+- **Frontend**: Tailwind CSS, Alpine.js
+- **Database**: MySQL
+- **Authentication**: Laravel Sanctum
+- **File Storage**: Laravel Storage
+- **PDF Generation**: DomPDF
+- **Excel Import/Export**: PhpSpreadsheet
+- **Icons**: Font Awesome, Tabler Icons
+
+## Installation
 
 ### Prerequisites
+- PHP 8.1 or higher
+- Composer
+- MySQL 5.7 or higher
+- Node.js and NPM (for asset compilation)
 
-- Ensure you have a Laravel application in a subdirectory (e.g., `laravel-app/`)
-- Make sure you have proper backups before proceeding
-- Verify that the target root directory is clean or that you're prepared to merge files
+### Setup Instructions
 
-### Steps to Move Laravel App Contents to Root
-
-1. **Locate the Laravel App Directory**
-
+1. **Clone the repository**
    ```bash
-   find . -name "laravel-app" -type d
+   git clone <repository-url>
+   cd hros-laravel
    ```
 
-2. **Move All Contents to Root**
-
+2. **Install PHP dependencies**
    ```bash
-   # Move all files and directories from laravel-app to root
-   mv laravel-app/* .
-   mv laravel-app/.* . 2>/dev/null || true  # Move hidden files (ignore errors for . and ..)
+   composer install
    ```
 
-3. **Remove the Empty Directory**
-
+3. **Install Node.js dependencies**
    ```bash
-   rmdir laravel-app
+   npm install
    ```
 
-4. **Verify the Migration**
+4. **Environment setup**
    ```bash
-   # Check if Laravel files are now in root
-   ls -la artisan composer.json app/ config/ database/ resources/ routes/ storage/ vendor/
+   cp .env.example .env
+   php artisan key:generate
    ```
 
-### Important Considerations
-
-#### File Conflicts
-
-- If there are existing files in the root directory with the same names as Laravel files, you'll need to resolve conflicts manually
-- Common conflicts might include:
-  - `composer.json`
-  - `.env` files
-  - `index.php`
-  - Configuration files
-
-#### Environment Configuration
-
-- Update `.env` file paths if necessary
-- Ensure database connections and other configurations point to correct locations
-- Update any hardcoded paths in your application
-
-#### Dependencies
-
-- Run `composer install` after migration to ensure all dependencies are properly installed
-- Update any autoload configurations if needed
-
-#### Web Server Configuration
-
-- Update web server configuration (Apache `.htaccess`, Nginx config, etc.)
-- Ensure the document root points to the correct location
-- Update any virtual host configurations
-
-### Post-Migration Checklist
-
-- [ ] Verify Laravel artisan commands work: `php artisan --version`
-- [ ] Test application functionality
-- [ ] Check database connections
-- [ ] Verify file uploads and storage paths
-- [ ] Test authentication and sessions
-- [ ] Check log files for errors
-- [ ] Update deployment scripts if applicable
-
-### Troubleshooting
-
-#### Common Issues
-
-1. **Permission Errors**
-
-   ```bash
-   # Fix storage and cache permissions
-   chmod -R 775 storage/
-   chmod -R 775 bootstrap/cache/
+5. **Configure database**
+   Edit `.env` file with your database credentials:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=hros_laravel
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
    ```
 
-2. **Autoload Issues**
-
+6. **Run migrations**
    ```bash
-   # Regenerate autoload files
-   composer dump-autoload
+   php artisan migrate
    ```
 
-3. **Cache Issues**
-
+7. **Seed the database (optional)**
    ```bash
-   # Clear all caches
-   php artisan cache:clear
-   php artisan config:clear
-   php artisan route:clear
-   php artisan view:clear
+   php artisan db:seed
    ```
 
-4. **Path Issues**
-   - Check `config/app.php` for correct paths
-   - Verify asset compilation paths
-   - Update any hardcoded URLs or paths
+8. **Create storage link**
+   ```bash
+   php artisan storage:link
+   ```
 
-### Rollback Plan
+9. **Compile assets**
+   ```bash
+   npm run dev
+   ```
 
-If issues arise, you can rollback by:
+10. **Start the development server**
+    ```bash
+    php artisan serve
+    ```
 
-1. Restoring from backup
-2. Or moving files back to the original subdirectory structure
+## Database Structure
 
-## Project Structure After Migration
+### Core Tables
+- `users` - System users and authentication
+- `employees` - Employee information and details
+- `leaves` - Leave requests and approvals
+- `attendance` - Daily attendance records
+- `loans` - Employee loan information
+- `loan_installments` - Loan payment tracking
+- `medical_records` - Employee medical information
+- `warnings` - Employee warnings and disciplinary actions
+- `documents` - Employee document storage
+- `holidays` - Company holiday calendar
+- `notices` - Company notices and announcements
 
-```
-/
-├── app/                    # Laravel application logic
-├── bootstrap/              # Framework bootstrap files
-├── config/                 # Configuration files
-├── database/               # Database migrations and seeders
-├── public/                 # Web server document root
-├── resources/              # Views, assets, language files
-├── routes/                 # Route definitions
-├── storage/                # Application storage
-├── tests/                  # Test files
-├── vendor/                 # Composer dependencies
-├── artisan                 # Laravel command-line tool
-├── composer.json           # Composer configuration
-├── .env                    # Environment configuration
-└── README.md              # This documentation
-```
+### Key Relationships
+- Users can have one employee record
+- Employees can have multiple leaves, attendance records, loans, etc.
+- All modules are interconnected for comprehensive reporting
 
-## Notes
+## Usage
 
-- This migration process should be performed in a development environment first
-- Always test thoroughly before deploying to production
-- Consider using version control (Git) to track changes
-- Document any custom configurations or modifications made during the process
+### Initial Setup
+1. Create an admin user through the database seeder or manually
+2. Log in with admin credentials
+3. Configure system settings
+4. Add departments, positions, and other master data
+5. Start adding employees
+
+### Employee Management
+- Add new employees with complete information
+- Upload profile photos and documents
+- Track employment status changes
+- Generate employee reports
+
+### Leave Management
+- Employees can submit leave requests
+- Managers can approve/reject leaves
+- Track leave balances and history
+- Generate leave reports
+
+### Attendance Tracking
+- Daily check-in/check-out system
+- Overtime calculation
+- Attendance reports by date range
+- Absence tracking
+
+### Loan Management
+- Process loan applications
+- Calculate installments
+- Track payment progress
+- Generate loan reports
+
+## API Endpoints
+
+The system includes RESTful API endpoints for:
+- Employee CRUD operations
+- Leave management
+- Attendance tracking
+- Loan processing
+- Document management
+
+## Security Features
+
+- Role-based access control
+- CSRF protection
+- SQL injection prevention
+- XSS protection
+- File upload validation
+- Secure password hashing
+- Session management
+
+## Reporting
+
+The system provides comprehensive reporting for:
+- Employee statistics
+- Attendance reports
+- Leave analysis
+- Loan summaries
+- Payroll reports
+- Custom date range reports
+
+## Customization
+
+### Adding New Modules
+1. Create migration for the new table
+2. Create model with relationships
+3. Create controller with CRUD operations
+4. Add routes to `web.php`
+5. Create views for the module
+6. Update sidebar navigation
+
+### Modifying Existing Features
+- Models are designed with relationships and scopes
+- Controllers follow Laravel conventions
+- Views use Blade templating with Tailwind CSS
+- Easy to extend and modify
+
+## Deployment
+
+### Production Setup
+1. Set `APP_ENV=production` in `.env`
+2. Configure production database
+3. Set up file storage (AWS S3 recommended)
+4. Configure email settings
+5. Set up SSL certificate
+6. Configure web server (Apache/Nginx)
+
+### Performance Optimization
+- Enable Laravel caching
+- Use Redis for sessions and cache
+- Optimize database queries
+- Use CDN for static assets
+- Enable compression
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
 
 ## Support
 
-If you encounter issues during the migration process:
+For support and questions:
+- Create an issue in the repository
+- Contact the development team
+- Check the documentation
 
-1. Check Laravel documentation for troubleshooting guides
-2. Review server error logs
-3. Verify file permissions and ownership
-4. # Ensure all dependencies are properly installed
+## Changelog
 
-# Laravel Setup and Migration Guide
+### Version 1.0.0
+- Initial release
+- Core HR modules
+- Role-based access control
+- Responsive design
+- Basic reporting
 
-This project contains a Laravel application set up in the `laravel-app` directory.
+## Roadmap
 
-## Steps Performed
-
-1. **Composer Installation**
-
-   - Downloaded Composer using the official installer script.
-   - Verified Composer installation with `php composer.phar --version`.
-
-2. **Laravel Installation**
-
-   - Installed Laravel using Composer:
-     ```bash
-     php composer.phar create-project laravel/laravel laravel-app
-     ```
-   - This created a new Laravel project in the `laravel-app` directory.
-
-3. **Environment Setup**
-
-   - Laravel automatically copied `.env.example` to `.env`.
-   - Application key generated automatically.
-   - **Database configuration updated for MySQL (Namecheap hosting)**.
-
-4. **Database & Migrations**
-   - The project is configured to use a MySQL database hosted on Namecheap.
-   - Update the `.env` file in `laravel-app` with your MySQL credentials:
-     ```env
-     DB_CONNECTION=mysql
-     DB_HOST=your-mysql-host
-     DB_PORT=3306
-     DB_DATABASE=your_database_name
-     DB_USERNAME=your_database_user
-     DB_PASSWORD=your_database_password
-     ```
-   - Run migrations with:
-     ```bash
-     cd laravel-app
-     php artisan migrate
-     ```
-
-## Next Steps
-
-- Configure your database connection in `laravel-app/.env` as needed.
-- Add or modify migrations in `laravel-app/database/migrations/`.
-- Run `php artisan migrate` after making changes to migrations.
-
----
-
-_This README will be updated as more steps are performed._
+### Upcoming Features
+- Advanced reporting with charts
+- Mobile app development
+- Integration with payroll systems
+- Advanced workflow automation
+- Multi-language support
+- Advanced analytics dashboard
