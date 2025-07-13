@@ -18,10 +18,20 @@ This project contains a Laravel application set up in the `laravel-app` director
 3. **Environment Setup**
    - Laravel automatically copied `.env.example` to `.env`.
    - Application key generated automatically.
+   - **Database configuration updated for MySQL (Namecheap hosting)**.
 
 4. **Database & Migrations**
-   - SQLite database file created at `laravel-app/database/database.sqlite`.
-   - Initial migrations will be run using:
+   - The project is configured to use a MySQL database hosted on Namecheap.
+   - Update the `.env` file in `laravel-app` with your MySQL credentials:
+     ```env
+     DB_CONNECTION=mysql
+     DB_HOST=your-mysql-host
+     DB_PORT=3306
+     DB_DATABASE=your_database_name
+     DB_USERNAME=your_database_user
+     DB_PASSWORD=your_database_password
+     ```
+   - Run migrations with:
      ```bash
      cd laravel-app
      php artisan migrate
