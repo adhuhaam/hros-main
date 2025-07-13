@@ -3,18 +3,25 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// Start session first
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    // Destroy session if exists
+    session_unset();
+    session_destroy();
+
+    // Redirect to login page
+    header('Location: login.php');
+    exit();
+}
+
 // Include database and any required files
 try {
     include 'db.php';
 } catch (Exception $e) {
     die("Database connection failed: " . $e->getMessage());
-}
-
-// Include session check
-try {
-    include 'session.php';
-} catch (Exception $e) {
-    die("Session error: " . $e->getMessage());
 }
 
 // Fetch counts for specific employment statuses with error handling
