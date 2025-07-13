@@ -1,2 +1,20 @@
+<<<<<<< HEAD
 # Placeholder favicon
 # This is a placeholder file. Replace with actual PNG favicon.
+=======
+# Favicon Placeholder
+# This is a placeholder for the favicon.png file.
+# Replace this file with an actual 32x32 or 16x16 PNG favicon.
+# 
+# For now, the system will use the default browser favicon.
+# 
+# To create a proper favicon:
+# 1. Design a simple icon (16x16, 32x32, or 48x48 pixels)
+# 2. Save it as PNG format
+# 3. Replace this file with the actual PNG
+# 
+# Recommended favicon design:
+# - Simple "HR" text or people icon
+# - Use brand colors (#0085db, #0056b3)
+# - Ensure good contrast for visibility
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
