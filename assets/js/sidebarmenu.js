@@ -1,97 +1,52 @@
-// Sidebar Menu JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize sidebar functionality
-    initSidebar();
-    
-    // Initialize dropdowns
-    initDropdowns();
-});
+/*
+Template Name: Admin Template
+Author: Wrappixel
 
-function initSidebar() {
-    const sidebarToggle = document.getElementById('sidebarCollapse');
-    const sidebar = document.querySelector('.left-sidebar');
-    const overlay = document.querySelector('.sidebar-overlay');
-    
-    if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', function() {
-            sidebar.classList.toggle('show');
-            if (overlay) {
-                overlay.classList.toggle('show');
-            }
-        });
-    }
-    
-    if (overlay) {
-        overlay.addEventListener('click', function() {
-            sidebar.classList.remove('show');
-            overlay.classList.remove('show');
-        });
-    }
-    
-    // Close sidebar on window resize if screen becomes larger
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            sidebar.classList.remove('show');
-            if (overlay) {
-                overlay.classList.remove('show');
-            }
-        }
+File: js
+*/
+// ==============================================================
+// Auto select left navbar
+// ==============================================================
+$(function () {
+    "use strict";
+    var url = window.location + "";
+    var path = url.replace(
+      window.location.protocol + "//" + window.location.host + "/",
+      ""
+    );
+    var element = $("ul#sidebarnav a").filter(function () {
+      return this.href === url || this.href === path; // || url.href.indexOf(this.href) === 0;
     });
-}
-
-function initDropdowns() {
-    // Initialize Bootstrap dropdowns
-    const dropdownToggles = document.querySelectorAll('[data-bs-toggle="dropdown"]');
-    
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const dropdownMenu = this.nextElementSibling;
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            
-            // Close all other dropdowns
-            document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
-                if (menu !== dropdownMenu) {
-                    menu.classList.remove('show');
-                    menu.previousElementSibling.setAttribute('aria-expanded', 'false');
-                }
-            });
-            
-            // Toggle current dropdown
-            dropdownMenu.classList.toggle('show');
-            this.setAttribute('aria-expanded', !isExpanded);
-        });
+    element.parentsUntil(".sidebar-nav").each(function (index) {
+      if ($(this).is("li") && $(this).children("a").length !== 0) {
+        $(this).children("a").addClass("active");
+        $(this).parent("ul#sidebarnav").length === 0
+          ? $(this).addClass("active")
+          : $(this).addClass("selected");
+      } else if (!$(this).is("ul") && $(this).children("a").length === 0) {
+        $(this).addClass("selected");
+      } else if ($(this).is("ul")) {
+        $(this).addClass("in");
+      }
     });
-    
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
-                menu.classList.remove('show');
-                menu.previousElementSibling.setAttribute('aria-expanded', 'false');
-            });
-        }
+  
+    element.addClass("active");
+    $("#sidebarnav a").on("click", function (e) {
+      if (!$(this).hasClass("active")) {
+        // hide any open menus and remove all other classes
+        $("ul", $(this).parents("ul:first")).removeClass("in");
+        $("a", $(this).parents("ul:first")).removeClass("active");
+  
+        // open our new menu and add the open class
+        $(this).next("ul").addClass("in");
+        $(this).addClass("active");
+      } else if ($(this).hasClass("active")) {
+        $(this).removeClass("active");
+        $(this).parents("ul:first").removeClass("active");
+        $(this).next("ul").removeClass("in");
+      }
     });
-}
-
-// Utility function to show/hide sidebar on mobile
-function toggleSidebar() {
-    const sidebar = document.querySelector('.left-sidebar');
-    const overlay = document.querySelector('.sidebar-overlay');
-    
-    if (sidebar) {
-        sidebar.classList.toggle('show');
-        if (overlay) {
-            overlay.classList.toggle('show');
-        }
-    }
-}
-
-// Export functions for global use
-window.SidebarMenu = {
-    initSidebar,
-    initDropdowns,
-    toggleSidebar
-};
+    $("#sidebarnav >li >a.has-arrow").on("click", function (e) {
+      e.preventDefault();
+    });
+  });
