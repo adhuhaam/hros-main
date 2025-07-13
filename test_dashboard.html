@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Test</title>
+    <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css" />
+    <style>
+        body {
+            background-color: #f8f9fa !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .page-wrapper {
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.2s ease;
+            background-color: #fff;
+            margin-bottom: 1.5rem;
+        }
+        .card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="container-fluid p-4">
+            <h1 class="h3 mb-4 text-gray-800">Dashboard Test</h1>
+            
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 mb-3">
+                    <div class="card border-left-primary h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="card-title fw-semibold text-primary mb-1">Active</h5>
+                                    <h4 class="fw-bold text-primary mb-0">150</h4>
+                                </div>
+                                <div class="text-primary">
+                                    <i class="fa-solid fa-user-check fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-lg-3 mb-3">
+                    <div class="card border-left-danger h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="card-title fw-semibold text-danger mb-1">Inactive</h5>
+                                    <h4 class="fw-bold text-danger mb-0">25</h4>
+                                </div>
+                                <div class="text-danger">
+                                    <i class="fa-solid fa-user-times fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-transparent border-0">
+                            <h5 class="card-title fw-semibold mb-0">Test Table</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>001</strong></td>
+                                            <td>John Doe</td>
+                                            <td><span class="badge bg-success text-white">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>002</strong></td>
+                                            <td>Jane Smith</td>
+                                            <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

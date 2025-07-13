@@ -44,7 +44,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <img src="assets/images/default.png" alt="" width="35" height="35" class="rounded-circle">
+            <img src="https://via.placeholder.com/35x35/3b82f6/ffffff?text=U" alt="User" width="35" height="35" class="rounded-circle">
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
             <li><a href="profile.php" class="dropdown-item"><i class="ti ti-user fs-6"></i> My Profile</a></li>

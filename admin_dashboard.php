@@ -53,12 +53,90 @@ try {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Admin Dashboard</title>
-  <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Bootstrap CSS -->
+  <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+  
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/css/styles.min.css" />
   
   <!-- Additional responsive CSS -->
   <style>
+    /* Ensure proper body styling */
+    body {
+      background-color: #f8f9fa !important;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* Page wrapper styling */
+    .page-wrapper {
+      min-height: 100vh;
+      background-color: #f8f9fa;
+    }
+    
+    /* Card improvements */
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.2s ease;
+      background-color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    
+    .card:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    .card-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background-color: #f9fafb;
+    }
+    
+    /* Status badge improvements */
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+    
+    /* Timeline improvements */
+    .timeline-widget {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding: 0.75rem 0;
+      border-left: 2px solid #e5e7eb;
+      padding-left: 1.5rem;
+      margin-left: 0.5rem;
+    }
+    
+    .timeline-badge {
+      position: absolute;
+      left: -0.5rem;
+      top: 1rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    
     /* Mobile-first responsive design */
     @media (max-width: 768px) {
       .card {
@@ -188,53 +266,6 @@ try {
       display: block;
     }
     
-    /* Card improvements */
-    .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 0.5rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.2s ease;
-    }
-    
-    .card:hover {
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .card-body {
-      padding: 1.5rem;
-    }
-    
-    /* Status badge improvements */
-    .badge {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.25rem;
-    }
-    
-    /* Timeline improvements */
-    .timeline-widget {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .timeline-item {
-      position: relative;
-      padding: 0.75rem 0;
-      border-left: 2px solid #e5e7eb;
-      padding-left: 1.5rem;
-      margin-left: 0.5rem;
-    }
-    
-    .timeline-badge {
-      position: absolute;
-      left: -0.5rem;
-      top: 1rem;
-      width: 1rem;
-      height: 1rem;
-      border-radius: 50%;
-      border: 2px solid white;
-    }
-    
     /* Loading state */
     .loading {
       opacity: 0.6;
@@ -244,6 +275,34 @@ try {
     /* Smooth transitions */
     * {
       transition: all 0.2s ease;
+    }
+    
+    /* Ensure proper text colors */
+    .text-gray-800 {
+      color: #1f2937 !important;
+    }
+    
+    .text-muted {
+      color: #6b7280 !important;
+    }
+    
+    /* Table improvements */
+    .table {
+      margin-bottom: 0;
+    }
+    
+    .table th {
+      border-top: none;
+      font-weight: 600;
+      color: #374151;
+    }
+    
+    .table td {
+      vertical-align: middle;
+    }
+    
+    .table-hover tbody tr:hover {
+      background-color: #f9fafb;
     }
   </style>
 </head>
@@ -497,6 +556,7 @@ try {
     });
   </script>
 
+  <!-- Scripts -->
   <script src="assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/sidebarmenu.js"></script>
