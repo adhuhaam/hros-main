@@ -24,7 +24,10 @@ $missingCount = 0;
 $resignedCount = 0;
 $retiredCount = 0;
 $terminatedCount = 0;
+<<<<<<< HEAD
+=======
 $totalEmployees = 0;
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
 
 try {
     $activeResult = $conn->query("SELECT COUNT(*) AS total FROM employees WHERE employment_status = 'Active'");
@@ -56,6 +59,11 @@ try {
     if ($terminatedResult) {
         $terminatedCount = $terminatedResult->fetch_assoc()['total'];
     }
+<<<<<<< HEAD
+} catch (Exception $e) {
+    error_log("Database query error in admin_dashboard.php: " . $e->getMessage());
+}
+=======
     
     $totalResult = $conn->query("SELECT COUNT(*) AS total FROM employees");
     if ($totalResult) {
@@ -68,6 +76,7 @@ try {
 // Get current date and time
 $currentDate = date('Y-m-d');
 $currentTime = date('H:i:s');
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
 ?>
 
 <!doctype html>
@@ -76,6 +85,185 @@ $currentTime = date('H:i:s');
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<<<<<<< HEAD
+  <title>Admin Dashboard</title>
+  <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.min.css" />
+  
+  <!-- Additional responsive CSS -->
+  <style>
+    /* Mobile-first responsive design */
+    @media (max-width: 768px) {
+      .card {
+        margin-bottom: 1rem;
+      }
+      
+      .table-responsive {
+        font-size: 0.875rem;
+      }
+      
+      .table-responsive th,
+      .table-responsive td {
+        padding: 0.5rem 0.25rem;
+      }
+      
+      .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+      }
+      
+      .navbar-nav .nav-item {
+        margin-right: 0.5rem;
+      }
+      
+      .dropdown-menu {
+        position: fixed !important;
+        top: 60px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .left-sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        z-index: 1050;
+        transition: left 0.3s ease;
+        background: white;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .left-sidebar.show {
+        left: 0;
+      }
+      
+      .body-wrapper {
+        margin-left: 0 !important;
+        width: 100% !important;
+      }
+      
+      .app-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1040;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      .container-fluid {
+        padding-top: 80px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      
+      .col-lg-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      
+      .col-lg-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      
+      .col-lg-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .left-sidebar {
+        position: fixed;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        z-index: 1050;
+      }
+      
+      .body-wrapper {
+        margin-left: 280px;
+        width: calc(100% - 280px);
+      }
+      
+      .app-header {
+        margin-left: 280px;
+        width: calc(100% - 280px);
+      }
+    }
+    
+    /* Overlay for mobile sidebar */
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1045;
+    }
+    
+    .sidebar-overlay.show {
+      display: block;
+    }
+    
+    /* Card improvements */
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.2s ease;
+    }
+    
+    .card:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    /* Status badge improvements */
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+    
+    /* Timeline improvements */
+    .timeline-widget {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding: 0.75rem 0;
+      border-left: 2px solid #e5e7eb;
+      padding-left: 1.5rem;
+      margin-left: 0.5rem;
+    }
+    
+    .timeline-badge {
+      position: absolute;
+      left: -0.5rem;
+      top: 1rem;
+=======
   <title>Admin Dashboard - HR Management System</title>
   <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
   
@@ -251,10 +439,16 @@ $currentTime = date('H:i:s');
       position: absolute;
       left: -0.5rem;
       top: 1.25rem;
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
       width: 1rem;
       height: 1rem;
       border-radius: 50%;
       border: 2px solid white;
+<<<<<<< HEAD
+    }
+    
+    /* Loading state */
+=======
       box-shadow: 0 0 0 2px #e6ecf1;
     }
 
@@ -398,10 +592,14 @@ $currentTime = date('H:i:s');
     }
 
     /* Loading Animation */
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
     .loading {
       opacity: 0.6;
       pointer-events: none;
     }
+<<<<<<< HEAD
+    
+=======
 
     .spinner {
       display: inline-block;
@@ -417,6 +615,7 @@ $currentTime = date('H:i:s');
       to { transform: rotate(360deg); }
     }
 
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
     /* Smooth transitions */
     * {
       transition: all 0.2s ease;
@@ -454,6 +653,13 @@ $currentTime = date('H:i:s');
       ?>
 
       <div class="container-fluid">
+<<<<<<< HEAD
+        <!-- Page Title -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <h1 class="h3 mb-0 text-gray-800">Admin Dashboard</h1>
+            <p class="text-muted">Welcome back! Here's what's happening with your employees today.</p>
+=======
         <!-- Welcome Section -->
         <div class="welcome-section">
           <div class="row align-items-center">
@@ -482,12 +688,25 @@ $currentTime = date('H:i:s');
             <div class="col-lg-4 text-center">
               <i class="fas fa-chart-line" style="font-size: 4rem; opacity: 0.3;"></i>
             </div>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
           </div>
         </div>
 
         <!-- Employment Status Cards -->
         <div class="row mb-4">
           <div class="col-sm-6 col-lg-3 mb-3">
+<<<<<<< HEAD
+            <div class="card border-left-primary h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h5 class="card-title fw-semibold text-primary mb-1">Active</h5>
+                    <h4 class="fw-bold text-primary mb-0"><?php echo $activeCount; ?></h4>
+                  </div>
+                  <div class="text-primary">
+                    <i class="fa-solid fa-user-check fa-2x"></i>
+                  </div>
+=======
             <div class="stat-card success">
               <div class="stat-number"><?php echo $activeCount; ?></div>
               <div class="stat-label">Active Employees</div>
@@ -549,11 +768,89 @@ $currentTime = date('H:i:s');
               <div class="card-body">
                 <div class="chart-container">
                   <div id="employeeChart"></div>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
                 </div>
               </div>
             </div>
           </div>
           
+<<<<<<< HEAD
+          <div class="col-sm-6 col-lg-3 mb-3">
+            <div class="card border-left-danger h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h5 class="card-title fw-semibold text-danger mb-1">DEAD</h5>
+                    <h4 class="fw-bold text-danger mb-0"><?php echo $deadCount; ?></h4>
+                  </div>
+                  <div class="text-danger">
+                    <i class="fa-solid fa-user-times fa-2x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-6 col-lg-3 mb-3">
+            <div class="card border-left-warning h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h5 class="card-title fw-semibold text-warning mb-1">MISSING</h5>
+                    <h4 class="fw-bold text-warning mb-0"><?php echo $missingCount; ?></h4>
+                  </div>
+                  <div class="text-warning">
+                    <i class="fa-solid fa-user-slash fa-2x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-6 col-lg-3 mb-3">
+            <div class="card border-left-secondary h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h5 class="card-title fw-semibold text-secondary mb-1">RESIGNED</h5>
+                    <h4 class="fw-bold text-secondary mb-0"><?php echo $resignedCount; ?></h4>
+                  </div>
+                  <div class="text-secondary">
+                    <i class="fa-solid fa-user-minus fa-2x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-6 col-lg-3 mb-3">
+            <div class="card border-left-info h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h5 class="card-title fw-semibold text-info mb-1">RETIRED</h5>
+                    <h4 class="fw-bold text-info mb-0"><?php echo $retiredCount; ?></h4>
+                  </div>
+                  <div class="text-info">
+                    <i class="fa-solid fa-user-clock fa-2x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-6 col-lg-3 mb-3">
+            <div class="card border-left-danger h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h5 class="card-title fw-semibold text-danger mb-1">TERMINATED</h5>
+                    <h4 class="fw-bold text-danger mb-0"><?php echo $terminatedCount; ?></h4>
+                  </div>
+                  <div class="text-danger">
+                    <i class="fa-solid fa-user-xmark fa-2x"></i>
+                  </div>
+=======
           <div class="col-lg-4 mb-4">
             <div class="card h-100">
               <div class="card-header">
@@ -565,12 +862,21 @@ $currentTime = date('H:i:s');
               <div class="card-body">
                 <div class="chart-container">
                   <div id="statusPieChart"></div>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+<<<<<<< HEAD
+        <!-- Additional Sections -->
+        <div class="row">
+          <div class="col-lg-8 mb-4">
+            <div class="card h-100">
+              <div class="card-header bg-transparent border-0">
+                <h5 class="card-title fw-semibold mb-0">Recent Requests</h5>
+=======
         <!-- Recent Activity and Quick Actions -->
         <div class="row">
           <div class="col-lg-8 mb-4">
@@ -580,17 +886,25 @@ $currentTime = date('H:i:s');
                   <i class="fas fa-clock me-2 text-warning"></i>
                   Recent Requests
                 </h5>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-hover align-middle">
+<<<<<<< HEAD
+                    <thead class="table-light">
+=======
                     <thead>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
                       <tr>
                         <th>Employee No</th>
                         <th>Print Type</th>
                         <th>Status</th>
                         <th>Requested Date</th>
+<<<<<<< HEAD
+=======
                         <th>Action</th>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
                       </tr>
                     </thead>
                     <tbody>
@@ -608,24 +922,35 @@ $currentTime = date('H:i:s');
                             <td><?php echo htmlspecialchars($row['print_type']); ?></td>
                             <td>
                               <span class="badge 
+<<<<<<< HEAD
+                                <?php echo $row['status'] == 'Pending' ? 'bg-warning text-dark' : ($row['status'] == 'Printed' ? 'bg-success text-white' : 'bg-danger text-white'); ?>">
+=======
                                 <?php echo $row['status'] == 'Pending' ? 'bg-warning text-dark' : ($row['status'] == 'Printed' ? 'bg-success' : 'bg-danger'); ?>">
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
                                 <?php echo htmlspecialchars($row['status']); ?>
                               </span>
                             </td>
                             <td><?php echo htmlspecialchars($row['requested_date']); ?></td>
+<<<<<<< HEAD
+=======
                             <td>
                               <button class="btn btn-sm btn-outline-primary">
                                 <i class="fas fa-eye"></i>
                               </button>
                             </td>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
                           </tr>
                         <?php endwhile;
                       else: ?>
                         <tr>
+<<<<<<< HEAD
+                          <td colspan="4" class="text-center text-muted">No recent requests found</td>
+=======
                           <td colspan="5" class="text-center text-muted py-4">
                             <i class="fas fa-inbox fa-2x mb-2"></i>
                             <br>No recent requests found
                           </td>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
                         </tr>
                       <?php endif; ?>
                     </tbody>
@@ -637,30 +962,55 @@ $currentTime = date('H:i:s');
           
           <div class="col-lg-4 mb-4">
             <div class="card h-100">
+<<<<<<< HEAD
+              <div class="card-header bg-transparent border-0">
+                <h5 class="card-title fw-semibold mb-0">Upcoming Deadlines</h5>
+=======
               <div class="card-header">
                 <h5 class="card-title fw-semibold mb-0">
                   <i class="fas fa-calendar-alt me-2 text-info"></i>
                   Upcoming Deadlines
                 </h5>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
               </div>
               <div class="card-body">
                 <ul class="timeline-widget">
                   <li class="timeline-item">
                     <span class="timeline-badge bg-success"></span>
+<<<<<<< HEAD
+                    <div>
+                      <strong>Employee Training</strong>
+                      <br>
+                      <small class="text-muted">15 Dec 2024</small>
+=======
                     <div class="timeline-content">
                       <div class="timeline-title">Employee Training</div>
                       <div class="timeline-date">15 Dec 2024</div>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
                     </div>
                   </li>
                   <li class="timeline-item">
                     <span class="timeline-badge bg-warning"></span>
+<<<<<<< HEAD
+                    <div>
+                      <strong>Policy Review</strong>
+                      <br>
+                      <small class="text-muted">20 Dec 2024</small>
+=======
                     <div class="timeline-content">
                       <div class="timeline-title">Policy Review</div>
                       <div class="timeline-date">20 Dec 2024</div>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
                     </div>
                   </li>
                   <li class="timeline-item">
                     <span class="timeline-badge bg-danger"></span>
+<<<<<<< HEAD
+                    <div>
+                      <strong>Quarterly Review</strong>
+                      <br>
+                      <small class="text-muted">31 Dec 2024</small>
+=======
                     <div class="timeline-content">
                       <div class="timeline-title">Quarterly Review</div>
                       <div class="timeline-date">31 Dec 2024</div>
@@ -671,6 +1021,7 @@ $currentTime = date('H:i:s');
                     <div class="timeline-content">
                       <div class="timeline-title">Annual Report</div>
                       <div class="timeline-date">15 Jan 2025</div>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
                     </div>
                   </li>
                 </ul>
@@ -679,6 +1030,8 @@ $currentTime = date('H:i:s');
           </div>
         </div>
 
+<<<<<<< HEAD
+=======
         <!-- Quick Actions -->
         <div class="row">
           <div class="col-12">
@@ -744,10 +1097,16 @@ $currentTime = date('H:i:s');
           </div>
         </div>
 
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
       </div>
     </div>
   </div>
 
+<<<<<<< HEAD
+  <!-- Mobile Sidebar Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+=======
   <!-- Scripts -->
   <script src="assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -883,6 +1242,7 @@ $currentTime = date('H:i:s');
       statusPieChart.render();
 
       // Mobile sidebar toggle
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
       const sidebarToggle = document.getElementById('headerCollapse');
       const sidebar = document.getElementById('leftSidebar');
       const overlay = document.getElementById('sidebarOverlay');
@@ -901,13 +1261,26 @@ $currentTime = date('H:i:s');
         });
       }
       
+<<<<<<< HEAD
+      // Close sidebar on window resize if screen becomes larger
+=======
       // Close sidebar on window resize
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
       window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
           sidebar.classList.remove('show');
           overlay.classList.remove('show');
         }
       });
+<<<<<<< HEAD
+    });
+  </script>
+
+  <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebarmenu.js"></script>
+  <script src="assets/js/app.min.js"></script>
+=======
 
       // Auto-refresh data every 5 minutes
       setInterval(function() {
@@ -915,6 +1288,7 @@ $currentTime = date('H:i:s');
       }, 300000);
     });
   </script>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
 </body>
 
 </html>

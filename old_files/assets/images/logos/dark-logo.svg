@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="40" viewBox="0 0 180 40">
+<<<<<<< HEAD
+  <rect width="180" height="40" fill="#f8f9fa"/>
+  <text x="90" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">HRMS Logo</text>
+=======
   <defs>
     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0085db;stop-opacity:1" />
@@ -24,4 +28,5 @@
   <!-- Text -->
   <text x="50" y="18" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#111c2d">HR</text>
   <text x="50" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="12" font-weight="400" fill="#707a82">Management System</text>
+>>>>>>> f11b40920280bd2e51d8e5f867116b3402171035
 </svg>
