@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('employee_id', 10);
             $table->foreign('employee_id')->references('emp_no')->on('employees')->onDelete('cascade');
-            $table->addColumn('loan_type_enum', 'loan_type');
+            $table->enum('loan_type', [
+                'Personal', 'Housing', 'Vehicle', 'Education', 'Emergency', 'Other'
+            ]);
             $table->decimal('amount', 12, 2);
             $table->decimal('interest_rate', 5, 2)->default(0);
             $table->decimal('total_amount', 12, 2);
@@ -25,7 +27,7 @@ return new class extends Migration
             $table->decimal('remaining_amount', 12, 2);
             $table->date('start_date');
             $table->date('end_date');
-            $table->addColumn('loan_status_enum', 'status')->default('Pending');
+            $table->enum('status', ['Pending', 'Active', 'Completed', 'Rejected'])->default('Pending');
             $table->foreignId('approved_by')->nullable()->constrained('users')->onDelete('set null');
             $table->timestamp('approved_at')->nullable();
             $table->text('purpose');

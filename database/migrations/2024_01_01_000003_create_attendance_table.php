@@ -22,9 +22,11 @@ return new class extends Migration
             $table->decimal('total_hours', 5, 2)->default(0);
             $table->decimal('overtime_hours', 5, 2)->default(0);
             $table->decimal('break_hours', 5, 2)->default(0);
-            $table->addColumn('attendance_status_enum', 'status')->default('Absent');
-            $table->addColumn('check_status_enum', 'check_in_status')->nullable();
-            $table->addColumn('check_status_enum', 'check_out_status')->nullable();
+            $table->enum('status', [
+                'Present', 'Absent', 'Late', 'Early Departure', 'Half Day', 'Leave', 'Holiday', 'Weekend', 'Remote', 'Business Trip'
+            ])->default('Absent');
+            $table->enum('check_in_status', ['On Time', 'Late', 'Early'])->nullable();
+            $table->enum('check_out_status', ['On Time', 'Late', 'Early'])->nullable();
             $table->string('check_in_location')->nullable(); // GPS coordinates or location name
             $table->string('check_out_location')->nullable();
             $table->string('check_in_ip')->nullable();
