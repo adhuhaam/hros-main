@@ -110,6 +110,15 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/attendance/check-in', [AttendanceController::class, 'checkIn'])->name('attendance.check-in');
     Route::post('/attendance/check-out', [AttendanceController::class, 'checkOut'])->name('attendance.check-out');
     Route::get('/attendance/report', [AttendanceController::class, 'report'])->name('attendance.report');
+    Route::post('/attendance/bulk-import', [AttendanceController::class, 'bulkImport'])->name('attendance.bulk-import');
+    Route::get('/attendance/export', [AttendanceController::class, 'export'])->name('attendance.export');
+    Route::post('/attendance/{attendance}/approve', [AttendanceController::class, 'approve'])->name('attendance.approve');
+    Route::post('/attendance/bulk-approve', [AttendanceController::class, 'bulkApprove'])->name('attendance.bulk-approve');
+    Route::get('/attendance/today-summary', [AttendanceController::class, 'todaySummary'])->name('attendance.today-summary');
+    Route::get('/attendance/employee/{employeeId}/status', [AttendanceController::class, 'employeeStatus'])->name('attendance.employee-status');
+    Route::get('/attendance/check-in', function() {
+        return view('attendance.check-in');
+    })->name('attendance.check-in-page');
 
     // Loan Routes
     Route::resource('loans', LoanController::class);

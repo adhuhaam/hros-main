@@ -14,20 +14,20 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         $roles = [
-            ['id' => 1, 'name' => 'Super Admin', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 2, 'name' => 'Admin', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 3, 'name' => 'HR Manager', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 4, 'name' => 'HR Officer', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 5, 'name' => 'Finance Manager', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 6, 'name' => 'Finance Officer', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 7, 'name' => 'Project Manager', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 8, 'name' => 'Team Leader', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 9, 'name' => 'Employee', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 10, 'name' => 'Contractor', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 11, 'name' => 'Intern', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 12, 'name' => 'Temporary', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 13, 'name' => 'Consultant', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 14, 'name' => 'Guest', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 1, 'role_name' => 'Super Admin', 'description' => 'Super admin role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 2, 'role_name' => 'Admin', 'description' => 'Admin role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 3, 'role_name' => 'HR Manager', 'description' => 'HR Manager role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 4, 'role_name' => 'HR Officer', 'description' => 'HR Officer role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 5, 'role_name' => 'Finance Manager', 'description' => 'Finance Manager role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 6, 'role_name' => 'Finance Officer', 'description' => 'Finance Officer role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 7, 'role_name' => 'Project Manager', 'description' => 'Project Manager role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 8, 'role_name' => 'Team Leader', 'description' => 'Team Leader role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 9, 'role_name' => 'Employee', 'description' => 'Employee role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 10, 'role_name' => 'Contractor', 'description' => 'Contractor role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 11, 'role_name' => 'Intern', 'description' => 'Intern role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 12, 'role_name' => 'Temporary', 'description' => 'Temporary role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 13, 'role_name' => 'Consultant', 'description' => 'Consultant role', 'created_at' => now(), 'permissions' => null],
+            ['id' => 14, 'role_name' => 'Guest', 'description' => 'Guest role', 'created_at' => now(), 'permissions' => null],
         ];
 
         DB::table('roles')->insert($roles);

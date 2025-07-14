@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Project extends Model
 {
     use HasFactory;
 
@@ -15,10 +15,15 @@ class Role extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'role_name',
+        'name',
+        'project_value',
+        'client',
+        'started_date',
+        'end_date',
+        'status',
+        'images',
         'description',
         'created_at',
-        'permissions',
     ];
 
     /**
@@ -27,22 +32,18 @@ class Role extends Model
      * @var array<string, string>
      */
     protected $casts = [
+        'project_value' => 'decimal:2',
+        'started_date' => 'date',
+        'end_date' => 'date',
+        'images' => 'array',
         'created_at' => 'datetime',
     ];
 
     /**
-     * Get the users for this role.
+     * Get the employees assigned to this project.
      */
-    public function users()
+    public function employees()
     {
-        return $this->hasMany(User::class);
-    }
-
-    /**
-     * Get the role name attribute (for backward compatibility).
-     */
-    public function getNameAttribute()
-    {
-        return $this->role_name;
+        return $this->belongsToMany(Employee::class, 'employee_project_allocations');
     }
 } 

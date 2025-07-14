@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class LeaveType extends Model
 {
     use HasFactory;
 
@@ -15,10 +15,13 @@ class Role extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'role_name',
+        'name',
         'description',
+        'max_days_per_year',
+        'gender_restriction',
+        'requires_approval',
         'created_at',
-        'permissions',
+        'updated_at',
     ];
 
     /**
@@ -27,22 +30,16 @@ class Role extends Model
      * @var array<string, string>
      */
     protected $casts = [
+        'requires_approval' => 'boolean',
         'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     /**
-     * Get the users for this role.
+     * Get the leave records for this leave type.
      */
-    public function users()
+    public function leaveRecords()
     {
-        return $this->hasMany(User::class);
-    }
-
-    /**
-     * Get the role name attribute (for backward compatibility).
-     */
-    public function getNameAttribute()
-    {
-        return $this->role_name;
+        return $this->hasMany(LeaveRecord::class);
     }
 } 

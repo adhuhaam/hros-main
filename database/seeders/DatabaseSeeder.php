@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             LeaveTypeSeeder::class,
             ProjectSeeder::class,
+            AttendanceSeeder::class, // Create employee shifts and attendance records
             TestDataSeeder::class, // Only runs in local/testing environments
         ]);
     }

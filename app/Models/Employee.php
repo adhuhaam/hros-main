@@ -4,51 +4,80 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Employee extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+
+    /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'emp_no';
+
+    /**
+     * The "type" of the auto-incrementing ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     protected $fillable = [
-        'employee_id',
-        'first_name',
-        'last_name',
-        'email',
-        'phone',
-        'date_of_birth',
+        'emp_no',
+        'name',
         'gender',
-        'nationality',
-        'passport_number',
-        'passport_expiry',
-        'work_permit_number',
-        'work_permit_expiry',
-        'visa_number',
-        'visa_expiry',
+        'designation',
+        'xpat_designation',
+        'xpat_join_date',
         'department',
-        'position',
-        'employment_status',
-        'hire_date',
-        'salary',
-        'bank_name',
-        'bank_account',
+        'nationality',
+        'passport_nic_no',
+        'passport_nic_no_expires',
+        'dob',
+        'wp_no',
+        'date_of_join',
+        'contact_number',
+        'contact_number_foregn',
+        'emergency_contact_number',
         'emergency_contact_name',
-        'emergency_contact_phone',
-        'address',
-        'accommodation_status',
-        'medical_status',
-        'user_id',
-        'profile_photo',
-        'status',
+        'employment_status',
+        'work_site',
+        'insurance_provider',
+        'recruiting_agency',
+        'emp_email',
+        'company_email',
+        'permanent_address',
+        'persent_address',
+        'basic_salary',
+        'salary_currency',
+        'termination_date',
+        'level',
+        'company',
+        'player_id',
     ];
 
     protected $casts = [
-        'date_of_birth' => 'date',
-        'passport_expiry' => 'date',
-        'work_permit_expiry' => 'date',
-        'visa_expiry' => 'date',
-        'hire_date' => 'date',
-        'salary' => 'decimal:2',
+        'xpat_join_date' => 'date',
+        'passport_nic_no_expires' => 'date',
+        'dob' => 'date',
+        'date_of_join' => 'date',
+        'basic_salary' => 'decimal:2',
+        'termination_date' => 'date',
     ];
 
     /**
@@ -56,47 +85,39 @@ class Employee extends Model
      */
     public function user()
     {
-        return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Get the employee's full name.
-     */
-    public function getFullNameAttribute()
-    {
-        return $this->first_name . ' ' . $this->last_name;
-    }
-
-    /**
-     * Get the employee's leaves.
-     */
-    public function leaves()
-    {
-        return $this->hasMany(Leave::class);
+        return $this->hasOne(User::class, 'emp_no', 'emp_no');
     }
 
     /**
      * Get the employee's attendance records.
      */
-    public function attendance()
+    public function attendanceRecords()
     {
-        return $this->hasMany(Attendance::class);
+        return $this->hasMany(AttendanceRecord::class, 'emp_no', 'emp_no');
     }
 
     /**
-     * Get the employee's loans.
+     * Get the employee's leave records.
      */
-    public function loans()
+    public function leaveRecords()
     {
-        return $this->hasMany(Loan::class);
+        return $this->hasMany(LeaveRecord::class, 'emp_no', 'emp_no');
     }
 
     /**
-     * Get the employee's medical records.
+     * Get the employee's salary income records.
      */
-    public function medicalRecords()
+    public function salaryIncome()
     {
-        return $this->hasMany(MedicalRecord::class);
+        return $this->hasMany(SalaryIncome::class, 'emp_no', 'emp_no');
+    }
+
+    /**
+     * Get the employee's salary deduction records.
+     */
+    public function salaryDeductions()
+    {
+        return $this->hasMany(SalaryDeduction::class, 'emp_no', 'emp_no');
     }
 
     /**
@@ -104,7 +125,7 @@ class Employee extends Model
      */
     public function warnings()
     {
-        return $this->hasMany(Warning::class);
+        return $this->hasMany(Warning::class, 'emp_no', 'emp_no');
     }
 
     /**
@@ -112,7 +133,7 @@ class Employee extends Model
      */
     public function documents()
     {
-        return $this->hasMany(Document::class);
+        return $this->hasMany(Document::class, 'emp_no', 'emp_no');
     }
 
     /**
@@ -144,10 +165,10 @@ class Employee extends Model
      */
     public function getServiceYearsAttribute()
     {
-        if (!$this->hire_date) {
+        if (!$this->date_of_join) {
             return 0;
         }
         
-        return $this->hire_date->diffInYears(now());
+        return $this->date_of_join->diffInYears(now());
     }
 }

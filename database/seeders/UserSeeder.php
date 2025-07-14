@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         $users = [
             [
                 'id' => 1,
-                'emp_no' => '1001',
+                'emp_no' => '0001',
                 'username' => 'admin',
                 'staff_name' => 'System Administrator',
                 'des' => 'System Administrator',
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'emp_no' => '1002',
+                'emp_no' => '0002',
                 'username' => 'hr_manager',
                 'staff_name' => 'HR Manager',
                 'des' => 'Human Resources Manager',

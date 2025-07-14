@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password', 255);
             $table->integer('role_id');
             $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
             // Indexes
             $table->index('role_id');
             // Foreign key
