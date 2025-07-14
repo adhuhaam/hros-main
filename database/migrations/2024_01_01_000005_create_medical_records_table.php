@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('employee_id', 10);
             $table->foreign('employee_id')->references('emp_no')->on('employees')->onDelete('cascade');
-            $table->enum('medical_type', ['Fitness', 'Blood Test', 'Chest X-Ray', 'Eye Test', 'Dental', 'Other']);
+            $table->addColumn('medical_type_enum', 'medical_type');
             $table->date('test_date');
             $table->date('expiry_date')->nullable();
-            $table->enum('status', ['Active', 'Expired', 'Pending'])->default('Active');
+            $table->addColumn('medical_status_enum', 'status')->default('Active');
             $table->text('notes')->nullable();
             $table->string('file_path')->nullable();
             $table->string('test_center')->nullable();

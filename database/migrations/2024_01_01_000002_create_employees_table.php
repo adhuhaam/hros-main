@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -29,7 +30,6 @@ return new class extends Migration
             $table->string('contact_number_foregn', 225)->nullable();
             $table->string('emergency_contact_number', 15)->nullable();
             $table->string('emergency_contact_name', 255)->nullable();
-            $table->enum('employment_status', ['Active', 'Terminated', 'Resigned', 'Rejoined', 'Dead', 'Retired', 'Missing'])->nullable();
             $table->string('work_site', 255)->nullable();
             $table->string('insurance_provider', 255)->nullable();
             $table->string('recruiting_agency', 255)->nullable();
@@ -38,16 +38,19 @@ return new class extends Migration
             $table->string('permanent_address', 1500)->nullable();
             $table->string('persent_address', 2000);
             $table->decimal('basic_salary', 10, 2)->nullable();
-            $table->enum('salary_currency', ['MVR', 'USD'])->default('MVR');
             $table->date('termination_date')->nullable();
-            $table->enum('level', ['senior', 'junior'])->default('junior');
-            $table->enum('company', ['RASHEED CARPENTRY AND CONSTRUCTION PVT LTD', 'NAZRASH COMPANY PVT LTD', '', ''])->default('RASHEED CARPENTRY AND CONSTRUCTION PVT LTD');
             $table->string('player_id', 100)->nullable();
             
             // Indexes
             $table->index('name');
             $table->index('emp_no');
         });
+
+        // Add enum columns using raw SQL for PostgreSQL compatibility
+        DB::statement('ALTER TABLE employees ADD COLUMN employment_status employment_status_enum');
+        DB::statement('ALTER TABLE employees ADD COLUMN salary_currency salary_currency_enum DEFAULT \'MVR\'');
+        DB::statement('ALTER TABLE employees ADD COLUMN level employee_level_enum DEFAULT \'junior\'');
+        DB::statement('ALTER TABLE employees ADD COLUMN company company_enum DEFAULT \'RASHEED CARPENTRY AND CONSTRUCTION PVT LTD\'');
     }
 
     /**

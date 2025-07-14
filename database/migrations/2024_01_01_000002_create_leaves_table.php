@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -14,12 +15,10 @@ return new class extends Migration
         Schema::create('leaves', function (Blueprint $table) {
             $table->id();
             $table->string('employee_id', 10);
-            $table->enum('leave_type', ['Annual', 'Sick', 'Emergency', 'Maternity', 'Paternity', 'Unpaid', 'Other']);
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('days_requested');
             $table->text('reason');
-            $table->enum('status', ['Pending', 'Approved', 'Rejected'])->default('Pending');
             $table->foreignId('approved_by')->nullable()->constrained('users')->onDelete('set null');
             $table->timestamp('approved_at')->nullable();
             $table->text('rejection_reason')->nullable();
@@ -29,6 +28,10 @@ return new class extends Migration
 
             $table->foreign('employee_id')->references('emp_no')->on('employees')->onDelete('cascade');
         });
+
+        // Add enum columns using raw SQL for PostgreSQL compatibility
+        DB::statement('ALTER TABLE leaves ADD COLUMN leave_type leave_type_enum');
+        DB::statement('ALTER TABLE leaves ADD COLUMN status leave_status_enum DEFAULT \'Pending\'');
     }
 
     /**
