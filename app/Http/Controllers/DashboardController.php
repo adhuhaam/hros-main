@@ -6,247 +6,422 @@ use App\Models\Employee;
 use App\Models\Leave;
 use App\Models\Attendance;
 use App\Models\Loan;
+use App\Models\User;
+use App\Models\Warning;
+use App\Models\Document;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
     /**
-     * Show the admin dashboard.
+     * Redirect to appropriate dashboard based on user role.
+     */
+    public function index()
+    {
+        $user = Auth::user();
+        $role = $user->role->name ?? 'Employee';
+        
+        return redirect()->route($this->getDashboardRoute($role));
+    }
+
+    /**
+     * Get dashboard route based on role.
+     */
+    private function getDashboardRoute($role)
+    {
+        $routes = [
+            'Admin' => 'admin.dashboard',
+            'HR Manager' => 'hr-manager.dashboard',
+            'HR Officer' => 'hr-officer.dashboard',
+            'Finance Manager' => 'finance-manager.dashboard',
+            'Finance Officer' => 'finance-officer.dashboard',
+            'Project Manager' => 'project-manager.dashboard',
+            'Team Leader' => 'team-leader.dashboard',
+            'Employee' => 'employee.dashboard',
+        ];
+
+        return $routes[$role] ?? 'employee.dashboard';
+    }
+
+    /**
+     * Admin Dashboard
      */
     public function adminDashboard()
     {
         $stats = $this->getAdminStats();
-        $recentLeaves = Leave::with('employee')->latest()->take(5)->get();
+        $recentLeaves = $this->getRecentRecords(Leave::class, ['employee'], [], 5);
         $recentEmployees = Employee::orderBy('date_of_join', 'desc')->take(5)->get();
+        $recentWarnings = $this->getRecentRecords(Warning::class, ['employee'], [], 5);
+        $attendanceChart = $this->getAttendanceChartData();
+        $leaveChart = $this->getLeaveChartData();
         
-        return view('dashboard.admin', compact('stats', 'recentLeaves', 'recentEmployees'));
+        return view('dashboard.admin', compact(
+            'stats', 
+            'recentLeaves', 
+            'recentEmployees', 
+            'recentWarnings',
+            'attendanceChart',
+            'leaveChart'
+        ));
     }
 
     /**
-     * Show the information officer dashboard.
-     */
-    public function infoOfficerDashboard()
-    {
-        $stats = $this->getInfoOfficerStats();
-        $recentLeaves = Leave::with('employee')->latest()->take(5)->get();
-        
-        return view('dashboard.info-officer', compact('stats', 'recentLeaves'));
-    }
-
-    /**
-     * Show the xpat officer dashboard.
-     */
-    public function xpatOfficerDashboard()
-    {
-        $stats = $this->getXpatOfficerStats();
-        $expiringDocuments = $this->getExpiringDocuments();
-        
-        return view('dashboard.xpat-officer', compact('stats', 'expiringDocuments'));
-    }
-
-    /**
-     * Show the leave officer dashboard.
-     */
-    public function leaveOfficerDashboard()
-    {
-        $stats = $this->getLeaveOfficerStats();
-        $pendingLeaves = Leave::with('employee')->pending()->latest()->take(10)->get();
-        
-        return view('dashboard.leave-officer', compact('stats', 'pendingLeaves'));
-    }
-
-    /**
-     * Show the HR manager dashboard.
+     * HR Manager Dashboard
      */
     public function hrManagerDashboard()
     {
         $stats = $this->getHrManagerStats();
         $recentEmployees = Employee::orderBy('date_of_join', 'desc')->take(5)->get();
-        $pendingLeaves = Leave::with('employee')->pending()->latest()->take(5)->get();
+        $pendingLeaves = $this->getRecentRecords(Leave::class, ['employee'], [['method' => 'pending']], 5);
+        $expiringContracts = $this->getExpiringContracts();
+        $departmentStats = $this->getDepartmentStats();
         
-        return view('dashboard.hr-manager', compact('stats', 'recentEmployees', 'pendingLeaves'));
+        return view('dashboard.hr-manager', compact(
+            'stats', 
+            'recentEmployees', 
+            'pendingLeaves',
+            'expiringContracts',
+            'departmentStats'
+        ));
     }
 
     /**
-     * Show the payroll officer dashboard.
+     * HR Officer Dashboard
      */
-    public function payrollOfficerDashboard()
+    public function hrOfficerDashboard()
     {
-        $stats = $this->getPayrollOfficerStats();
-        $activeLoans = Loan::with('employee')->active()->latest()->take(5)->get();
+        $stats = $this->getHrOfficerStats();
+        $pendingLeaves = $this->getRecentRecords(Leave::class, ['employee'], [['method' => 'pending']], 10);
+        $recentEmployees = Employee::orderBy('date_of_join', 'desc')->take(5)->get();
+        $expiringDocuments = $this->getExpiringDocuments();
         
-        return view('dashboard.payroll-officer', compact('stats', 'activeLoans'));
+        return view('dashboard.hr-officer', compact(
+            'stats', 
+            'pendingLeaves', 
+            'recentEmployees',
+            'expiringDocuments'
+        ));
     }
 
     /**
-     * Show the supervisor dashboard.
+     * Finance Manager Dashboard
      */
-    public function supervisorDashboard()
+    public function financeManagerDashboard()
     {
-        $stats = $this->getSupervisorStats();
+        $stats = $this->getFinanceManagerStats();
+        $activeLoans = $this->getRecentRecords(Loan::class, ['employee'], [['method' => 'active']], 5);
+        $salaryStats = $this->getSalaryStats();
+        $loanChart = $this->getLoanChartData();
+        
+        return view('dashboard.finance-manager', compact(
+            'stats', 
+            'activeLoans',
+            'salaryStats',
+            'loanChart'
+        ));
+    }
+
+    /**
+     * Finance Officer Dashboard
+     */
+    public function financeOfficerDashboard()
+    {
+        $stats = $this->getFinanceOfficerStats();
+        $activeLoans = $this->getRecentRecords(Loan::class, ['employee'], [['method' => 'active']], 5);
+        $pendingLoans = $this->getRecentRecords(Loan::class, ['employee'], [['method' => 'pending']], 5);
+        
+        return view('dashboard.finance-officer', compact(
+            'stats', 
+            'activeLoans',
+            'pendingLoans'
+        ));
+    }
+
+    /**
+     * Project Manager Dashboard
+     */
+    public function projectManagerDashboard()
+    {
+        $stats = $this->getProjectManagerStats();
+        $teamMembers = $this->getTeamMembers();
+        $projectStats = $this->getProjectStats();
+        
+        return view('dashboard.project-manager', compact(
+            'stats', 
+            'teamMembers',
+            'projectStats'
+        ));
+    }
+
+    /**
+     * Team Leader Dashboard
+     */
+    public function teamLeaderDashboard()
+    {
+        $stats = $this->getTeamLeaderStats();
         $teamAttendance = $this->getTeamAttendance();
+        $teamLeaves = $this->getTeamLeaves();
         
-        return view('dashboard.supervisor', compact('stats', 'teamAttendance'));
+        return view('dashboard.team-leader', compact(
+            'stats', 
+            'teamAttendance',
+            'teamLeaves'
+        ));
     }
 
     /**
-     * Show the other staff dashboard.
+     * Employee Dashboard
      */
-    public function otherStaffDashboard()
+    public function employeeDashboard()
     {
-        $stats = $this->getOtherStaffStats();
+        $user = Auth::user();
+        $employee = $user->employee;
         
-        return view('dashboard.other-staff', compact('stats'));
+        if (!$employee) {
+            return redirect()->route('profile')->with('error', 'Employee profile not found.');
+        }
+        
+        $stats = $this->getEmployeeStats($employee);
+        $myLeaves = Leave::where('employee_id', $employee->emp_no)->latest()->take(5)->get();
+        $myAttendance = Attendance::where('employee_id', $employee->emp_no)->latest()->take(10)->get();
+        $myLoans = Loan::where('employee_id', $employee->emp_no)->latest()->take(5)->get();
+        
+        return view('dashboard.employee', compact(
+            'stats', 
+            'myLeaves', 
+            'myAttendance',
+            'myLoans',
+            'employee'
+        ));
     }
 
-    /**
-     * Show the reception dashboard.
-     */
-    public function receptionDashboard()
-    {
-        $stats = $this->getReceptionStats();
-        $todayAttendance = Attendance::with('employee')->today()->get();
-        
-        return view('dashboard.reception', compact('stats', 'todayAttendance'));
-    }
+    // Statistics Methods
 
-    /**
-     * Get admin dashboard statistics.
-     */
     private function getAdminStats()
     {
         return [
             'total_employees' => Employee::count(),
-            'active_employees' => Employee::active()->count(),
-            'pending_leaves' => Leave::pending()->count(),
-            'active_loans' => Loan::active()->count(),
-            'today_attendance' => Attendance::today()->present()->count(),
-            'absent_today' => Attendance::today()->absent()->count(),
+            'active_employees' => Employee::where('employment_status', 'Active')->count(),
+            'pending_leaves' => Leave::where('status', 'Pending')->count(),
+            'active_loans' => Loan::where('status', 'Active')->count(),
+            'today_attendance' => Attendance::whereDate('date', today())->where('status', 'Present')->count(),
+            'absent_today' => Employee::where('employment_status', 'Active')->count() - 
+                            Attendance::whereDate('date', today())->where('status', 'Present')->count(),
+            'total_warnings' => Warning::count(),
+            'expiring_documents' => $this->getExpiringDocumentsCount(),
         ];
     }
 
-    /**
-     * Get information officer dashboard statistics.
-     */
-    private function getInfoOfficerStats()
-    {
-        return [
-            'total_employees' => Employee::count(),
-            'pending_leaves' => Leave::pending()->count(),
-            'approved_leaves' => Leave::approved()->count(),
-            'today_attendance' => Attendance::today()->present()->count(),
-        ];
-    }
-
-    /**
-     * Get xpat officer dashboard statistics.
-     */
-    private function getXpatOfficerStats()
-    {
-        return [
-            'total_employees' => Employee::count(),
-            'expiring_passports' => Employee::where('passport_expiry', '<=', now()->addMonths(3))->count(),
-            'expiring_visas' => Employee::where('visa_expiry', '<=', now()->addMonths(3))->count(),
-            'expiring_work_permits' => Employee::where('work_permit_expiry', '<=', now()->addMonths(3))->count(),
-        ];
-    }
-
-    /**
-     * Get leave officer dashboard statistics.
-     */
-    private function getLeaveOfficerStats()
-    {
-        return [
-            'pending_leaves' => Leave::pending()->count(),
-            'approved_leaves' => Leave::approved()->count(),
-            'rejected_leaves' => Leave::rejected()->count(),
-            'total_employees' => Employee::active()->count(),
-        ];
-    }
-
-    /**
-     * Get HR manager dashboard statistics.
-     */
     private function getHrManagerStats()
     {
         return [
             'total_employees' => Employee::count(),
-            'active_employees' => Employee::active()->count(),
-            'pending_leaves' => Leave::pending()->count(),
-            'active_loans' => Loan::active()->count(),
+            'active_employees' => Employee::where('employment_status', 'Active')->count(),
+            'pending_leaves' => Leave::where('status', 'Pending')->count(),
             'new_employees_this_month' => Employee::where('date_of_join', '>=', now()->startOfMonth())->count(),
+            'expiring_contracts' => $this->getExpiringContractsCount(),
+            'department_count' => Employee::distinct('department')->count(),
         ];
     }
 
-    /**
-     * Get payroll officer dashboard statistics.
-     */
-    private function getPayrollOfficerStats()
+    private function getHrOfficerStats()
     {
         return [
-            'total_employees' => Employee::active()->count(),
-            'active_loans' => Loan::active()->count(),
-            'total_salary' => Employee::active()->sum('salary'),
-            'overtime_hours_today' => Attendance::today()->sum('overtime_hours'),
+            'pending_leaves' => Leave::where('status', 'Pending')->count(),
+            'approved_leaves' => Leave::where('status', 'Approved')->count(),
+            'rejected_leaves' => Leave::where('status', 'Rejected')->count(),
+            'total_employees' => Employee::where('employment_status', 'Active')->count(),
+            'expiring_documents' => $this->getExpiringDocumentsCount(),
         ];
     }
 
-    /**
-     * Get supervisor dashboard statistics.
-     */
-    private function getSupervisorStats()
+    private function getFinanceManagerStats()
     {
         return [
-            'team_members' => Employee::active()->count(),
-            'present_today' => Attendance::today()->present()->count(),
-            'absent_today' => Attendance::today()->absent()->count(),
-            'pending_leaves' => Leave::pending()->count(),
+            'total_employees' => Employee::where('employment_status', 'Active')->count(),
+            'active_loans' => Loan::where('status', 'Active')->count(),
+            'total_salary' => Employee::where('employment_status', 'Active')->sum('basic_salary'),
+            'pending_loans' => Loan::where('status', 'Pending')->count(),
+            'total_loan_amount' => Loan::where('status', 'Active')->sum('amount'),
         ];
     }
 
-    /**
-     * Get other staff dashboard statistics.
-     */
-    private function getOtherStaffStats()
+    private function getFinanceOfficerStats()
     {
         return [
-            'total_employees' => Employee::count(),
-            'my_leaves' => Leave::where('employee_id', Auth::user()->employee->id ?? 0)->count(),
-            'my_loans' => Loan::where('employee_id', Auth::user()->employee->id ?? 0)->count(),
+            'total_employees' => Employee::where('employment_status', 'Active')->count(),
+            'active_loans' => Loan::where('status', 'Active')->count(),
+            'pending_loans' => Loan::where('status', 'Pending')->count(),
+            'total_salary' => Employee::where('employment_status', 'Active')->sum('basic_salary'),
         ];
     }
 
-    /**
-     * Get reception dashboard statistics.
-     */
-    private function getReceptionStats()
+    private function getProjectManagerStats()
     {
         return [
-            'total_employees' => Employee::count(),
-            'present_today' => Attendance::today()->present()->count(),
-            'absent_today' => Attendance::today()->absent()->count(),
-            'late_today' => Attendance::today()->late()->count(),
+            'team_members' => Employee::where('employment_status', 'Active')->count(),
+            'active_projects' => Project::where('status', 'Active')->count(),
+            'completed_projects' => Project::where('status', 'Completed')->count(),
+            'pending_tasks' => 0, // To be implemented with tasks table
         ];
     }
 
-    /**
-     * Get expiring documents.
-     */
+    private function getTeamLeaderStats()
+    {
+        return [
+            'team_members' => Employee::where('employment_status', 'Active')->count(),
+            'present_today' => Attendance::whereDate('date', today())->where('status', 'Present')->count(),
+            'absent_today' => Employee::where('employment_status', 'Active')->count() - 
+                            Attendance::whereDate('date', today())->where('status', 'Present')->count(),
+            'pending_leaves' => Leave::where('status', 'Pending')->count(),
+        ];
+    }
+
+    private function getEmployeeStats($employee)
+    {
+        return [
+            'total_leaves' => Leave::where('employee_id', $employee->emp_no)->count(),
+            'approved_leaves' => Leave::where('employee_id', $employee->emp_no)->where('status', 'Approved')->count(),
+            'pending_leaves' => Leave::where('employee_id', $employee->emp_no)->where('status', 'Pending')->count(),
+            'active_loans' => Loan::where('employee_id', $employee->emp_no)->where('status', 'Active')->count(),
+            'attendance_this_month' => Attendance::where('employee_id', $employee->emp_no)
+                ->whereMonth('date', now()->month)
+                ->whereYear('date', now()->year)
+                ->where('status', 'Present')
+                ->count(),
+        ];
+    }
+
+    // Helper Methods
+
+    private function getRecentRecords($model, $relations = [], $conditions = [], $limit = 5)
+    {
+        try {
+            $query = $model::with($relations);
+            
+            foreach ($conditions as $condition) {
+                $query = $query->{$condition['method']}($condition['value'] ?? null);
+            }
+            
+            return $query->latest()->take($limit)->get();
+        } catch (\Exception $e) {
+            // Fallback if created_at column is not available
+            $query = $model::with($relations);
+            
+            foreach ($conditions as $condition) {
+                $query = $query->{$condition['method']}($condition['value'] ?? null);
+            }
+            
+            return $query->orderBy('id', 'desc')->take($limit)->get();
+        }
+    }
+
     private function getExpiringDocuments()
     {
         return Employee::where(function($query) {
-            $query->where('passport_expiry', '<=', now()->addMonths(3))
-                  ->orWhere('visa_expiry', '<=', now()->addMonths(3))
-                  ->orWhere('work_permit_expiry', '<=', now()->addMonths(3));
+            $query->where('passport_nic_no_expires', '<=', now()->addMonths(3))
+                  ->orWhere('wp_expiry', '<=', now()->addMonths(3));
         })->get();
     }
 
-    /**
-     * Get team attendance.
-     */
+    private function getExpiringDocumentsCount()
+    {
+        return Employee::where(function($query) {
+            $query->where('passport_nic_no_expires', '<=', now()->addMonths(3))
+                  ->orWhere('wp_expiry', '<=', now()->addMonths(3));
+        })->count();
+    }
+
+    private function getExpiringContracts()
+    {
+        return Employee::where('date_of_join', '<=', now()->subYears(2))
+            ->where('employment_status', 'Active')
+            ->get();
+    }
+
+    private function getExpiringContractsCount()
+    {
+        return Employee::where('date_of_join', '<=', now()->subYears(2))
+            ->where('employment_status', 'Active')
+            ->count();
+    }
+
+    private function getDepartmentStats()
+    {
+        return Employee::where('employment_status', 'Active')
+            ->select('department', DB::raw('count(*) as count'))
+            ->groupBy('department')
+            ->get();
+    }
+
+    private function getSalaryStats()
+    {
+        return [
+            'total_salary' => Employee::where('employment_status', 'Active')->sum('basic_salary'),
+            'avg_salary' => Employee::where('employment_status', 'Active')->avg('basic_salary'),
+            'min_salary' => Employee::where('employment_status', 'Active')->min('basic_salary'),
+            'max_salary' => Employee::where('employment_status', 'Active')->max('basic_salary'),
+        ];
+    }
+
+    private function getTeamMembers()
+    {
+        return Employee::where('employment_status', 'Active')->get();
+    }
+
+    private function getProjectStats()
+    {
+        return [
+            'total_projects' => Project::count(),
+            'active_projects' => Project::where('status', 'Active')->count(),
+            'completed_projects' => Project::where('status', 'Completed')->count(),
+        ];
+    }
+
     private function getTeamAttendance()
     {
-        return Attendance::with('employee')->today()->get();
+        return Attendance::with('employee')->whereDate('date', today())->get();
+    }
+
+    private function getTeamLeaves()
+    {
+        return Leave::with('employee')->where('status', 'Pending')->get();
+    }
+
+    private function getAttendanceChartData()
+    {
+        $data = [];
+        for ($i = 6; $i >= 0; $i--) {
+            $date = now()->subDays($i);
+            $data[] = [
+                'date' => $date->format('M d'),
+                'present' => Attendance::whereDate('date', $date)->where('status', 'Present')->count(),
+                'absent' => Employee::where('employment_status', 'Active')->count() - 
+                           Attendance::whereDate('date', $date)->where('status', 'Present')->count(),
+            ];
+        }
+        return $data;
+    }
+
+    private function getLeaveChartData()
+    {
+        return [
+            'pending' => Leave::where('status', 'Pending')->count(),
+            'approved' => Leave::where('status', 'Approved')->count(),
+            'rejected' => Leave::where('status', 'Rejected')->count(),
+        ];
+    }
+
+    private function getLoanChartData()
+    {
+        return [
+            'active' => Loan::where('status', 'Active')->count(),
+            'pending' => Loan::where('status', 'Pending')->count(),
+            'completed' => Loan::where('status', 'Completed')->count(),
+        ];
     }
 }
