@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('employee_shifts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained()->onDelete('cascade');
+            $table->string('employee_id', 10);
             $table->string('shift_name');
             $table->time('start_time');
             $table->time('end_time');
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->text('notes')->nullable();
             $table->timestamps();
 
+            $table->foreign('employee_id')->references('emp_no')->on('employees')->onDelete('cascade');
             $table->index(['employee_id', 'is_active']);
             $table->index(['effective_from', 'effective_to']);
         });
