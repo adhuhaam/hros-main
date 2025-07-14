@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('leaves', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained()->onDelete('cascade');
+            $table->string('employee_id', 10);
             $table->enum('leave_type', ['Annual', 'Sick', 'Emergency', 'Maternity', 'Paternity', 'Unpaid', 'Other']);
             $table->date('start_date');
             $table->date('end_date');
@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('destination')->nullable();
             $table->string('emergency_contact')->nullable();
             $table->timestamps();
+
+            $table->foreign('employee_id')->references('emp_no')->on('employees')->onDelete('cascade');
         });
     }
 
