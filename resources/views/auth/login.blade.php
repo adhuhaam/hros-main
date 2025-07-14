@@ -99,7 +99,7 @@
                 <div class="mt-6 text-center">
                     <p class="text-sm text-gray-600">
                         Don't have an account? 
-                        <a href="#" class="text-blue-600 hover:text-blue-500">Contact Administrator</a>
+                        <a href="#" class="text-blue-600 hover:text-blue-500">Contact HR Department</a>
                     </p>
                 </div>
             </div>
@@ -130,7 +130,7 @@
                     value: 0.5 
                 },
                 size: { 
-                    value: 3, 
+                    value: 6, 
                     random: true 
                 },
                 line_linked: { 

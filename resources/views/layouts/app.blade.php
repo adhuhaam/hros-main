@@ -39,7 +39,7 @@
         <div class="flex items-center justify-between p-4 border-b">
             <div class="flex items-center">
                 <img src="/assets/images/logos/dark-logo.svg" alt="Logo" class="h-8">
-                <span class="ml-2 text-lg font-semibold text-gray-800">HRMS</span>
+                <span class="ml-2 text-lg font-semibold text-gray-800">HRoS</span>
             </div>
             <button id="sidebar-close" class="lg:hidden text-gray-500 hover:text-gray-700">
                 <i class="ti ti-x text-xl"></i>
