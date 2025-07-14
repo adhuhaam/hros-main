@@ -18,7 +18,7 @@ class DashboardController extends Controller
     {
         $stats = $this->getAdminStats();
         $recentLeaves = Leave::with('employee')->latest()->take(5)->get();
-        $recentEmployees = Employee::latest()->take(5)->get();
+        $recentEmployees = Employee::orderBy('date_of_join', 'desc')->take(5)->get();
         
         return view('dashboard.admin', compact('stats', 'recentLeaves', 'recentEmployees'));
     }
@@ -62,7 +62,7 @@ class DashboardController extends Controller
     public function hrManagerDashboard()
     {
         $stats = $this->getHrManagerStats();
-        $recentEmployees = Employee::latest()->take(5)->get();
+        $recentEmployees = Employee::orderBy('date_of_join', 'desc')->take(5)->get();
         $pendingLeaves = Leave::with('employee')->pending()->latest()->take(5)->get();
         
         return view('dashboard.hr-manager', compact('stats', 'recentEmployees', 'pendingLeaves'));
@@ -175,7 +175,7 @@ class DashboardController extends Controller
             'active_employees' => Employee::active()->count(),
             'pending_leaves' => Leave::pending()->count(),
             'active_loans' => Loan::active()->count(),
-            'new_employees_this_month' => Employee::where('hire_date', '>=', now()->startOfMonth())->count(),
+            'new_employees_this_month' => Employee::where('date_of_join', '>=', now()->startOfMonth())->count(),
         ];
     }
 

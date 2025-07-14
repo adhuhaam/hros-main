@@ -37,7 +37,7 @@ class EmployeeController extends Controller
             });
         }
 
-        $employees = $query->latest()->paginate(15);
+        $employees = $query->orderBy('date_of_join', 'desc')->paginate(15);
         $departments = Employee::distinct()->pluck('department');
         $statuses = ['Active', 'Inactive', 'Resigned', 'Terminated', 'Retired', 'Dead', 'Missing'];
 

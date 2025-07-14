@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -15,56 +18,155 @@ class AuthController extends Controller
      */
     public function showLoginForm()
     {
+        if (Auth::check()) {
+            return redirect()->intended($this->getRedirectPath());
+        }
+
         return view('auth.login');
     }
 
     /**
-     * Handle the login request.
+     * Handle login request.
      */
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|string',
+            'login' => 'required|string', // Can be username or email
             'password' => 'required|string',
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
+            return back()->withErrors($validator)->withInput($request->only('login'));
         }
 
-        // Find user by username
-        $user = User::where('username', $request->username)->first();
-
-        if (!$user || !Hash::check($request->password, $user->password)) {
-            return redirect()->back()
-                ->withErrors(['username' => 'Invalid credentials'])
-                ->withInput();
+        // Rate limiting
+        $key = 'login.' . $request->ip();
+        if (RateLimiter::tooManyAttempts($key, 5)) {
+            $seconds = RateLimiter::availableIn($key);
+            return back()->withErrors([
+                'login' => "Too many login attempts. Please try again in {$seconds} seconds."
+            ]);
         }
 
-        // Log the user in manually
-        Auth::login($user);
-        $request->session()->regenerate();
+        // Determine if login is email or username
+        $loginType = filter_var($request->login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        
+        $credentials = [
+            $loginType => $request->login,
+            'password' => $request->password
+        ];
 
-        // Redirect based on role
-        return $this->redirectBasedOnRole($user->roleName);
+        if (Auth::attempt($credentials, $request->filled('remember'))) {
+            $request->session()->regenerate();
+            RateLimiter::clear($key);
+
+            // Log successful login
+            $this->logLoginActivity(Auth::user(), $request, 'success');
+
+            return redirect()->intended($this->getRedirectPath());
+        }
+
+        // Increment rate limiter
+        RateLimiter::hit($key);
+
+        // Log failed login attempt
+        $this->logLoginActivity(null, $request, 'failed');
+
+        return back()->withErrors([
+            'login' => 'The provided credentials do not match our records.',
+        ])->withInput($request->only('login'));
     }
 
     /**
-     * Handle the logout request.
+     * Handle logout request.
      */
     public function logout(Request $request)
     {
+        $user = Auth::user();
+
+        // Log logout activity
+        if ($user) {
+            $this->logLoginActivity($user, $request, 'logout');
+        }
+
         Auth::logout();
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/')->with('success', 'You have been logged out successfully.');
     }
 
     /**
-     * Show the forgot password form.
+     * Show the registration form (if enabled).
+     */
+    public function showRegistrationForm()
+    {
+        // Registration might be disabled in production
+        if (!config('auth.allow_registration', false)) {
+            return redirect()->route('login')->with('error', 'Registration is currently disabled.');
+        }
+
+        $roles = Role::where('role_name', '!=', 'Admin')->get(); // Don't allow admin registration
+        return view('auth.register', compact('roles'));
+    }
+
+    /**
+     * Handle registration request.
+     */
+    public function register(Request $request)
+    {
+        if (!config('auth.allow_registration', false)) {
+            return redirect()->route('login')->with('error', 'Registration is currently disabled.');
+        }
+
+        $validator = Validator::make($request->all(), [
+            'emp_no' => 'required|string|max:10|unique:users',
+            'username' => 'required|string|max:255|unique:users',
+            'staff_name' => 'required|string|max:225',
+            'des' => 'required|string|max:225',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'role_id' => 'required|exists:roles,id',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        // Verify employee exists and is not already a user
+        $employee = \App\Models\Employee::where('emp_no', $request->emp_no)->first();
+        if (!$employee) {
+            return back()->withErrors(['emp_no' => 'Employee not found in the system.'])->withInput();
+        }
+
+        // Prevent admin role self-registration
+        $role = Role::find($request->role_id);
+        if ($role->role_name === 'Admin') {
+            return back()->withErrors(['role_id' => 'Cannot register as Admin.'])->withInput();
+        }
+
+        $user = User::create([
+            'emp_no' => $request->emp_no,
+            'username' => $request->username,
+            'staff_name' => $request->staff_name,
+            'des' => $request->des,
+            'email' => $request->email,
+            'password' => $request->password,
+            'role_id' => $request->role_id,
+        ]);
+
+        // Auto-login after registration
+        Auth::login($user);
+
+        // Log registration
+        $this->logLoginActivity($user, $request, 'register');
+
+        return redirect($this->getRedirectPath())->with('success', 'Registration successful! Welcome to the system.');
+    }
+
+    /**
+     * Show forgot password form.
      */
     public function showForgotPasswordForm()
     {
@@ -72,7 +174,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Handle the forgot password request.
+     * Handle forgot password request.
      */
     public function forgotPassword(Request $request)
     {
@@ -81,103 +183,171 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
+            return back()->withErrors($validator)->withInput();
         }
 
-        // Here you would typically send a password reset email
+        // In a real application, you would send a password reset email here
         // For now, we'll just show a success message
-        return redirect()->back()
-            ->with('success', 'Password reset link has been sent to your email.');
+        return back()->with('success', 'Password reset instructions have been sent to your email address.');
     }
 
     /**
-     * Show the profile page.
+     * Get the redirect path after login based on user role.
      */
-    public function profile()
+    private function getRedirectPath()
     {
         $user = Auth::user();
-        return view('auth.profile', compact('user'));
-    }
-
-    /**
-     * Update the user profile.
-     */
-    public function updateProfile(Request $request)
-    {
-        $user = Auth::user();
-
-        $validator = Validator::make($request->all(), [
-            'staff_name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,' . $user->id,
-            'current_password' => 'nullable|string',
-            'new_password' => 'nullable|string|min:8|confirmed',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
+        
+        if (!$user) {
+            return '/dashboard';
         }
 
-        // Update basic info
-        $user->update([
-            'staff_name' => $request->staff_name,
-            'email' => $request->email,
-        ]);
+        return route($user->getDashboardRoute());
+    }
 
-        // Update password if provided
-        if ($request->filled('current_password') && $request->filled('new_password')) {
-            if (!Hash::check($request->current_password, $user->password)) {
-                return redirect()->back()
-                    ->withErrors(['current_password' => 'Current password is incorrect'])
-                    ->withInput();
-            }
+    /**
+     * Log login/logout activity.
+     */
+    private function logLoginActivity($user, Request $request, $type)
+    {
+        // In a real application, you might want to log this to a database table
+        // For now, we'll use Laravel's built-in logging
+        $data = [
+            'type' => $type,
+            'user_id' => $user ? $user->id : null,
+            'username' => $user ? $user->username : $request->login,
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'timestamp' => now(),
+        ];
 
-            $user->update([
-                'password' => Hash::make($request->new_password)
+        \Log::info('Auth Activity', $data);
+    }
+
+    /**
+     * Check if user is authenticated (API endpoint).
+     */
+    public function checkAuth()
+    {
+        if (Auth::check()) {
+            $user = Auth::user();
+            $user->load('role');
+
+            return response()->json([
+                'authenticated' => true,
+                'user' => [
+                    'id' => $user->id,
+                    'username' => $user->username,
+                    'staff_name' => $user->staff_name,
+                    'email' => $user->email,
+                    'role' => $user->role->role_name,
+                    'permissions' => $user->getPermissions(),
+                ],
             ]);
         }
 
-        return redirect()->back()->with('success', 'Profile updated successfully.');
+        return response()->json(['authenticated' => false], 401);
     }
 
     /**
-     * Redirect user based on their role.
+     * Get current user's information (API endpoint).
      */
-    private function redirectBasedOnRole($roleName)
+    public function me()
     {
-        switch ($roleName) {
-            case 'Super Admin':
-            case 'Admin':
-                return redirect()->route('admin.dashboard');
-            case 'HR Manager':
-                return redirect()->route('hr-manager.dashboard');
-            case 'HR Officer':
-                return redirect()->route('hr-officer.dashboard');
-            case 'Finance Manager':
-                return redirect()->route('finance-manager.dashboard');
-            case 'Finance Officer':
-                return redirect()->route('finance-officer.dashboard');
-            case 'Project Manager':
-                return redirect()->route('project-manager.dashboard');
-            case 'Team Leader':
-                return redirect()->route('team-leader.dashboard');
-            case 'Employee':
-                return redirect()->route('employee.dashboard');
-            case 'Contractor':
-                return redirect()->route('contractor.dashboard');
-            case 'Intern':
-                return redirect()->route('intern.dashboard');
-            case 'Temporary':
-                return redirect()->route('temporary.dashboard');
-            case 'Consultant':
-                return redirect()->route('consultant.dashboard');
-            case 'Guest':
-                return redirect()->route('guest.dashboard');
-            default:
-                return redirect()->route('dashboard');
+        $user = Auth::user();
+        
+        if (!$user) {
+            return response()->json(['error' => 'Unauthenticated'], 401);
         }
+
+        $user->load(['role', 'employee']);
+
+        return response()->json([
+            'user' => [
+                'id' => $user->id,
+                'emp_no' => $user->emp_no,
+                'username' => $user->username,
+                'staff_name' => $user->staff_name,
+                'des' => $user->des,
+                'email' => $user->email,
+                'role' => $user->role->role_name,
+                'permissions' => $user->getPermissions(),
+                'accessible_modules' => $user->getAccessibleModules(),
+                'dashboard_route' => $user->getDashboardRoute(),
+                'initials' => $user->initials,
+                'full_name' => $user->full_name,
+            ],
+            'employee' => $user->employee ? [
+                'emp_no' => $user->employee->emp_no,
+                'name' => $user->employee->name,
+                'designation' => $user->employee->designation,
+                'department' => $user->employee->department,
+                'phone' => $user->employee->phone,
+                'email' => $user->employee->email,
+            ] : null,
+        ]);
+    }
+
+    /**
+     * Change password.
+     */
+    public function changePassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'current_password' => 'required|string',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        $user = Auth::user();
+
+        if (!Hash::check($request->current_password, $user->password)) {
+            return response()->json(['errors' => ['current_password' => ['Current password is incorrect.']]], 422);
+        }
+
+        $user->updatePassword($request->password);
+
+        return response()->json(['message' => 'Password changed successfully.']);
+    }
+
+    /**
+     * Impersonate user (Admin only).
+     */
+    public function impersonate(User $user)
+    {
+        if (!Auth::user()->isAdmin()) {
+            return redirect()->back()->with('error', 'Unauthorized action.');
+        }
+
+        // Store original user in session
+        session(['impersonator' => Auth::id()]);
+        
+        Auth::login($user);
+
+        return redirect($this->getRedirectPath())
+                ->with('info', "You are now impersonating {$user->full_name}. Click 'Stop Impersonating' to return to your account.");
+    }
+
+    /**
+     * Stop impersonating.
+     */
+    public function stopImpersonating()
+    {
+        if (!session('impersonator')) {
+            return redirect()->route('dashboard')->with('error', 'You are not impersonating anyone.');
+        }
+
+        $originalUserId = session('impersonator');
+        session()->forget('impersonator');
+
+        $originalUser = User::find($originalUserId);
+        if ($originalUser) {
+            Auth::login($originalUser);
+        }
+
+        return redirect()->route('admin.dashboard')->with('success', 'Stopped impersonating user.');
     }
 }
