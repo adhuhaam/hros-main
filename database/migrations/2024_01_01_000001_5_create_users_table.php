@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->id();
             $table->string('emp_no', 10);
             $table->string('username', 255);
             $table->string('staff_name', 225)->nullable();
             $table->string('des', 225);
             $table->string('email', 255)->unique()->nullable();
             $table->string('password', 255);
-            $table->integer('role_id');
+            $table->unsignedBigInteger('role_id');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
             // Indexes

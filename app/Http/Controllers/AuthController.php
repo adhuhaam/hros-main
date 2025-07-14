@@ -31,12 +31,12 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'login' => 'required|string', // Can be username or email
+            'email' => 'required|email',
             'password' => 'required|string',
         ]);
 
         if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput($request->only('login'));
+            return back()->withErrors($validator)->withInput($request->only('email'));
         }
 
         // Rate limiting
@@ -44,15 +44,12 @@ class AuthController extends Controller
         if (RateLimiter::tooManyAttempts($key, 5)) {
             $seconds = RateLimiter::availableIn($key);
             return back()->withErrors([
-                'login' => "Too many login attempts. Please try again in {$seconds} seconds."
+                'email' => "Too many login attempts. Please try again in {$seconds} seconds."
             ]);
         }
 
-        // Determine if login is email or username
-        $loginType = filter_var($request->login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-        
         $credentials = [
-            $loginType => $request->login,
+            'email' => $request->email,
             'password' => $request->password
         ];
 
@@ -73,8 +70,8 @@ class AuthController extends Controller
         $this->logLoginActivity(null, $request, 'failed');
 
         return back()->withErrors([
-            'login' => 'The provided credentials do not match our records.',
-        ])->withInput($request->only('login'));
+            'email' => 'The provided credentials do not match our records.',
+        ])->withInput($request->only('email'));
     }
 
     /**

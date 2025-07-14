@@ -9,3 +9,5 @@ Homestead.yaml
 Thumbs.db
 composer.lock
 .env
+.env.example
+.env.backup
