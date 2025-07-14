@@ -34,23 +34,21 @@ class AuthController extends Controller
                 ->withInput();
         }
 
-        $credentials = $request->only('username', 'password');
+        // Find user by username
+        $user = User::where('username', $request->username)->first();
 
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
-            
-            // Update last login
-            $user->update(['last_login' => now()]);
-            
-            $request->session()->regenerate();
-
-            // Redirect based on role
-            return $this->redirectBasedOnRole($user->role);
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return redirect()->back()
+                ->withErrors(['username' => 'Invalid credentials'])
+                ->withInput();
         }
 
-        return redirect()->back()
-            ->withErrors(['username' => 'Invalid credentials'])
-            ->withInput();
+        // Log the user in manually
+        Auth::login($user);
+        $request->session()->regenerate();
+
+        // Redirect based on role
+        return $this->redirectBasedOnRole($user->roleName);
     }
 
     /**
@@ -111,7 +109,7 @@ class AuthController extends Controller
         $user = Auth::user();
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
+            'staff_name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'current_password' => 'nullable|string',
             'new_password' => 'nullable|string|min:8|confirmed',
@@ -125,7 +123,7 @@ class AuthController extends Controller
 
         // Update basic info
         $user->update([
-            'name' => $request->name,
+            'staff_name' => $request->staff_name,
             'email' => $request->email,
         ]);
 
@@ -148,27 +146,36 @@ class AuthController extends Controller
     /**
      * Redirect user based on their role.
      */
-    private function redirectBasedOnRole($role)
+    private function redirectBasedOnRole($roleName)
     {
-        switch ($role) {
+        switch ($roleName) {
+            case 'Super Admin':
             case 'Admin':
                 return redirect()->route('admin.dashboard');
-            case 'Information Officer':
-                return redirect()->route('info-officer.dashboard');
-            case 'Xpat Officer':
-                return redirect()->route('xpat-officer.dashboard');
-            case 'Leave Officer':
-                return redirect()->route('leave-officer.dashboard');
             case 'HR Manager':
                 return redirect()->route('hr-manager.dashboard');
-            case 'Payroll Officer':
-                return redirect()->route('payroll-officer.dashboard');
-            case 'Supervisor':
-                return redirect()->route('supervisor.dashboard');
-            case 'Other Staff':
-                return redirect()->route('other-staff.dashboard');
-            case 'reception':
-                return redirect()->route('reception.dashboard');
+            case 'HR Officer':
+                return redirect()->route('hr-officer.dashboard');
+            case 'Finance Manager':
+                return redirect()->route('finance-manager.dashboard');
+            case 'Finance Officer':
+                return redirect()->route('finance-officer.dashboard');
+            case 'Project Manager':
+                return redirect()->route('project-manager.dashboard');
+            case 'Team Leader':
+                return redirect()->route('team-leader.dashboard');
+            case 'Employee':
+                return redirect()->route('employee.dashboard');
+            case 'Contractor':
+                return redirect()->route('contractor.dashboard');
+            case 'Intern':
+                return redirect()->route('intern.dashboard');
+            case 'Temporary':
+                return redirect()->route('temporary.dashboard');
+            case 'Consultant':
+                return redirect()->route('consultant.dashboard');
+            case 'Guest':
+                return redirect()->route('guest.dashboard');
             default:
                 return redirect()->route('dashboard');
         }

@@ -7,6 +7,8 @@ use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\LoanController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Temporary test route - remove in production
+Route::get('/test-db', function () {
+    $users = User::all();
+    $roles = Role::all();
+    
+    return response()->json([
+        'users' => $users,
+        'roles' => $roles,
+        'user_count' => $users->count(),
+        'role_count' => $roles->count(),
+    ]);
+});
 
 // Authentication Routes
 Route::get('/', function () {
@@ -44,29 +59,41 @@ Route::middleware(['auth'])->group(function () {
     // Admin Dashboard
     Route::get('/admin/dashboard', [DashboardController::class, 'adminDashboard'])->name('admin.dashboard');
     
-    // Information Officer Dashboard
-    Route::get('/info-officer/dashboard', [DashboardController::class, 'infoOfficerDashboard'])->name('info-officer.dashboard');
-    
-    // Xpat Officer Dashboard
-    Route::get('/xpat-officer/dashboard', [DashboardController::class, 'xpatOfficerDashboard'])->name('xpat-officer.dashboard');
-    
-    // Leave Officer Dashboard
-    Route::get('/leave-officer/dashboard', [DashboardController::class, 'leaveOfficerDashboard'])->name('leave-officer.dashboard');
-    
     // HR Manager Dashboard
     Route::get('/hr-manager/dashboard', [DashboardController::class, 'hrManagerDashboard'])->name('hr-manager.dashboard');
     
-    // Payroll Officer Dashboard
-    Route::get('/payroll-officer/dashboard', [DashboardController::class, 'payrollOfficerDashboard'])->name('payroll-officer.dashboard');
+    // HR Officer Dashboard
+    Route::get('/hr-officer/dashboard', [DashboardController::class, 'hrOfficerDashboard'])->name('hr-officer.dashboard');
     
-    // Supervisor Dashboard
-    Route::get('/supervisor/dashboard', [DashboardController::class, 'supervisorDashboard'])->name('supervisor.dashboard');
+    // Finance Manager Dashboard
+    Route::get('/finance-manager/dashboard', [DashboardController::class, 'financeManagerDashboard'])->name('finance-manager.dashboard');
     
-    // Other Staff Dashboard
-    Route::get('/other-staff/dashboard', [DashboardController::class, 'otherStaffDashboard'])->name('other-staff.dashboard');
+    // Finance Officer Dashboard
+    Route::get('/finance-officer/dashboard', [DashboardController::class, 'financeOfficerDashboard'])->name('finance-officer.dashboard');
     
-    // Reception Dashboard
-    Route::get('/reception/dashboard', [DashboardController::class, 'receptionDashboard'])->name('reception.dashboard');
+    // Project Manager Dashboard
+    Route::get('/project-manager/dashboard', [DashboardController::class, 'projectManagerDashboard'])->name('project-manager.dashboard');
+    
+    // Team Leader Dashboard
+    Route::get('/team-leader/dashboard', [DashboardController::class, 'teamLeaderDashboard'])->name('team-leader.dashboard');
+    
+    // Employee Dashboard
+    Route::get('/employee/dashboard', [DashboardController::class, 'employeeDashboard'])->name('employee.dashboard');
+    
+    // Contractor Dashboard
+    Route::get('/contractor/dashboard', [DashboardController::class, 'contractorDashboard'])->name('contractor.dashboard');
+    
+    // Intern Dashboard
+    Route::get('/intern/dashboard', [DashboardController::class, 'internDashboard'])->name('intern.dashboard');
+    
+    // Temporary Dashboard
+    Route::get('/temporary/dashboard', [DashboardController::class, 'temporaryDashboard'])->name('temporary.dashboard');
+    
+    // Consultant Dashboard
+    Route::get('/consultant/dashboard', [DashboardController::class, 'consultantDashboard'])->name('consultant.dashboard');
+    
+    // Guest Dashboard
+    Route::get('/guest/dashboard', [DashboardController::class, 'guestDashboard'])->name('guest.dashboard');
 
     // Employee Routes
     Route::resource('employees', EmployeeController::class);

@@ -18,14 +18,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'emp_no',
+        'username',
+        'staff_name',
+        'des',
         'email',
         'password',
-        'username',
-        'role',
-        'status',
-        'last_login',
-        'profile_photo',
+        'role_id',
+        'created_at',
+        'updated_at',
     ];
 
     /**
@@ -46,7 +47,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
-        'last_login' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     /**
@@ -54,7 +56,15 @@ class User extends Authenticatable
      */
     public function employee()
     {
-        return $this->hasOne(Employee::class);
+        return $this->hasOne(Employee::class, 'emp_no', 'emp_no');
+    }
+
+    /**
+     * Get the role associated with the user.
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 
     /**
@@ -71,7 +81,6 @@ class User extends Authenticatable
      */
     public function getRoleNameAttribute()
     {
-        // TODO: Implement role checking when Spatie Permission is added back
-        return 'Guest';
+        return $this->role ? $this->role->name : 'Guest';
     }
 }
