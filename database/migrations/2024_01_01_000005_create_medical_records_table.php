@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('medical_records', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained()->onDelete('cascade');
+            $table->string('employee_id', 10);
+            $table->foreign('employee_id')->references('emp_no')->on('employees')->onDelete('cascade');
             $table->enum('medical_type', ['Fitness', 'Blood Test', 'Chest X-Ray', 'Eye Test', 'Dental', 'Other']);
             $table->date('test_date');
             $table->date('expiry_date')->nullable();

@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained()->onDelete('cascade');
+            $table->string('employee_id', 10);
+            $table->foreign('employee_id')->references('emp_no')->on('employees')->onDelete('cascade');
             $table->enum('loan_type', ['Personal', 'Housing', 'Vehicle', 'Education', 'Emergency', 'Other']);
             $table->decimal('amount', 12, 2);
             $table->decimal('interest_rate', 5, 2)->default(0);

@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('warnings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained()->onDelete('cascade');
+            $table->string('employee_id', 10);
+            $table->foreign('employee_id')->references('emp_no')->on('employees')->onDelete('cascade');
             $table->enum('warning_type', ['Verbal', 'Written', 'Final', 'Suspension', 'Termination']);
             $table->string('subject');
             $table->text('description');
