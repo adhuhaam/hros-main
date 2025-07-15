@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('role_name', 50)->unique();
             $table->text('description')->nullable();
-            $table->timestamp('created_at')->useCurrent();
             $table->text('permissions')->nullable();
+            $table->timestamps();
         });
     }
 

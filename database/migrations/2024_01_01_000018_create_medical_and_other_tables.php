@@ -126,7 +126,7 @@ return new class extends Migration
             $table->timestamp('created_at')->useCurrent();
         });
 
-        Schema::create('permissions', function (Blueprint $table) {
+        Schema::create('system_permissions', function (Blueprint $table) {
             $table->id();
             $table->string('key', 100);
             $table->string('label', 255);
@@ -138,7 +138,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('system_permissions');
         Schema::dropIfExists('mailing_group');
         Schema::dropIfExists('island_transfers');
         Schema::dropIfExists('termination');

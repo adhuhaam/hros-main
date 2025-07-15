@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('email', 255)->unique();
             $table->string('password', 255);
             $table->unsignedBigInteger('role_id');
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamps();
             // Indexes
             $table->index('role_id');
             // Foreign key
