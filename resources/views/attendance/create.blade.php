@@ -24,7 +24,7 @@
                             Employee <span class="text-red-500">*</span>
                         </label>
                         <select name="employee_id" id="employee_id" required
-                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 @error('employee_id') border-red-500 @enderror">
+                                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 {{ $errors->has('employee_id') ? 'border-red-500' : 'border-gray-300' }}">
                             <option value="">Select Employee</option>
                             @foreach($employees as $employee)
                                 <option value="{{ $employee->emp_no }}" {{ old('employee_id') == $employee->emp_no ? 'selected' : '' }}>
@@ -43,7 +43,7 @@
                             Date <span class="text-red-500">*</span>
                         </label>
                         <input type="date" name="date" id="date" value="{{ old('date', today()->format('Y-m-d')) }}" required
-                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 @error('date') border-red-500 @enderror">
+                               class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 {{ $errors->has('date') ? 'border-red-500' : 'border-gray-300' }}">
                         @error('date')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
@@ -55,7 +55,7 @@
                             Status <span class="text-red-500">*</span>
                         </label>
                         <select name="status" id="status" required
-                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 @error('status') border-red-500 @enderror">
+                                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 {{ $errors->has('status') ? 'border-red-500' : 'border-gray-300' }}">
                             <option value="">Select Status</option>
                             <option value="Present" {{ old('status') == 'Present' ? 'selected' : '' }}>Present</option>
                             <option value="Absent" {{ old('status') == 'Absent' ? 'selected' : '' }}>Absent</option>
@@ -79,7 +79,7 @@
                             Check In Time
                         </label>
                         <input type="time" name="check_in" id="check_in" value="{{ old('check_in') }}"
-                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 @error('check_in') border-red-500 @enderror">
+                               class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 {{ $errors->has('check_in') ? 'border-red-500' : 'border-gray-300' }}">
                         @error('check_in')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
@@ -91,7 +91,7 @@
                             Check Out Time
                         </label>
                         <input type="time" name="check_out" id="check_out" value="{{ old('check_out') }}"
-                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 @error('check_out') border-red-500 @enderror">
+                               class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 {{ $errors->has('check_out') ? 'border-red-500' : 'border-gray-300' }}">
                         @error('check_out')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
@@ -103,7 +103,7 @@
                             Notes
                         </label>
                         <textarea name="notes" id="notes" rows="3"
-                                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 @error('notes') border-red-500 @enderror"
+                                  class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 {{ $errors->has('notes') ? 'border-red-500' : 'border-gray-300' }}"
                                   placeholder="Enter any additional notes...">{{ old('notes') }}</textarea>
                         @error('notes')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>

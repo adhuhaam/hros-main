@@ -155,9 +155,15 @@
                         </div>
                         <div class="flex justify-between">
                             <span class="text-gray-600">Employment Status:</span>
-                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full 
-                                @if($employee->employment_status === 'Active') bg-green-100 text-green-800
-                                @else bg-gray-100 text-gray-800 @endif">
+                            @php
+                                $statusClasses = '';
+                                if($employee->employment_status === 'Active') {
+                                    $statusClasses = 'bg-green-100 text-green-800';
+                                } else {
+                                    $statusClasses = 'bg-gray-100 text-gray-800';
+                                }
+                            @endphp
+                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full {{ $statusClasses }}">
                                 {{ $employee->employment_status }}
                             </span>
                         </div>
@@ -191,10 +197,17 @@
                                     </p>
                                 </div>
                                 <div class="text-right">
-                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full 
-                                        @if($leave->status === 'Pending') bg-yellow-100 text-yellow-800
-                                        @elseif($leave->status === 'Approved') bg-green-100 text-green-800
-                                        @else bg-red-100 text-red-800 @endif">
+                                    @php
+                                        $statusClasses = '';
+                                        if($leave->status === 'Pending') {
+                                            $statusClasses = 'bg-yellow-100 text-yellow-800';
+                                        } elseif($leave->status === 'Approved') {
+                                            $statusClasses = 'bg-green-100 text-green-800';
+                                        } else {
+                                            $statusClasses = 'bg-red-100 text-red-800';
+                                        }
+                                    @endphp
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full {{ $statusClasses }}">
                                         {{ $leave->status }}
                                     </span>
                                 </div>
@@ -239,11 +252,19 @@
                                     </p>
                                 </div>
                                 <div class="text-right">
-                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full 
-                                        @if($loan->status === 'Pending') bg-yellow-100 text-yellow-800
-                                        @elseif($loan->status === 'Active') bg-green-100 text-green-800
-                                        @elseif($loan->status === 'Completed') bg-blue-100 text-blue-800
-                                        @else bg-red-100 text-red-800 @endif">
+                                    @php
+                                        $statusClasses = '';
+                                        if($loan->status === 'Pending') {
+                                            $statusClasses = 'bg-yellow-100 text-yellow-800';
+                                        } elseif($loan->status === 'Active') {
+                                            $statusClasses = 'bg-green-100 text-green-800';
+                                        } elseif($loan->status === 'Completed') {
+                                            $statusClasses = 'bg-blue-100 text-blue-800';
+                                        } else {
+                                            $statusClasses = 'bg-red-100 text-red-800';
+                                        }
+                                    @endphp
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full {{ $statusClasses }}">
                                         {{ $loan->status }}
                                     </span>
                                 </div>
@@ -293,10 +314,17 @@
                                         {{ \Carbon\Carbon::parse($attendance->date)->format('M d, Y') }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full 
-                                            @if($attendance->status === 'Present') bg-green-100 text-green-800
-                                            @elseif($attendance->status === 'Absent') bg-red-100 text-red-800
-                                            @else bg-yellow-100 text-yellow-800 @endif">
+                                        @php
+                                            $statusClasses = '';
+                                            if($attendance->status === 'Present') {
+                                                $statusClasses = 'bg-green-100 text-green-800';
+                                            } elseif($attendance->status === 'Absent') {
+                                                $statusClasses = 'bg-red-100 text-red-800';
+                                            } else {
+                                                $statusClasses = 'bg-yellow-100 text-yellow-800';
+                                            }
+                                        @endphp
+                                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full {{ $statusClasses }}">
                                             {{ $attendance->status }}
                                         </span>
                                     </td>

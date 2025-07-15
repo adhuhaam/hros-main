@@ -163,10 +163,17 @@
                                     </div>
                                 </div>
                                 <div class="text-right">
-                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full 
-                                        @if($leave->status === 'Pending') bg-yellow-100 text-yellow-800
-                                        @elseif($leave->status === 'Approved') bg-green-100 text-green-800
-                                        @else bg-red-100 text-red-800 @endif">
+                                    @php
+                                        $statusClasses = '';
+                                        if($leave->status === 'Pending') {
+                                            $statusClasses = 'bg-yellow-100 text-yellow-800';
+                                        } elseif($leave->status === 'Approved') {
+                                            $statusClasses = 'bg-green-100 text-green-800';
+                                        } else {
+                                            $statusClasses = 'bg-red-100 text-red-800';
+                                        }
+                                    @endphp
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full {{ $statusClasses }}">
                                         {{ $leave->status }}
                                     </span>
                                 </div>
@@ -208,9 +215,15 @@
                                     </p>
                                 </div>
                                 <div class="ml-4">
-                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full 
-                                        @if($employee->employment_status === 'Active') bg-green-100 text-green-800
-                                        @else bg-gray-100 text-gray-800 @endif">
+                                    @php
+                                        $statusClasses = '';
+                                        if($employee->employment_status === 'Active') {
+                                            $statusClasses = 'bg-green-100 text-green-800';
+                                        } else {
+                                            $statusClasses = 'bg-gray-100 text-gray-800';
+                                        }
+                                    @endphp
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full {{ $statusClasses }}">
                                         {{ $employee->employment_status }}
                                     </span>
                                 </div>
