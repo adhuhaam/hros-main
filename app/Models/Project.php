@@ -23,8 +23,9 @@ class Project extends Model
         'status',
         'images',
         'description',
-        'created_at',
     ];
+
+    public $timestamps = false;
 
     /**
      * The attributes that should be cast.
@@ -36,7 +37,6 @@ class Project extends Model
         'started_date' => 'date',
         'end_date' => 'date',
         'images' => 'array',
-        'created_at' => 'datetime',
     ];
 
     /**

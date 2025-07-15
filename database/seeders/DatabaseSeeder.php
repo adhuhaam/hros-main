@@ -13,12 +13,12 @@ class DatabaseSeeder extends Seeder
     {
         // Call seeders in order (dependencies first)
         $this->call([
-            RoleSeeder::class,
-            UserSeeder::class,
+            PermissionSeeder::class, // Create permissions first
+            RoleSeeder::class, // Then create roles with permissions
+            BasicDataSeeder::class, // Create real data without factories
             LeaveTypeSeeder::class,
             ProjectSeeder::class,
             AttendanceSeeder::class, // Create employee shifts and attendance records
-            TestDataSeeder::class, // Only runs in local/testing environments
         ]);
     }
 }

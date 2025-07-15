@@ -36,7 +36,7 @@ Route::get('/test-db', function () {
 
 // Authentication Routes
 Route::get('/', function () {
-    return redirect('/login');
+    return view('welcome');
 });
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Carbon\Carbon;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SalaryDeduction>
@@ -17,55 +18,112 @@ class SalaryDeductionFactory extends Factory
     public function definition(): array
     {
         return [
-            'emp_no' => fake()->numerify('####'),
-            'date' => fake()->date(),
-            'other_deduction' => fake()->randomFloat(2, 0, 1000),
-            'salary_advance' => fake()->randomFloat(2, 0, 2000),
-            'loan' => fake()->randomFloat(2, 0, 1500),
-            'pension' => fake()->randomFloat(2, 0, 800),
-            'medical_deduction' => fake()->randomFloat(2, 0, 500),
-            'no_pay' => fake()->randomFloat(2, 0, 1000),
-            'late' => fake()->randomFloat(2, 0, 300),
+            'emp_no' => $this->generateEmployeeNumber(),
+            'date' => $this->getRandomDate(),
+            'other_deduction' => $this->getRandomAmount(0, 1000),
+            'salary_advance' => $this->getRandomAmount(0, 2000),
+            'loan' => $this->getRandomAmount(0, 1500),
+            'pension' => $this->getRandomAmount(0, 800),
+            'medical_deduction' => $this->getRandomAmount(0, 500),
+            'no_pay' => $this->getRandomAmount(0, 1000),
+            'late' => $this->getRandomAmount(0, 300),
         ];
     }
 
     /**
-     * Indicate that the salary deduction has loan payments.
+     * Generate employee number
      */
-    public function withLoan(): static
+    private function generateEmployeeNumber(): string
     {
-        return $this->state(fn (array $attributes) => [
-            'loan' => fake()->randomFloat(2, 500, 2000),
-        ]);
+        static $counter = 1;
+        return str_pad($counter++, 4, '0', STR_PAD_LEFT);
     }
 
     /**
-     * Indicate that the salary deduction has salary advance.
+     * Get random date
      */
-    public function withAdvance(): static
+    private function getRandomDate(): string
     {
-        return $this->state(fn (array $attributes) => [
-            'salary_advance' => fake()->randomFloat(2, 1000, 3000),
-        ]);
+        return Carbon::now()->subMonths(rand(0, 12))->format('Y-m-d');
     }
 
     /**
-     * Indicate that the salary deduction has no pay leave.
+     * Get random amount
      */
-    public function withNoPay(): static
+    private function getRandomAmount(float $min, float $max): float
     {
-        return $this->state(fn (array $attributes) => [
-            'no_pay' => fake()->randomFloat(2, 500, 2000),
-        ]);
+        return round(rand($min * 100, $max * 100) / 100, 2);
     }
 
     /**
-     * Indicate that the salary deduction has late penalties.
+     * Indicate that the deduction is for loan.
      */
-    public function withLatePenalty(): static
+    public function loan(): static
     {
-        return $this->state(fn (array $attributes) => [
-            'late' => fake()->randomFloat(2, 100, 500),
-        ]);
+        return $this->state(function (array $attributes) {
+            return [
+                'loan' => $this->getRandomAmount(500, 2000),
+                'other_deduction' => 0,
+                'salary_advance' => 0,
+                'pension' => 0,
+                'medical_deduction' => 0,
+                'no_pay' => 0,
+                'late' => 0,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the deduction is for salary advance.
+     */
+    public function salaryAdvance(): static
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'salary_advance' => $this->getRandomAmount(1000, 3000),
+                'other_deduction' => 0,
+                'loan' => 0,
+                'pension' => 0,
+                'medical_deduction' => 0,
+                'no_pay' => 0,
+                'late' => 0,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the deduction is for no pay leave.
+     */
+    public function noPay(): static
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'no_pay' => $this->getRandomAmount(500, 2000),
+                'other_deduction' => 0,
+                'salary_advance' => 0,
+                'loan' => 0,
+                'pension' => 0,
+                'medical_deduction' => 0,
+                'late' => 0,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the deduction is for late attendance.
+     */
+    public function late(): static
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'late' => $this->getRandomAmount(100, 500),
+                'other_deduction' => 0,
+                'salary_advance' => 0,
+                'loan' => 0,
+                'pension' => 0,
+                'medical_deduction' => 0,
+                'no_pay' => 0,
+            ];
+        });
     }
 } 

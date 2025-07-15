@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('username', 255);
             $table->string('staff_name', 225)->nullable();
             $table->string('des', 225);
-            $table->string('email', 255)->unique()->nullable();
+            $table->string('email', 255)->unique();
             $table->string('password', 255);
             $table->unsignedBigInteger('role_id');
             $table->timestamp('created_at')->useCurrent();
@@ -25,7 +25,7 @@ return new class extends Migration
             // Indexes
             $table->index('role_id');
             // Foreign key
-            $table->foreign('role_id')->references('id')->on('roles');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

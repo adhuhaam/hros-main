@@ -139,7 +139,7 @@ class User extends Authenticatable
      */
     public function getPermissions()
     {
-        return $this->role ? $this->role->permissions : [];
+        return $this->role ? $this->role->getPermissionNames() : [];
     }
 
     /**
@@ -255,8 +255,8 @@ class User extends Authenticatable
      */
     public function scopeWithPermission($query, $permission)
     {
-        return $query->whereHas('role', function($q) use ($permission) {
-            $q->whereJsonContains('permissions', $permission);
+        return $query->whereHas('role.permissions', function($q) use ($permission) {
+            $q->where('name', $permission);
         });
     }
 

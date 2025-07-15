@@ -1,264 +1,154 @@
-# HR Management System (Laravel)
+# HRoS - Human Resource Management System
 
-A comprehensive Human Resource Management System built with Laravel, featuring employee management, leave management, attendance tracking, loan management, and more.
+## Role-Based Access Control (RBAC) & Permissions System
 
-## Features
+### Overview
 
-### Core Modules
-- **Employee Management**: Complete employee lifecycle management
-- **Leave Management**: Request, approve, and track employee leaves
-- **Attendance Tracking**: Daily attendance monitoring with check-in/check-out
-- **Loan Management**: Employee loan processing and installment tracking
-- **Document Management**: Store and manage employee documents
-- **Medical Records**: Track employee medical information
-- **Warning System**: Manage employee warnings and disciplinary actions
+This system uses a robust, database-driven role and permission management system. Permissions are stored in a dedicated `permissions` table, and roles are linked to permissions via a `role_permissions` pivot table. Users are assigned a single role, and their access to modules and actions is determined by the permissions attached to their role.
 
-### User Roles & Permissions
-- **Admin**: Full system access
-- **Information Officer**: Employee and leave management
-- **Xpat Officer**: Document and visa management
-- **Leave Officer**: Leave approval and management
-- **HR Manager**: Comprehensive HR functions
-- **Payroll Officer**: Salary and loan management
-- **Supervisor**: Team management
-- **Other Staff**: Limited access to personal information
-- **Reception**: Basic employee and accommodation management
+---
 
-### Dashboard Features
-- Role-based dashboards with relevant statistics
-- Real-time data visualization
-- Quick action buttons
-- Recent activity feeds
-- Responsive design for mobile devices
+### Database Structure
 
-## Technology Stack
+- **permissions**: Stores all possible permissions (e.g., `employees.view`, `leaves.create`).
+- **roles**: Stores all user roles (e.g., Admin, HR Manager, Employee).
+- **role_permissions**: Pivot table linking roles to permissions (many-to-many).
+- **users**: Each user has a `role_id`.
 
-- **Backend**: Laravel 10.x
-- **Frontend**: Tailwind CSS, Alpine.js
-- **Database**: MySQL
-- **Authentication**: Laravel Sanctum
-- **File Storage**: Laravel Storage
-- **PDF Generation**: DomPDF
-- **Excel Import/Export**: PhpSpreadsheet
-- **Icons**: Font Awesome, Tabler Icons
+---
 
-## Installation
+### Migrations
 
-### Prerequisites
-- PHP 8.1 or higher
-- Composer
-- MySQL 5.7 or higher
-- Node.js and NPM (for asset compilation)
+- `2025_07_14_232526_create_permissions_table.php`: Creates the `permissions` table with fields for name, display_name, description, module, action, etc.
+- `2025_07_14_232532_create_role_permissions_table.php`: Creates the `role_permissions` pivot table.
+- `2025_07_14_232738_remove_permissions_column_from_roles_table.php`: Removes the old JSON `permissions` column from the `roles` table.
 
-### Setup Instructions
+**To run all migrations:**
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd hros-laravel
-   ```
+```bash
+php artisan migrate
+```
 
-2. **Install PHP dependencies**
-   ```bash
-   composer install
-   ```
+---
 
-3. **Install Node.js dependencies**
-   ```bash
-   npm install
-   ```
+### Seeders
 
-4. **Environment setup**
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
+- **PermissionSeeder**: Populates the `permissions` table with all permissions defined in `config/modules.php` and system permissions.
+- **RoleSeeder**: Populates the `roles` table and assigns permissions to each role using the pivot table.
+- **DatabaseSeeder**: Runs `PermissionSeeder` first, then `RoleSeeder`, then other seeders.
 
-5. **Configure database**
-   Edit `.env` file with your database credentials:
-   ```env
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=hros_laravel
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
-   ```
+**To seed the database:**
 
-6. **Run migrations**
-   ```bash
-   php artisan migrate
-   ```
+```bash
+php artisan db:seed
+```
 
-7. **Seed the database (optional)**
-   ```bash
-   php artisan db:seed
-   ```
+---
 
-8. **Create storage link**
-   ```bash
-   php artisan storage:link
-   ```
+### Models
 
-9. **Compile assets**
-   ```bash
-   npm run dev
-   ```
+- **Permission**: Represents a single permission. Has relationships to roles and users (via roles).
+- **Role**: Represents a user role. Has many users and many permissions (via pivot).
+- **User**: Each user belongs to a role. Permission checks are delegated to the user's role.
 
-10. **Start the development server**
+---
+
+### How Permissions Work
+
+- Each module (e.g., Employees, Leaves, Attendance) and each action (view, create, edit, delete, etc.) is represented as a permission (e.g., `employees.view`).
+- Roles are assigned permissions via the `role_permissions` table.
+- Users inherit permissions from their assigned role.
+- The sidebar and all routes are protected by permission checks, so users only see and access what they are allowed.
+
+---
+
+### Managing Roles & Permissions (Admin)
+
+1. **Login as Admin** (default: username `admin`, password `123456`)
+2. Go to **Role Management** from the sidebar.
+3. View, create, edit, or delete roles.
+4. Click **Manage Permissions** for any role to assign or revoke permissions using a module-based interface.
+5. Save changes. The sidebar and all access will update automatically for users with that role.
+
+---
+
+### Adding/Editing Permissions
+
+- To add new permissions, update `config/modules.php` and re-run the `PermissionSeeder`.
+- To assign new permissions to roles, update the `RoleSeeder` or use the web interface as admin.
+
+---
+
+### Artisan Commands
+
+- **Run migrations:**
     ```bash
-    php artisan serve
+    php artisan migrate
+    ```
+- **Rollback last migration batch:**
+    ```bash
+    php artisan migrate:rollback
+    ```
+- **Seed permissions and roles:**
+    ```bash
+    php artisan db:seed
+    ```
+- **Seed only permissions:**
+    ```bash
+    php artisan db:seed --class=PermissionSeeder
+    ```
+- **Seed only roles:**
+    ```bash
+    php artisan db:seed --class=RoleSeeder
     ```
 
-## Database Structure
+---
 
-### Core Tables
-- `users` - System users and authentication
-- `employees` - Employee information and details
-- `leaves` - Leave requests and approvals
-- `attendance` - Daily attendance records
-- `loans` - Employee loan information
-- `loan_installments` - Loan payment tracking
-- `medical_records` - Employee medical information
-- `warnings` - Employee warnings and disciplinary actions
-- `documents` - Employee document storage
-- `holidays` - Company holiday calendar
-- `notices` - Company notices and announcements
+### Code Reference
 
-### Key Relationships
-- Users can have one employee record
-- Employees can have multiple leaves, attendance records, loans, etc.
-- All modules are interconnected for comprehensive reporting
+- **Permission checks in code:**
+    ```php
+    // In controllers or views
+    if (auth()->user()->hasPermission('employees.view')) {
+        // ...
+    }
+    ```
+- **Sidebar and navigation:**
+    - The sidebar is dynamically generated based on the user's permissions.
+- **Middleware:**
+    - All protected routes use the `CheckPermission` middleware for granular access control.
 
-## Usage
+---
 
-### Initial Setup
-1. Create an admin user through the database seeder or manually
-2. Log in with admin credentials
-3. Configure system settings
-4. Add departments, positions, and other master data
-5. Start adding employees
+### Troubleshooting
 
-### Employee Management
-- Add new employees with complete information
-- Upload profile photos and documents
-- Track employment status changes
-- Generate employee reports
+- If you get a `Base table or view already exists` error, drop the table manually or rollback migrations before running them again.
+- Always run `PermissionSeeder` before `RoleSeeder` to ensure all permissions exist before assigning them to roles.
 
-### Leave Management
-- Employees can submit leave requests
-- Managers can approve/reject leaves
-- Track leave balances and history
-- Generate leave reports
+---
 
-### Attendance Tracking
-- Daily check-in/check-out system
-- Overtime calculation
-- Attendance reports by date range
-- Absence tracking
+### Customization
 
-### Loan Management
-- Process loan applications
-- Calculate installments
-- Track payment progress
-- Generate loan reports
+- **To add a new module:**
 
-## API Endpoints
+    1. Add it to `config/modules.php` with its permissions.
+    2. Run `php artisan db:seed --class=PermissionSeeder` to add new permissions.
+    3. Assign the new permissions to roles via the admin interface or `RoleSeeder`.
 
-The system includes RESTful API endpoints for:
-- Employee CRUD operations
-- Leave management
-- Attendance tracking
-- Loan processing
-- Document management
+- **To add a new role:**
+    1. Use the admin interface or add to `RoleSeeder`.
+    2. Assign permissions as needed.
 
-## Security Features
+---
 
-- Role-based access control
-- CSRF protection
-- SQL injection prevention
-- XSS protection
-- File upload validation
-- Secure password hashing
-- Session management
+### Security
 
-## Reporting
+- Never edit the `.env` file for permissions or roles.
+- All permission logic is enforced at both the UI and route/middleware level.
 
-The system provides comprehensive reporting for:
-- Employee statistics
-- Attendance reports
-- Leave analysis
-- Loan summaries
-- Payroll reports
-- Custom date range reports
+---
 
-## Customization
+### Credits
 
-### Adding New Modules
-1. Create migration for the new table
-2. Create model with relationships
-3. Create controller with CRUD operations
-4. Add routes to `web.php`
-5. Create views for the module
-6. Update sidebar navigation
-
-### Modifying Existing Features
-- Models are designed with relationships and scopes
-- Controllers follow Laravel conventions
-- Views use Blade templating with Tailwind CSS
-- Easy to extend and modify
-
-## Deployment
-
-### Production Setup
-1. Set `APP_ENV=production` in `.env`
-2. Configure production database
-3. Set up file storage (AWS S3 recommended)
-4. Configure email settings
-5. Set up SSL certificate
-6. Configure web server (Apache/Nginx)
-
-### Performance Optimization
-- Enable Laravel caching
-- Use Redis for sessions and cache
-- Optimize database queries
-- Use CDN for static assets
-- Enable compression
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
-
-## Support
-
-For support and questions:
-- Create an issue in the repository
-- Contact the development team
-- Check the documentation
-
-## Changelog
-
-### Version 1.0.0
-- Initial release
-- Core HR modules
-- Role-based access control
-- Responsive design
-- Basic reporting
-
-## Roadmap
-
-### Upcoming Features
-- Advanced reporting with charts
-- Mobile app development
-- Integration with payroll systems
-- Advanced workflow automation
-- Multi-language support
-- Advanced analytics dashboard
+- Developed with Laravel, MySQL, and Tailwind CSS.
+- For questions or support, contact the system administrator.

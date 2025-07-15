@@ -323,16 +323,14 @@ class DashboardController extends Controller
     private function getExpiringDocuments()
     {
         return Employee::where(function($query) {
-            $query->where('passport_nic_no_expires', '<=', now()->addMonths(3))
-                  ->orWhere('wp_expiry', '<=', now()->addMonths(3));
+            $query->where('passport_expire_date', '<=', now()->addMonths(3));
         })->get();
     }
 
     private function getExpiringDocumentsCount()
     {
         return Employee::where(function($query) {
-            $query->where('passport_nic_no_expires', '<=', now()->addMonths(3))
-                  ->orWhere('wp_expiry', '<=', now()->addMonths(3));
+            $query->where('passport_expire_date', '<=', now()->addMonths(3));
         })->count();
     }
 

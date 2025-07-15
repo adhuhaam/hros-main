@@ -27,12 +27,12 @@ class UserSeeder extends Seeder
         if (!User::where('username', 'admin')->exists()) {
             User::create([
                 'id' => 1,
-                'emp_no' => 'EMP001',
+                'emp_no' => '001',
                 'username' => 'admin',
                 'staff_name' => 'System Administrator',
                 'des' => 'Administrator',
-                'email' => 'admin@company.com',
-                'password' => 'admin123', // Will be hashed automatically
+                'email' => 'adhuham@rcc.com.mv',
+                'password' => '123456', // Will be hashed automatically
                 'role_id' => $adminRole->id,
             ]);
         }
@@ -41,12 +41,12 @@ class UserSeeder extends Seeder
         if (!User::where('username', 'hrmanager')->exists()) {
             User::create([
                 'id' => 2,
-                'emp_no' => 'EMP002',
+                'emp_no' => '002',
                 'username' => 'hrmanager',
                 'staff_name' => 'HR Manager',
                 'des' => 'Human Resources Manager',
-                'email' => 'hrmanager@company.com',
-                'password' => 'hr123',
+                'email' => 'hrmanager@rcc.com.mv',
+                'password' => '123456',
                 'role_id' => $hrManagerRole->id,
             ]);
         }
@@ -55,12 +55,12 @@ class UserSeeder extends Seeder
         if (!User::where('username', 'hrofficer')->exists()) {
             User::create([
                 'id' => 3,
-                'emp_no' => 'EMP003',
+                'emp_no' => '003',
                 'username' => 'hrofficer',
                 'staff_name' => 'HR Officer',
                 'des' => 'Human Resources Officer',
-                'email' => 'hrofficer@company.com',
-                'password' => 'hr123',
+                'email' => 'hrofficer@rcc.com.mv',
+                'password' => '123456',
                 'role_id' => $hrOfficerRole->id,
             ]);
         }
@@ -69,12 +69,12 @@ class UserSeeder extends Seeder
         if (!User::where('username', 'financemanager')->exists()) {
             User::create([
                 'id' => 4,
-                'emp_no' => 'EMP004',
+                'emp_no' => '004',
                 'username' => 'financemanager',
                 'staff_name' => 'Finance Manager',
                 'des' => 'Finance Manager',
-                'email' => 'finance@company.com',
-                'password' => 'finance123',
+                'email' => 'finance@rcc.com.mv',
+                'password' => '123456',
                 'role_id' => $financeManagerRole->id,
             ]);
         }
@@ -83,12 +83,12 @@ class UserSeeder extends Seeder
         if (!User::where('username', 'employee')->exists()) {
             User::create([
                 'id' => 5,
-                'emp_no' => 'EMP005',
+                'emp_no' => '005',
                 'username' => 'employee',
                 'staff_name' => 'John Doe',
                 'des' => 'Software Developer',
-                'email' => 'employee@company.com',
-                'password' => 'employee123',
+                'email' => 'employee@rcc.com.mv',
+                'password' => '123456',
                 'role_id' => $employeeRole->id,
             ]);
         }
@@ -107,43 +107,43 @@ class UserSeeder extends Seeder
         $roles = Role::all();
         $testUsers = [
             [
-                'emp_no' => 'EMP010',
+                'emp_no' => '010',
                 'username' => 'projectmanager',
                 'staff_name' => 'Alice Johnson',
                 'des' => 'Project Manager',
-                'email' => 'alice@company.com',
+                'email' => 'alice@rcc.com.mv',
                 'role_name' => 'Project Manager',
             ],
             [
-                'emp_no' => 'EMP011',
+                'emp_no' => '011',
                 'username' => 'teamleader',
                 'staff_name' => 'Bob Smith',
                 'des' => 'Team Leader',
-                'email' => 'bob@company.com',
+                'email' => 'bob@rcc.com.mv',
                 'role_name' => 'Team Leader',
             ],
             [
-                'emp_no' => 'EMP012',
+                'emp_no' => '012',
                 'username' => 'developer1',
                 'staff_name' => 'Carol Williams',
                 'des' => 'Senior Developer',
-                'email' => 'carol@company.com',
+                'email' => 'carol@rcc.com.mv',
                 'role_name' => 'Employee',
             ],
             [
-                'emp_no' => 'EMP013',
+                'emp_no' => '013',
                 'username' => 'developer2',
                 'staff_name' => 'David Brown',
                 'des' => 'Junior Developer',
-                'email' => 'david@company.com',
+                'email' => 'david@rcc.com.mv',
                 'role_name' => 'Employee',
             ],
             [
-                'emp_no' => 'EMP014',
+                'emp_no' => '014',
                 'username' => 'financeofficer',
                 'staff_name' => 'Emma Davis',
                 'des' => 'Finance Officer',
-                'email' => 'emma@company.com',
+                'email' => 'emma@rcc.com.mv',
                 'role_name' => 'Finance Officer',
             ],
         ];
@@ -159,7 +159,7 @@ class UserSeeder extends Seeder
                         'staff_name' => $userData['staff_name'],
                         'des' => $userData['des'],
                         'email' => $userData['email'],
-                        'password' => 'password123', // Default password for test users
+                        'password' => '123456', // Default password for test users
                         'role_id' => $role->id,
                     ]);
                 }

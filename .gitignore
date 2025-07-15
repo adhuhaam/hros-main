@@ -11,3 +11,4 @@ composer.lock
 .env
 .env.example
 .env.backup
+.cursor

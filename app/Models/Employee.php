@@ -47,7 +47,7 @@ class Employee extends Model
         'department',
         'nationality',
         'passport_nic_no',
-        'passport_nic_no_expires',
+        'passport_expire_date',
         'dob',
         'wp_no',
         'date_of_join',
@@ -68,12 +68,11 @@ class Employee extends Model
         'termination_date',
         'level',
         'company',
-        'player_id',
     ];
 
     protected $casts = [
         'xpat_join_date' => 'date',
-        'passport_nic_no_expires' => 'date',
+        'passport_expire_date' => 'date',
         'dob' => 'date',
         'date_of_join' => 'date',
         'basic_salary' => 'decimal:2',

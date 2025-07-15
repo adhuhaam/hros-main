@@ -21,13 +21,13 @@ return new class extends Migration
             $table->string('department', 255)->nullable();
             $table->string('nationality', 100)->nullable();
             $table->string('passport_nic_no', 100)->nullable();
-            $table->date('passport_nic_no_expires')->nullable();
+            $table->date('passport_expire_date')->nullable();
             $table->date('dob')->nullable();
             $table->string('wp_no', 100)->nullable();
             $table->date('date_of_join')->nullable();
-            $table->string('contact_number', 15)->nullable();
+            $table->string('contact_number', 50)->nullable();
             $table->string('contact_number_foregn', 225)->nullable();
-            $table->string('emergency_contact_number', 15)->nullable();
+            $table->string('emergency_contact_number', 50)->nullable();
             $table->string('emergency_contact_name', 255)->nullable();
             $table->enum('employment_status', [
                 'Active', 'Terminated', 'Resigned', 'Rejoined', 'Dead', 'Retired', 'Missing'
@@ -47,7 +47,6 @@ return new class extends Migration
                 'RASHEED CARPENTRY AND CONSTRUCTION PVT LTD',
                 'NAZRASH COMPANY PVT LTD'
             ])->default('RASHEED CARPENTRY AND CONSTRUCTION PVT LTD');
-            $table->string('player_id', 100)->nullable();
             
             // Indexes
             $table->index('name');

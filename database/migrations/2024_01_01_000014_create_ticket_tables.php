@@ -37,7 +37,7 @@ return new class extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
             $table->text('remarks')->nullable();
-            $table->integer('price_id')->nullable();
+            $table->unsignedBigInteger('price_id')->nullable();
             $table->string('ticket_file', 255)->nullable();
             $table->string('invoice_file', 255)->nullable();
             

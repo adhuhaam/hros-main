@@ -54,7 +54,6 @@ return new class extends Migration
         Schema::create('push_logs', function (Blueprint $table) {
             $table->id();
             $table->string('emp_no', 20)->nullable();
-            $table->string('player_id', 100)->nullable();
             $table->string('title', 255)->nullable();
             $table->text('message')->nullable();
             $table->timestamp('sent_at')->useCurrent();

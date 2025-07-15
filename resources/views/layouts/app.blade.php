@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'HR Management System')</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -35,77 +39,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- Sidebar -->
-    <div id="sidebar" class="sidebar fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg">
-        <div class="flex items-center justify-between p-4 border-b">
-            <div class="flex items-center">
-                <img src="/assets/images/logos/dark-logo.svg" alt="Logo" class="h-8">
-                <span class="ml-2 text-lg font-semibold text-gray-800">HRoS</span>
-            </div>
-            <button id="sidebar-close" class="lg:hidden text-gray-500 hover:text-gray-700">
-                <i class="ti ti-x text-xl"></i>
-            </button>
-        </div>
-        
-        <nav class="mt-4">
-            <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                Navigation
-            </div>
-            
-            <ul class="space-y-1">
-                @if(auth()->user()->role === 'Admin')
-                    <li>
-                        <a href="{{ route('admin.dashboard') }}" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-                            <i class="fa-solid fa-house mr-3"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('employees.index') }}" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-                            <i class="fa-solid fa-users mr-3"></i>
-                            <span>Employees</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('leaves.index') }}" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-                            <i class="fa-solid fa-calendar mr-3"></i>
-                            <span>Leave Management</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('attendance.index') }}" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-                            <i class="fa-solid fa-clock mr-3"></i>
-                            <span>Attendance</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('loans.index') }}" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-                            <i class="fa-solid fa-money-bill mr-3"></i>
-                            <span>Loans</span>
-                        </a>
-                    </li>
-                @endif
-                
-                <!-- Profile -->
-                <li class="border-t mt-4 pt-4">
-                    <a href="{{ route('profile') }}" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-                        <i class="fa-solid fa-user mr-3"></i>
-                        <span>Profile</span>
-                    </a>
-                </li>
-                
-                <!-- Logout -->
-                <li>
-                    <form method="POST" action="{{ route('logout') }}" class="inline">
-                        @csrf
-                        <button type="submit" class="w-full flex items-center px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600">
-                            <i class="fa-solid fa-sign-out-alt mr-3"></i>
-                            <span>Logout</span>
-                        </button>
-                    </form>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    @include('components.sidebar')
 
     <!-- Main Content -->
     <div class="lg:ml-64">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -36,7 +37,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $allPermissions = Role::getGroupedPermissions();
+        $allPermissions = Permission::getGroupedByModule();
         
         return view('roles.create', compact('allPermissions'));
     }
@@ -50,7 +51,7 @@ class RoleController extends Controller
             'role_name' => 'required|string|max:50|unique:roles',
             'description' => 'nullable|string',
             'permissions' => 'array',
-            'permissions.*' => 'string|in:' . implode(',', Role::getAllPermissions()),
+            'permissions.*' => 'string|exists:permissions,name',
         ]);
 
         if ($validator->fails()) {
@@ -60,8 +61,11 @@ class RoleController extends Controller
         $role = Role::create([
             'role_name' => $request->role_name,
             'description' => $request->description,
-            'permissions' => $request->permissions ?? [],
         ]);
+
+        if ($request->permissions) {
+            $role->setPermissions($request->permissions);
+        }
 
         return redirect()->route('roles.index')
                         ->with('success', 'Role created successfully.');
@@ -72,8 +76,8 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        $role->load('users');
-        $groupedPermissions = Role::getGroupedPermissions();
+        $role->load(['users', 'permissions']);
+        $groupedPermissions = Permission::getGroupedByModule();
         
         return view('roles.show', compact('role', 'groupedPermissions'));
     }
@@ -83,8 +87,8 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        $allPermissions = Role::getGroupedPermissions();
-        $rolePermissions = $role->permissions ?? [];
+        $allPermissions = Permission::getGroupedByModule();
+        $rolePermissions = $role->getPermissionNames();
         
         return view('roles.edit', compact('role', 'allPermissions', 'rolePermissions'));
     }
@@ -98,7 +102,7 @@ class RoleController extends Controller
             'role_name' => ['required', 'string', 'max:50', Rule::unique('roles')->ignore($role->id)],
             'description' => 'nullable|string',
             'permissions' => 'array',
-            'permissions.*' => 'string|in:' . implode(',', Role::getAllPermissions()),
+            'permissions.*' => 'string|exists:permissions,name',
         ]);
 
         if ($validator->fails()) {
@@ -108,8 +112,11 @@ class RoleController extends Controller
         $role->update([
             'role_name' => $request->role_name,
             'description' => $request->description,
-            'permissions' => $request->permissions ?? [],
         ]);
+
+        if ($request->permissions) {
+            $role->setPermissions($request->permissions);
+        }
 
         return redirect()->route('roles.index')
                         ->with('success', 'Role updated successfully.');
@@ -141,8 +148,8 @@ class RoleController extends Controller
      */
     public function permissions(Role $role)
     {
-        $allPermissions = Role::getGroupedPermissions();
-        $rolePermissions = $role->permissions ?? [];
+        $allPermissions = Permission::getGroupedByModule();
+        $rolePermissions = $role->getPermissionNames();
         
         return view('roles.permissions', compact('role', 'allPermissions', 'rolePermissions'));
     }
@@ -154,7 +161,7 @@ class RoleController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'permissions' => 'array',
-            'permissions.*' => 'string|in:' . implode(',', Role::getAllPermissions()),
+            'permissions.*' => 'string|exists:permissions,name',
         ]);
 
         if ($validator->fails()) {
@@ -175,8 +182,11 @@ class RoleController extends Controller
         $newRole = Role::create([
             'role_name' => $role->role_name . ' (Copy)',
             'description' => $role->description . ' (Duplicate)',
-            'permissions' => $role->permissions,
         ]);
+
+        // Copy permissions
+        $permissionIds = $role->permissions()->pluck('permissions.id')->toArray();
+        $newRole->permissions()->sync($permissionIds);
 
         return redirect()->route('roles.edit', $newRole)
                         ->with('success', 'Role duplicated successfully. Please update the name and description.');
@@ -188,8 +198,8 @@ class RoleController extends Controller
     public function getAllPermissions()
     {
         return response()->json([
-            'permissions' => Role::getAllPermissions(),
-            'grouped_permissions' => Role::getGroupedPermissions(),
+            'permissions' => Permission::getAllNames(),
+            'grouped_permissions' => Permission::getGroupedByModule(),
         ]);
     }
 
@@ -202,7 +212,7 @@ class RoleController extends Controller
             'role_permissions' => 'required|array',
             'role_permissions.*.role_id' => 'required|exists:roles,id',
             'role_permissions.*.permissions' => 'array',
-            'role_permissions.*.permissions.*' => 'string|in:' . implode(',', Role::getAllPermissions()),
+            'role_permissions.*.permissions.*' => 'string|exists:permissions,name',
         ]);
 
         if ($validator->fails()) {

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('title', 255);
             $table->text('description')->nullable();
             $table->unsignedBigInteger('status_id')->nullable();
-            $table->integer('assigned_to')->nullable();
+            $table->unsignedBigInteger('assigned_to')->nullable();
             $table->date('due_date')->nullable();
             $table->string('priority', 20)->nullable();
             $table->timestamp('created_at')->useCurrent();
