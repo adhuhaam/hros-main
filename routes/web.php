@@ -189,6 +189,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     // Reports Routes
+    Route::get('/reports', [App\Http\Controllers\ReportController::class, 'index'])->name('reports.index');
     Route::prefix('reports')->group(function () {
         Route::get('/employee', [ReportController::class, 'employee'])->name('reports.employee');
         Route::get('/attendance', [ReportController::class, 'attendance'])->name('reports.attendance');
