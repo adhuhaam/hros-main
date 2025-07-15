@@ -26,7 +26,6 @@ class UserSeeder extends Seeder
         // Create default admin user
         if (!User::where('username', 'admin')->exists()) {
             User::create([
-                'id' => 1,
                 'emp_no' => '001',
                 'username' => 'admin',
                 'staff_name' => 'System Administrator',
@@ -40,7 +39,6 @@ class UserSeeder extends Seeder
         // Create HR Manager user
         if (!User::where('username', 'hrmanager')->exists()) {
             User::create([
-                'id' => 2,
                 'emp_no' => '002',
                 'username' => 'hrmanager',
                 'staff_name' => 'HR Manager',
@@ -54,7 +52,6 @@ class UserSeeder extends Seeder
         // Create HR Officer user
         if (!User::where('username', 'hrofficer')->exists()) {
             User::create([
-                'id' => 3,
                 'emp_no' => '003',
                 'username' => 'hrofficer',
                 'staff_name' => 'HR Officer',
@@ -68,7 +65,6 @@ class UserSeeder extends Seeder
         // Create Finance Manager user
         if (!User::where('username', 'financemanager')->exists()) {
             User::create([
-                'id' => 4,
                 'emp_no' => '004',
                 'username' => 'financemanager',
                 'staff_name' => 'Finance Manager',
@@ -82,7 +78,6 @@ class UserSeeder extends Seeder
         // Create sample employee user
         if (!User::where('username', 'employee')->exists()) {
             User::create([
-                'id' => 5,
                 'emp_no' => '005',
                 'username' => 'employee',
                 'staff_name' => 'John Doe',
