@@ -15,7 +15,6 @@ class ProjectSeeder extends Seeder
     {
         $projects = [
             [
-                'id' => 1,
                 'name' => 'Main Office Building',
                 'description' => 'Construction of the main office building',
                 'project_value' => 5000000.00,
@@ -26,7 +25,6 @@ class ProjectSeeder extends Seeder
                 'created_at' => now(),
             ],
             [
-                'id' => 2,
                 'name' => 'Residential Complex A',
                 'description' => 'Luxury residential complex development',
                 'project_value' => 8000000.00,
@@ -37,7 +35,6 @@ class ProjectSeeder extends Seeder
                 'created_at' => now(),
             ],
             [
-                'id' => 3,
                 'name' => 'Shopping Mall',
                 'description' => 'Modern shopping mall construction',
                 'project_value' => 12000000.00,
@@ -48,7 +45,6 @@ class ProjectSeeder extends Seeder
                 'created_at' => now(),
             ],
             [
-                'id' => 4,
                 'name' => 'Highway Extension',
                 'description' => 'Highway extension project',
                 'project_value' => 15000000.00,
@@ -59,7 +55,6 @@ class ProjectSeeder extends Seeder
                 'created_at' => now(),
             ],
             [
-                'id' => 5,
                 'name' => 'Hospital Renovation',
                 'description' => 'Renovation of existing hospital facilities',
                 'project_value' => 3000000.00,
