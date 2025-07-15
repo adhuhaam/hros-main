@@ -15,7 +15,6 @@ class LeaveTypeSeeder extends Seeder
     {
         $leaveTypes = [
             [
-                'id' => 1,
                 'name' => 'Annual Leave',
                 'description' => 'Regular annual leave entitlement',
                 'max_days_per_year' => 21,
@@ -25,7 +24,6 @@ class LeaveTypeSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 2,
                 'name' => 'Sick Leave',
                 'description' => 'Medical leave for illness',
                 'max_days_per_year' => 14,
@@ -35,7 +33,6 @@ class LeaveTypeSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 3,
                 'name' => 'Maternity Leave',
                 'description' => 'Leave for expecting mothers',
                 'max_days_per_year' => 90,
@@ -45,7 +42,6 @@ class LeaveTypeSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 4,
                 'name' => 'Paternity Leave',
                 'description' => 'Leave for new fathers',
                 'max_days_per_year' => 14,
@@ -55,7 +51,6 @@ class LeaveTypeSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 5,
                 'name' => 'Unpaid Leave',
                 'description' => 'Leave without pay',
                 'max_days_per_year' => 0,
@@ -65,7 +60,6 @@ class LeaveTypeSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 6,
                 'name' => 'Emergency Leave',
                 'description' => 'Emergency personal leave',
                 'max_days_per_year' => 3,

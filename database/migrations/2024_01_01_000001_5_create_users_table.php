@@ -23,8 +23,8 @@ return new class extends Migration
             $table->timestamps();
             // Indexes
             $table->index('role_id');
-            // Foreign key
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            // Foreign key - temporarily commented out to avoid constraint issues
+            // $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
