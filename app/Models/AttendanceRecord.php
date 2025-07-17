@@ -14,7 +14,7 @@ class AttendanceRecord extends Model
     protected $table = 'attendance_records';
 
     protected $fillable = [
-        'employee_id',
+        'emp_no',
         'date',
         'time_in',
         'time_out',

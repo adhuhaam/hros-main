@@ -40,7 +40,7 @@ class AttendanceRecordFactory extends Factory
             'island_name' => $this->getRandomIsland(),
             'site_name' => $this->getRandomSite(),
             'status' => $statuses[array_rand($statuses)],
-            'upload_date' => $this->getRandomDate(),
+            'upload_date' => $this->getSimpleRandomDate(),
         ];
     }
 
@@ -112,11 +112,14 @@ class AttendanceRecordFactory extends Factory
     }
 
     /**
-     * Get random date
+     * Get random date (memory efficient)
      */
-    private function getRandomDate(): string
+    private function getSimpleRandomDate(): string
     {
-        return Carbon::now()->subDays(rand(0, 365))->format('Y-m-d');
+        $year = rand(2023, 2025);
+        $month = str_pad(rand(1, 12), 2, '0', STR_PAD_LEFT);
+        $day = str_pad(rand(1, 28), 2, '0', STR_PAD_LEFT);
+        return $year . '-' . $month . '-' . $day;
     }
 
     /**

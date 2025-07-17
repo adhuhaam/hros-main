@@ -24,25 +24,55 @@ class TestDataSeeder extends Seeder
             return;
         }
 
+        $this->command->info('Creating test data...');
+
         // Create additional users for testing
-        User::factory(10)->create();
+        $this->command->info('Creating users...');
+        User::factory(5)->create();
 
         // Create employees
-        Employee::factory(50)->create();
+        $this->command->info('Creating employees...');
+        Employee::factory(20)->create();
 
-        // Create attendance records
-        AttendanceRecord::factory(200)->create();
+        // Create attendance records in smaller batches
+        $this->command->info('Creating attendance records...');
+        $this->createAttendanceRecordsInBatches(50);
 
         // Create leave records
-        LeaveRecord::factory(30)->create();
+        $this->command->info('Creating leave records...');
+        LeaveRecord::factory(10)->create();
 
         // Create warnings
-        Warning::factory(15)->create();
+        $this->command->info('Creating warnings...');
+        Warning::factory(5)->create();
 
         // Create salary income records
-        SalaryIncome::factory(100)->create();
+        $this->command->info('Creating salary income records...');
+        SalaryIncome::factory(30)->create();
 
         // Create salary deduction records
-        SalaryDeduction::factory(80)->create();
+        $this->command->info('Creating salary deduction records...');
+        SalaryDeduction::factory(25)->create();
+
+        $this->command->info('Test data created successfully!');
+    }
+
+    /**
+     * Create attendance records in smaller batches to avoid memory issues
+     */
+    private function createAttendanceRecordsInBatches(int $totalRecords): void
+    {
+        $batchSize = 10;
+        $batches = ceil($totalRecords / $batchSize);
+
+        for ($i = 0; $i < $batches; $i++) {
+            $recordsToCreate = min($batchSize, $totalRecords - ($i * $batchSize));
+            AttendanceRecord::factory($recordsToCreate)->create();
+            
+            // Clear memory after each batch
+            if (function_exists('gc_collect_cycles')) {
+                gc_collect_cycles();
+            }
+        }
     }
 } 

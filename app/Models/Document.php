@@ -10,7 +10,7 @@ class Document extends Model
     use HasFactory;
 
     protected $fillable = [
-        'employee_id',
+        'emp_no',
         'document_type',
         'title',
         'description',
@@ -41,7 +41,7 @@ class Document extends Model
      */
     public function employee()
     {
-        return $this->belongsTo(Employee::class, 'employee_id', 'emp_no');
+        return $this->belongsTo(Employee::class, 'emp_no', 'emp_no');
     }
 
     /**

@@ -3,9 +3,18 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\MedicalRecordController;
+use App\Http\Controllers\WarningController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\NoticeController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\Role;
@@ -100,6 +109,12 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('employees', EmployeeController::class);
         Route::get('/employees/export', [EmployeeController::class, 'export'])->name('employees.export')->middleware('permission:employees.export');
         Route::post('/employees/import', [EmployeeController::class, 'import'])->name('employees.import')->middleware('permission:employees.import');
+        
+        // Employee Document Routes
+        Route::post('/employees/{employee}/documents', [EmployeeController::class, 'uploadDocument'])->name('employees.documents.upload')->middleware('permission:documents.create');
+        Route::delete('/employees/{employee}/documents/{document}', [EmployeeController::class, 'deleteDocument'])->name('employees.documents.delete')->middleware('permission:documents.delete');
+        Route::post('/employees/{employee}/documents/{document}/verify', [EmployeeController::class, 'verifyDocument'])->name('employees.documents.verify')->middleware('permission:documents.verify');
+        Route::get('/employees/{employee}/documents/{document}/download', [EmployeeController::class, 'downloadDocument'])->name('employees.documents.download')->middleware('permission:documents.view');
     });
 
     // Leave Routes
@@ -107,6 +122,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('leaves', LeaveController::class);
         Route::post('/leaves/{leave}/approve', [LeaveController::class, 'approve'])->name('leaves.approve')->middleware('permission:leaves.approve');
         Route::post('/leaves/{leave}/reject', [LeaveController::class, 'reject'])->name('leaves.reject')->middleware('permission:leaves.reject');
+        Route::get('/leaves/export', [LeaveController::class, 'export'])->name('leaves.export')->middleware('permission:leaves.export');
     });
 
     // Attendance Routes
@@ -132,6 +148,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/loans/{loan}/approve', [LoanController::class, 'approve'])->name('loans.approve')->middleware('permission:loans.approve');
         Route::post('/loans/{loan}/reject', [LoanController::class, 'reject'])->name('loans.reject')->middleware('permission:loans.reject');
         Route::post('/loans/{loan}/pay-installment', [LoanController::class, 'payInstallment'])->name('loans.pay-installment')->middleware('permission:loans.pay_installment');
+        Route::get('/loans/export', [LoanController::class, 'export'])->name('loans.export')->middleware('permission:loans.export');
     });
 
     // User Management Routes
@@ -166,26 +183,44 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/users/{user}/impersonate', [AuthController::class, 'impersonate'])->name('users.impersonate');
     });
 
-    // Additional HR Modules (to be implemented)
-    Route::prefix('hr')->group(function () {
-        // Medical Records
+    // Medical Records Routes
+    Route::middleware(['permission:medical_records.view'])->group(function () {
         Route::resource('medical-records', MedicalRecordController::class);
-        
-        // Warnings
+        Route::get('/medical-records/{medicalRecord}/download', [MedicalRecordController::class, 'download'])->name('medical-records.download')->middleware('permission:medical_records.download');
+        Route::get('/medical-records/export', [MedicalRecordController::class, 'export'])->name('medical-records.export')->middleware('permission:medical_records.export');
+    });
+
+    // Warnings Routes
+    Route::middleware(['permission:warnings.view'])->group(function () {
         Route::resource('warnings', WarningController::class);
-        
-        // Documents
+        Route::get('/warnings/export', [WarningController::class, 'export'])->name('warnings.export')->middleware('permission:warnings.export');
+    });
+
+    // Documents Routes (Standalone)
+    Route::middleware(['permission:documents.view'])->group(function () {
         Route::resource('documents', DocumentController::class);
-        
-        // Holidays
+        Route::get('/documents/{document}/download', [DocumentController::class, 'download'])->name('documents.download')->middleware('permission:documents.download');
+        Route::post('/documents/{document}/verify', [DocumentController::class, 'verify'])->name('documents.verify')->middleware('permission:documents.verify');
+        Route::get('/documents/export', [DocumentController::class, 'export'])->name('documents.export')->middleware('permission:documents.export');
+    });
+
+    // Holidays Routes
+    Route::middleware(['permission:holidays.view'])->group(function () {
         Route::resource('holidays', HolidayController::class);
-        
-        // Notices
+        Route::get('/holidays/export', [HolidayController::class, 'export'])->name('holidays.export')->middleware('permission:holidays.export');
+    });
+
+    // Notices Routes
+    Route::middleware(['permission:notices.view'])->group(function () {
         Route::resource('notices', NoticeController::class);
-        
-        // Settings
-        Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
-        Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
+        Route::post('/notices/{notice}/toggle-featured', [NoticeController::class, 'toggleFeatured'])->name('notices.toggle-featured')->middleware('permission:notices.edit');
+        Route::get('/notices/export', [NoticeController::class, 'export'])->name('notices.export')->middleware('permission:notices.export');
+    });
+
+    // Settings Routes
+    Route::middleware(['permission:settings.view'])->group(function () {
+        Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
+        Route::put('/settings', [SettingsController::class, 'update'])->name('settings.update')->middleware('permission:settings.edit');
     });
 
     // Reports Routes

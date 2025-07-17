@@ -124,7 +124,7 @@ class Employee extends Model
      */
     public function warnings()
     {
-        return $this->hasMany(Warning::class, 'emp_no', 'emp_no');
+        return $this->hasMany(Warning::class, 'employee_id', 'emp_no');
     }
 
     /**

@@ -7,7 +7,6 @@ use App\Models\Employee;
 use App\Models\EmployeeShift;
 use App\Models\Attendance;
 use App\Models\User;
-use Carbon\Carbon;
 
 class AttendanceSeeder extends Seeder
 {
@@ -78,9 +77,9 @@ class AttendanceSeeder extends Seeder
             $this->createEmployeeShift($employee);
         }
 
-        // Create attendance records for the last 2 days only
-        $this->command->info('Creating attendance records...');
-        $this->createAttendanceRecords($employees);
+        // Skip attendance records for now - will be added later
+        $this->command->info('Skipping attendance records - will be added later...');
+        // $this->createAttendanceRecords($employees);
 
         $this->command->info('Attendance seeding completed!');
     }
@@ -100,7 +99,7 @@ class AttendanceSeeder extends Seeder
             'grace_period_minutes' => 15,
             'is_active' => true,
             'working_days' => [1, 2, 3, 4, 5], // Monday to Friday
-            'effective_from' => Carbon::now()->subMonths(3),
+            'effective_from' => date('Y-m-d', strtotime('-3 months')),
             'effective_to' => null,
             'notes' => 'Default shift assignment'
         ]);
@@ -111,8 +110,8 @@ class AttendanceSeeder extends Seeder
      */
     private function createAttendanceRecords($employees): void
     {
-        $startDate = Carbon::now()->subDays(2);
-        $endDate = Carbon::now();
+        // Only create one attendance record per employee for today
+        $today = date('Y-m-d');
 
         foreach ($employees as $employee) {
             $shift = EmployeeShift::where('employee_id', $employee->emp_no)
@@ -123,20 +122,8 @@ class AttendanceSeeder extends Seeder
                 continue;
             }
 
-            $currentDate = $startDate->copy();
-            
-            while ($currentDate <= $endDate) {
-                // Skip weekends
-                if (!in_array($currentDate->dayOfWeek, $shift->working_days)) {
-                    $currentDate->addDay();
-                    continue;
-                }
-
-                // Create simple attendance record
-                $this->createSimpleAttendanceRecord($employee, $shift, $currentDate);
-
-                $currentDate->addDay();
-            }
+            // Create only one simple attendance record
+            $this->createSimpleAttendanceRecord($employee, $shift, $today);
         }
     }
 
@@ -153,7 +140,7 @@ class AttendanceSeeder extends Seeder
 
         Attendance::create([
             'employee_id' => $employee->emp_no,
-            'date' => $date->format('Y-m-d'),
+            'date' => $date,
             'scheduled_start' => $shift->start_time,
             'scheduled_end' => $shift->end_time,
             'check_in' => $checkIn,
@@ -172,7 +159,7 @@ class AttendanceSeeder extends Seeder
             'manager_notes' => 'Approved',
             'is_approved' => true,
             'approved_by' => User::first()?->id,
-            'approved_at' => $date->copy()->addHours(2),
+            'approved_at' => date('Y-m-d H:i:s', strtotime($date . ' +2 hours')),
         ]);
     }
 } 

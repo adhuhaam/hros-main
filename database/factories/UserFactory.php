@@ -4,8 +4,6 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
-use Carbon\Carbon;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -33,10 +31,6 @@ class UserFactory extends Factory
             'email' => $email,
             'password' => Hash::make('password'), // Default password
             'role_id' => rand(1, 14),
-            'remember_token' => Str::random(10),
-            'email_verified_at' => Carbon::now(),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
         ];
     }
 
@@ -107,7 +101,7 @@ class UserFactory extends Factory
     {
         return $this->state(function (array $attributes) {
             return [
-                'email_verified_at' => null,
+                // No email_verified_at column in this schema
             ];
         });
     }

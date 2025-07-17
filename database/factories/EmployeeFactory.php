@@ -18,12 +18,10 @@ class EmployeeFactory extends Factory
     public function definition(): array
     {
         $nationalities = ['Maldives', 'Bangladesh', 'India', 'Sri Lanka', 'Nepal', 'Pakistan', 'Philippines'];
-        $employmentStatuses = ['Active', 'Inactive', 'Terminated', 'Resigned', 'Retired'];
+        $employmentStatuses = ['Active', 'Terminated', 'Resigned', 'Rejoined', 'Dead', 'Retired', 'Missing'];
         $companies = [
             'RASHEED CARPENTRY AND CONSTRUCTION PVT LTD',
-            'MALDIVES CONSTRUCTION COMPANY',
-            'ISLAND BUILDERS LTD',
-            'COASTAL DEVELOPMENTS'
+            'NAZRASH COMPANY PVT LTD'
         ];
 
         $gender = $this->getRandomGender();

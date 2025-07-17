@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\User;
+use App\Models\Document;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -30,10 +31,11 @@ class EmployeeController extends Controller
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
-                $q->where('first_name', 'like', "%{$search}%")
-                  ->orWhere('last_name', 'like', "%{$search}%")
-                  ->orWhere('employee_id', 'like', "%{$search}%")
-                  ->orWhere('email', 'like', "%{$search}%");
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('emp_no', 'like', "%{$search}%")
+                  ->orWhere('emp_email', 'like', "%{$search}%")
+                  ->orWhere('company_email', 'like', "%{$search}%")
+                  ->orWhere('contact_number', 'like', "%{$search}%");
             });
         }
 
@@ -62,18 +64,17 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'employee_id' => 'required|string|unique:employees,employee_id',
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'email' => 'required|email|unique:employees,email',
-            'phone' => 'required|string|max:20',
-            'date_of_birth' => 'required|date',
+            'emp_no' => 'required|string|unique:employees,emp_no',
+            'name' => 'required|string|max:255',
             'gender' => 'required|in:Male,Female,Other',
+            'dob' => 'required|date',
             'nationality' => 'required|string|max:255',
+            'designation' => 'required|string|max:255',
             'department' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
-            'hire_date' => 'required|date',
-            'salary' => 'required|numeric|min:0',
+            'date_of_join' => 'required|date',
+            'basic_salary' => 'required|numeric|min:0',
+            'contact_number' => 'required|string|max:20',
+            'employment_status' => 'required|string|max:255',
             'profile_photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
@@ -99,9 +100,9 @@ class EmployeeController extends Controller
         // Create user account if requested
         if ($request->boolean('create_user_account')) {
             $user = User::create([
-                'name' => $employee->first_name . ' ' . $employee->last_name,
-                'email' => $employee->email,
-                'username' => $employee->employee_id,
+                'name' => $employee->name,
+                'email' => $employee->emp_email ?? $employee->company_email,
+                'username' => $employee->emp_no,
                 'password' => Hash::make($request->password ?? 'password123'),
                 'role' => $request->user_role ?? 'Other Staff',
             ]);
@@ -118,7 +119,7 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        $employee->load(['user', 'leaves', 'attendance', 'loans', 'medicalRecords', 'warnings', 'documents']);
+        $employee->load(['user', 'leaveRecords', 'attendanceRecords', 'warnings', 'documents']);
         
         return view('employees.show', compact('employee'));
     }
@@ -142,18 +143,16 @@ class EmployeeController extends Controller
     public function update(Request $request, Employee $employee)
     {
         $validator = Validator::make($request->all(), [
-            'employee_id' => 'required|string|unique:employees,employee_id,' . $employee->id,
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'email' => 'required|email|unique:employees,email,' . $employee->id,
-            'phone' => 'required|string|max:20',
-            'date_of_birth' => 'required|date',
+            'name' => 'required|string|max:255',
             'gender' => 'required|in:Male,Female,Other',
+            'dob' => 'required|date',
             'nationality' => 'required|string|max:255',
+            'designation' => 'required|string|max:255',
             'department' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
-            'hire_date' => 'required|date',
-            'salary' => 'required|numeric|min:0',
+            'date_of_join' => 'required|date',
+            'basic_salary' => 'required|numeric|min:0',
+            'contact_number' => 'required|string|max:20',
+            'employment_status' => 'required|string|max:255',
             'profile_photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
@@ -178,6 +177,7 @@ class EmployeeController extends Controller
             $data['profile_photo'] = $photoName;
         }
 
+        // Update the employee record (emp_no cannot be changed by users)
         $employee->update($data);
 
         return redirect()->route('employees.show', $employee)
@@ -272,5 +272,112 @@ class EmployeeController extends Controller
         
         return redirect()->back()
             ->with('success', 'Employees imported successfully.');
+    }
+
+    /**
+     * Upload document for an employee.
+     */
+    public function uploadDocument(Request $request, Employee $employee)
+    {
+        $validator = Validator::make($request->all(), [
+            'document_type' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'document_file' => 'required|file|mimes:pdf,jpg,jpeg,png,doc,docx|max:10240', // 10MB max
+            'expiry_date' => 'nullable|date|after:today',
+            'is_required' => 'boolean',
+            'notes' => 'nullable|string',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $file = $request->file('document_file');
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        $filePath = 'documents/' . $employee->emp_no . '/' . $fileName;
+        
+        // Store the file
+        $file->storeAs('public/' . $filePath);
+
+        // Create document record
+        $document = Document::create([
+            'emp_no' => $employee->emp_no,
+            'document_type' => $request->document_type,
+            'title' => $request->title,
+            'description' => $request->description,
+            'file_path' => $filePath,
+            'file_name' => $fileName,
+            'file_size' => $file->getSize(),
+            'file_type' => $file->getClientMimeType(),
+            'uploaded_by' => auth()->id(),
+            'expiry_date' => $request->expiry_date,
+            'status' => 'Active',
+            'is_required' => $request->boolean('is_required'),
+            'is_verified' => false,
+            'notes' => $request->notes,
+        ]);
+
+        return redirect()->route('employees.show', $employee)
+            ->with('success', 'Document uploaded successfully.');
+    }
+
+    /**
+     * Delete document for an employee.
+     */
+    public function deleteDocument(Request $request, Employee $employee, Document $document)
+    {
+        // Check if the document belongs to the employee
+        if ($document->emp_no !== $employee->emp_no) {
+            return redirect()->back()->with('error', 'Document not found.');
+        }
+
+        // Delete the file from storage
+        if (Storage::exists('public/' . $document->file_path)) {
+            Storage::delete('public/' . $document->file_path);
+        }
+
+        // Delete the document record
+        $document->delete();
+
+        return redirect()->route('employees.show', $employee)
+            ->with('success', 'Document deleted successfully.');
+    }
+
+    /**
+     * Verify document for an employee.
+     */
+    public function verifyDocument(Request $request, Employee $employee, Document $document)
+    {
+        // Check if the document belongs to the employee
+        if ($document->emp_no !== $employee->emp_no) {
+            return redirect()->back()->with('error', 'Document not found.');
+        }
+
+        $document->verify(auth()->id());
+
+        return redirect()->route('employees.show', $employee)
+            ->with('success', 'Document verified successfully.');
+    }
+
+    /**
+     * Download document for an employee.
+     */
+    public function downloadDocument(Request $request, Employee $employee, Document $document)
+    {
+        // Check if the document belongs to the employee
+        if ($document->emp_no !== $employee->emp_no) {
+            return redirect()->back()->with('error', 'Document not found.');
+        }
+
+        $filePath = storage_path('app/public/' . $document->file_path);
+        
+        if (!file_exists($filePath)) {
+            return redirect()->back()->with('error', 'File not found.');
+        }
+
+        return response()->download($filePath, $document->file_name);
     }
 }
